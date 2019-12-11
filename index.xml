@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Running a Hugo generated site on Google Cloud Storage</title>
+      <title>Running a Hugo generated site on Github Pages and Google Cloud Storage</title>
       <link>tunzor.github.io/posts/hugo-on-gcs/</link>
       <pubDate>Tue, 10 Dec 2019 09:45:13 -0500</pubDate>
       

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Running a Hugo generated site on Google Cloud Storage - tunzor: a blog in one act</title>
+  <title>Running a Hugo generated site on Github Pages and Google Cloud Storage - tunzor: a blog in one act</title>
   <meta name="description" content="Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.
 This in and of itself might not be very interesting. The potential hosting environment is what is of particular interest to me.
 Why go static? Since the pages are HTML, you don&rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site."><script type="application/ld+json">
@@ -46,7 +46,7 @@ Why go static? Since the pages are HTML, you don&rsquo;t need to worry about hav
         "position": 3,
         "item": {
           "@id": "tunzor.github.io\/posts\/hugo-on-gcs\/",
-          "name": "Running a hugo generated site on google cloud storage"
+          "name": "Running a hugo generated site on github pages and google cloud storage"
         }
     }]
 }
@@ -57,10 +57,10 @@ Why go static? Since the pages are HTML, you don&rsquo;t need to worry about hav
   "author": {
     "name" : ""
   },
-  "headline": "Running a Hugo generated site on Google Cloud Storage",
+  "headline": "Running a Hugo generated site on Github Pages and Google Cloud Storage",
   "description" : "Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.\nThis in and of itself might not be very interesting. The potential hosting environment is what is of particular interest to me.\nWhy go static? Since the pages are HTML, you don\x26rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site.",
   "inLanguage" : "en",
-  "wordCount":  1428 ,
+  "wordCount":  1479 ,
   "datePublished" : "2019-12-10T09:45:13",
   "dateModified" : "2019-12-10T09:45:13",
   "image" : "tunzor.github.io",
@@ -79,7 +79,7 @@ Why go static? Since the pages are HTML, you don&rsquo;t need to worry about hav
 }
 </script>
 
-<meta property="og:title" content="Running a Hugo generated site on Google Cloud Storage" />
+<meta property="og:title" content="Running a Hugo generated site on Github Pages and Google Cloud Storage" />
 <meta property="og:description" content="Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.
 This in and of itself might not be very interesting. The potential hosting environment is what is of particular interest to me.
 Why go static? Since the pages are HTML, you don&rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site.">
@@ -87,7 +87,7 @@ Why go static? Since the pages are HTML, you don&rsquo;t need to worry about hav
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="tunzor: a blog in one act" />
 
-  <meta name="twitter:title" content="Running a Hugo generated site on Google Cloud Storage" />
+  <meta name="twitter:title" content="Running a Hugo generated site on Github Pages and Google Cloud Storage" />
   <meta name="twitter:description" content="Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for …">
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.55.4" />
@@ -198,7 +198,7 @@ Why go static? Since the pages are HTML, you don&rsquo;t need to worry about hav
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="posts-heading">
               
-                <h1>Running a Hugo generated site on Google Cloud Storage</h1>
+                <h1>Running a Hugo generated site on Github Pages and Google Cloud Storage</h1>
               
               
                 <hr class="small">
@@ -345,7 +345,21 @@ Hugo will let you know what it generated and you&rsquo;ll now notice there&rsquo
 <pre><code>tunzor.github.io
 </code></pre>
 
-<p>Next, head over to our site&rsquo;s directory, the one that contains the <code>public/</code> directory that we generated previously with Hugo. We want to copy its contents to an empty directory so that we can push it to our new github repo.</p>
+<p>Before we copy our generated files over, we need to make one important change: update the base URL in our site&rsquo;s <code>config.toml</code> file. You should see the <code>baseURL</code> configured as <code>&quot;http://example.org/&quot;</code>, we need to change that to use the Github Pages URL (which is the name of our repo: <code>YOUR_USERNAME.github.io</code>):</p>
+
+<pre><code>baseURL = &quot;tunzor.github.io&quot;
+</code></pre>
+
+<p>Now that we&rsquo;ve updated that config, we need to regenerate the files. In our site&rsquo;s directory:</p>
+
+<pre><code># Delete public folder and its contents
+rm -rf public/
+
+# Regenerate our static files
+hugo
+</code></pre>
+
+<p>We want to copy the <code>public/</code> directory&rsquo;s contents to an empty directory so that we can push it to our new github repo.</p>
 
 <pre><code># ~/hugo-blog is a temp directory; make it whatever you like
 cp -r public/ ~/hugo-blog/
@@ -392,14 +406,14 @@ gsutil iam ch allUsers:objectViewer gs://toninos-blog
 gsutil web set -m index.html -e 404.html gs://toninos-blog
 </code></pre>
 
-<p>Before we copy our generated files over, we need to make one important change: update the base URL in our site&rsquo;s <code>config.toml</code> file. You should see the <code>baseURL</code> configured as <code>&quot;http://example.org/&quot;</code>, we need to change that to use the GCS URL and the name of the bucket we created above:</p>
+<p>As we did for the Github Pages part above, we&rsquo;ll need to update the <code>baseURL</code> config before we push to GCS. Update it to use the GCS URL and the name of the bucket we created above and regenerate them as we did before:</p>
 
-<pre><code>baseURL = &quot;https://storage.googleapis.com/toninos-blog&quot;
-</code></pre>
+<pre><code># Update line in config.toml
+baseURL = &quot;https://storage.googleapis.com/toninos-blog&quot;
 
-<p>Now that we&rsquo;ve updated that config, we need to regenerate the files. In our site&rsquo;s directory:</p>
+...
 
-<pre><code># Delete public folder and its contents
+# Delete public folder and its contents
 rm -rf public/
 
 # Regenerate our static files
