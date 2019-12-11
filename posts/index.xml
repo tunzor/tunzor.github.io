@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on tunzor: a blog in one act</title>
+    <title>Posts on tunzor</title>
     <link>https://tunzor.github.io/posts/</link>
-    <description>Recent content in Posts on tunzor: a blog in one act</description>
+    <description>Recent content in Posts on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 10 Dec 2019 09:45:13 -0500</lastBuildDate>
