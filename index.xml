@@ -6,10 +6,19 @@
     <description>Recent content on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Dec 2019 09:45:13 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 11 Dec 2019 11:58:02 -0500</lastBuildDate>
     
 	<atom:link href="https://tunzor.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About Me</title>
+      <link>https://tunzor.github.io/about/</link>
+      <pubDate>Wed, 11 Dec 2019 11:58:02 -0500</pubDate>
+      
+      <guid>https://tunzor.github.io/about/</guid>
+      <description>Experienced developer Hobbyist Android and game developer Volunteer coding instructor and mentor Google Cloud Certified Cloud Engineer Lover of learning  </description>
+    </item>
     
     <item>
       <title>Running a Hugo generated site on Github Pages and Google Cloud Storage</title>
