@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Running a Hugo generated site on Google Cloud Storage - My New Hugo Site</title>
+  <meta name="description" content="Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.
+This in and of itself might not be very interesting. The potential hosting environment is what is of particular interest to me.
+Why go static? Since the pages are HTML, you don&rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site."><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "My New Hugo Site",
+    
+    "url": "tunzor.github.io"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "tunzor.github.io"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "tunzor.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "tunzor.github.io\/posts\/hugo-on-gcs\/",
+          "name": "Running a hugo generated site on google cloud storage"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Running a Hugo generated site on Google Cloud Storage",
+  "description" : "Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.\nThis in and of itself might not be very interesting. The potential hosting environment is what is of particular interest to me.\nWhy go static? Since the pages are HTML, you don\x26rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site.",
+  "inLanguage" : "en",
+  "wordCount":  1400 ,
+  "datePublished" : "2019-12-10T09:45:13",
+  "dateModified" : "2019-12-10T09:45:13",
+  "image" : "tunzor.github.io",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "tunzor.github.io\/posts\/hugo-on-gcs\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "tunzor.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "tunzor.github.io",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Running a Hugo generated site on Google Cloud Storage" />
+<meta property="og:description" content="Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.
+This in and of itself might not be very interesting. The potential hosting environment is what is of particular interest to me.
+Why go static? Since the pages are HTML, you don&rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site.">
+<meta property="og:url" content="tunzor.github.io/tunzor.github.io/posts/hugo-on-gcs/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="My New Hugo Site" />
+
+  <meta name="twitter:title" content="Running a Hugo generated site on Google Cloud Storage" />
+  <meta name="twitter:description" content="Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for …">
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.55.4" />
+  <link rel="alternate" href="tunzor.github.io/index.xml" type="application/rss+xml" title="My New Hugo Site"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="tunzor.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="tunzor.github.io/css/syntax.css" /><link rel="stylesheet" href="tunzor.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="tunzor.github.io">My New Hugo Site</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Running a Hugo generated site on Google Cloud Storage</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p><a href="https://gohugo.io/" target=_blank>Hugo</a>, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.</p>
+
+<p>This in and of itself might not be very interesting. The potential hosting environment is what is of particular interest to me.</p>
+
+<h2 id="why-go-static">Why go static?</h2>
+
+<p>Since the pages are HTML, you don&rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site.</p>
+
+<p>No rendering engine (JSP, PHP, NodeJS, etc.) means no application to run.</p>
+
+<p>No application to run means no paying for or dealing with backend server hosting.</p>
+
+<p>This is beneficial in two ways: cost and simplicity.</p>
+
+<ol>
+<li><p>Cost is pretty obvious; dynamic hosting can get relatively expensive when we compare it to free.</p></li>
+
+<li><p>Simple HTML pages don&rsquo;t need any server-side processing to serve as they&rsquo;re just static text files. This cuts down on the time it takes to actually deliver the page to the user.</p></li>
+</ol>
+
+<p><strong>no server-side processing + small file size = super fast website</strong></p>
+
+<p>One really good <em>free</em> option for hosting static pages is <a href="https://pages.github.com/" target=_blank>Github Pages</a>. You create a repo with the name <code>username.github.io</code> and drop your content in. Easy.</p>
+
+<p>Another option is Google Cloud Storage; Google&rsquo;s object storage. Similar process: create a bucket, drop your files in, and profit.</p>
+
+<p>We&rsquo;ll be tackling both today; let&rsquo;s jump in.</p>
+
+<h2 id="forget-a-href-https-simpsons-fandom-com-wiki-hugo-simpson-ii-target-blank-bart-a-let-s-go-with-hugo">Forget <a href="https://simpsons.fandom.com/wiki/Hugo_Simpson_II" target="blank">Bart</a>, let&rsquo;s go with Hugo</h2>
+
+<p>Hugo is a command line tool and we can either install it with our system&rsquo;s <a href="https://gohugo.io/getting-started/installing/#quick-install" target=_blank>package manager</a> or from a <a href="https://gohugo.io/getting-started/installing/#install-hugo-from-tarball" target=_blank>tarball package manually</a>. I&rsquo;m running on a mac system so I&rsquo;ll install it with <code>brew</code>:</p>
+
+<pre><code>brew install hugo
+</code></pre>
+
+<p>Next we check that it&rsquo;s installed correctly:</p>
+
+<pre><code>hugo version
+</code></pre>
+
+<p>Sweet. Now we tell Hugo to create a new site for us (<em>my-site</em> can be whatever you like):</p>
+
+<pre><code>hugo new site my-site
+</code></pre>
+
+<p>Hugo will then tell you that it created the site, the path to it, and some next steps:</p>
+
+<pre><code>Congratulations! Your new Hugo site is created in
+/Users/YOUR_USER/path/where/you/ran/hugo/my-site. 
+...
+</code></pre>
+
+<p>Almost there. Now we need to setup a theme. There are lots to choose from <a href="https://themes.gohugo.io/" target=_blank>here</a>; we&rsquo;ll use the <a href="https://themes.gohugo.io/gohugo-theme-ananke/" target=_blank>ananke theme</a>. We&rsquo;ll need to check out the theme&rsquo;s files from github and then tell Hugo we want to use it.</p>
+
+<pre><code># Move to our site's directory
+cd my-site
+
+# Checkout the theme's files
+git init
+git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+
+# Tell Hugo we want to use the ananke theme by appending it to the config file
+echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml
+</code></pre>
+
+<p>Success! We&rsquo;ve installed and configured Hugo!</p>
+
+<p>One last thing we&rsquo;ll do is create a test post. We use <code>hugo new</code> to create a new post, provide it the path where we want to create it (the path is relative to the <code>content</code> directory of our site), and then add some content to it.</p>
+
+<blockquote>
+<p><strong>Side note</strong><br />
+We can also manually create files in the content directory and Hugo will still pick them up. The upside to using <code>hugo new</code> is that it&rsquo;ll add some template markup to the post file for us.</p>
+</blockquote>
+
+<pre><code>hugo new posts/my-first-post.md
+
+# Add some content to the post file
+echo '# Hello World from Hugo!' &gt;&gt; content/posts/my-first-post.md
+
+# Show the generated post file with our content
+cat content/posts/my-first-post.md
+---
+title: &quot;My First Post&quot;
+date: 2019-12-10T11:17:47-05:00
+draft: true
+---
+# Hello World from Hugo!
+</code></pre>
+
+<p>The final step is to test that Hugo works and our ground-breaking content displays correctly. We&rsquo;ll run the hugo server with drafts mode enabled so that we can see our post from above since Hugo marks new posts as drafts by default (more info about draft mode <a href="https://gohugo.io/getting-started/usage/#draft-future-and-expired-content" target=_blank>here</a>):</p>
+
+<pre><code># -D and --buildDrafts are equivalent flags
+hugo server -D
+...
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+...
+</code></pre>
+
+<p>Navigate to <a href="http://localhost:1313/" target=_blank>localhost:1313/</a> and marvel at all that we&rsquo;ve accomplished in such a short time. You can also hit the post directly with <a href="http://localhost:1313/posts/my-first-post/" target=_blank>localhost:1313/posts/my-first-post</a>.</p>
+
+<h2 id="gimme-gimme-gimme-sup-some-html-sup">Gimme, Gimme, Gimme <sup>(some HTML)</sup></h2>
+
+<p>We&rsquo;ve got our site ready to go and all we need are the generated files.</p>
+
+<p>Before we start generating, we need to do one important thing: we need to move the posts out of the draft mode. For each post that we want to publish, set the draft option at the top of the post Markdown file to false: <code>draft: false</code>.</p>
+
+<p><em>NOW</em> we can generate the files and this is super simple to do with Hugo. In our site&rsquo;s main directory we run:</p>
+
+<pre><code>hugo 
+</code></pre>
+
+<p>That&rsquo;s it. Really.<br />
+Hugo will let you know what it generated and you&rsquo;ll now notice there&rsquo;s a <code>public</code> directory. This is what we&rsquo;re after.</p>
+
+<p>Now that we know Hugo works (I never doubted him), it&rsquo;s time to take it to the cloud!</p>
+
+<h2 id="git-ready-git-set-go">Git ready, git set, go!</h2>
+
+<p>The first hosted option we&rsquo;re going to use is Github Pages and it&rsquo;s <del>difficult</del> <del>a doozy</del> <del>convoluted</del> easy.</p>
+
+<p>Head over to your github account and create a new repo with the name <code>YOUR_USERNAME.github.io</code>; mine will be:</p>
+
+<pre><code>tunzor.github.io
+</code></pre>
+
+<p>Next, head over to our site&rsquo;s directory, the one that contains the <code>public/</code> directory that we generated previously with Hugo. We want to copy its contents to an empty directory so that we can push it to our new github repo.</p>
+
+<pre><code># ~/hugo-blog is a temp directory; make it whatever you like
+cp -r public/ ~/hugo-blog/
+
+# Move to the directory, add all the generated files, and push it real good
+cd ~/hugo-blog
+git init
+git add .
+git commit -m &quot;Initial commit with an informative commit message.&quot;
+git remote add origin https://github.com/tunzor/tunzor.github.io.git
+git push -u origin master
+</code></pre>
+
+<h2 id="we-re-going-to-be-on-cloud-nine">We&rsquo;re [going to be] on cloud nine!</h2>
+
+<p><img src="https://frinkiac.com/video/S11E07/-yWtvkxozLtgkpGtVvLg6WYUzJk=.gif" alt="We're on cloud nine!" title="They even have a better sound bite than us!" style="width: 50%"/></p>
+
+<p>Now that we have those sweet, sweet generated files, we can push them <sup>real good</sup> to the cloud for hosting.</p>
+
+<p>We&rsquo;ll use the Google CLI tool <code>gsutil</code> to actually do the upload but before we can use it, we have to install it. It comes packaged with the <code>gcloud</code> tool which is how we can interact with Google Cloud. Instructions for setting it up are well documented <a href="https://cloud.google.com/sdk/docs/downloads-interactive" target=_blank>here</a>. Once we&rsquo;ve got it installed and working, we&rsquo;ll need to initialize it so we can authenticate and start doing cool stuff.</p>
+
+<blockquote>
+<p><strong>Side note</strong><br />
+In GCP a project ID and project NAME are different. During creation if we make the name unique, then GCP will assign it as the project name <strong>and</strong> ID. If it&rsquo;s not, then GCP will generate a unique ID; we don&rsquo;t want this to happen as it won&rsquo;t be as easy to remember.</p>
+</blockquote>
+
+<pre><code># This opens a browser for authentication and sets gcloud config properties
+gcloud init
+
+# This will create a new GCP project
+gcloud projects create my-super-unique-projects-name
+</code></pre>
+
+<p>Now that we&rsquo;ve got our project up and running, we have to create a GCS bucket. We&rsquo;ll be creating it in the <code>us-east1</code> region (this is part of the GCP free tier). Then we&rsquo;ll modify the access control list to make the bucket and its contents public.</p>
+
+<pre><code># -p specifies the GCP project ID
+# -l is the bucket location
+gsutil mb -p toninos-hugo-blog -l us-east1 gs://toninos-blog
+
+gsutil iam ch allUsers:objectViewer gs://toninos-blog
+
+# Sets the index.html as the default page if the path is a directory
+# e.g. /posts/my-first-post will serve /posts/my-first-post/index.html
+gsutil web set -m index.html -e 404.html gs://toninos-blog
+</code></pre>
+
+<p>Before we copy our generated files over, we need to make one important change: update the base URL in our site&rsquo;s <code>config.toml</code> file. You should see the <code>baseURL</code> configured as <code>&quot;http://example.org/&quot;</code>, we need to change that to use the GCS URL and the name of the bucket we created above:</p>
+
+<pre><code>baseURL = &quot;https://storage.googleapis.com/toninos-blog&quot;
+</code></pre>
+
+<p>Now that we&rsquo;ve updated that config, we need to regenerate the files. In our site&rsquo;s directory:</p>
+
+<pre><code># Delete public folder and its contents
+rm -rf public/
+
+# Regenerate our static files
+hugo
+</code></pre>
+
+<p>Next we need to copy the public directory&rsquo;s contents to the bucket.</p>
+
+<pre><code># Move into our public directory
+cd public/
+
+# -m for multi-thread/process
+# -r for recursively copy (child directories/files)
+gsutil -m cp -r * gs://toninos-blog
+</code></pre>
+
+<h3 id="aaaaand-we-re-done">Aaaaand we&rsquo;re done!</h3>
+
+<p>We can now navigate to our bucket using the <code>baseURL</code> from above and adding <code>index.html</code> to it and we should see our site!</p>
+
+<pre><code>https://storage.googleapis.com/toninos-blog/index.html
+</code></pre>
+
+<blockquote>
+<p><strong>Side Note</strong><br />
+The one issue we have with this method is that the default index.html page for the individual posts won&rsquo;t be served unless we navigate directly to them. For example, <code>/posts/my-first-post</code> won&rsquo;t serve <code>/posts/my-first-post/index.html</code>. The site however still <em>technically</em> works and we can view it by hitting <code>https://storage.googleapis.com/BLOG-NAME/index.html</code></p>
+</blockquote>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="tunzor.github.io">My New Hugo Site</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.55.4</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="tunzor.github.io/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="tunzor.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
