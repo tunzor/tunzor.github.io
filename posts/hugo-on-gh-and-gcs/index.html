@@ -9,7 +9,7 @@
 
   <title>Running a Hugo generated site on Github Pages and Google Cloud Storage - tunzor: a blog in one act</title>
   <meta name="description" content="Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.
-This in and of itself might not be very interesting. The potential hosting environment is what is of particular interest to me.
+This in and of itself might not be very interesting but the potential hosting environments are what particularly interest me.
 Why go static? Since the pages are HTML, you don&rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site."><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,9 +58,9 @@ Why go static? Since the pages are HTML, you don&rsquo;t need to worry about hav
     "name" : ""
   },
   "headline": "Running a Hugo generated site on Github Pages and Google Cloud Storage",
-  "description" : "Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.\nThis in and of itself might not be very interesting. The potential hosting environment is what is of particular interest to me.\nWhy go static? Since the pages are HTML, you don\x26rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site.",
+  "description" : "Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.\nThis in and of itself might not be very interesting but the potential hosting environments are what particularly interest me.\nWhy go static? Since the pages are HTML, you don\x26rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site.",
   "inLanguage" : "en",
-  "wordCount":  1479 ,
+  "wordCount":  1565 ,
   "datePublished" : "2019-12-10T09:45:13",
   "dateModified" : "2019-12-10T09:45:13",
   "image" : "https:\/\/tunzor.github.io",
@@ -81,7 +81,7 @@ Why go static? Since the pages are HTML, you don&rsquo;t need to worry about hav
 
 <meta property="og:title" content="Running a Hugo generated site on Github Pages and Google Cloud Storage" />
 <meta property="og:description" content="Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.
-This in and of itself might not be very interesting. The potential hosting environment is what is of particular interest to me.
+This in and of itself might not be very interesting but the potential hosting environments are what particularly interest me.
 Why go static? Since the pages are HTML, you don&rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site.">
 <meta property="og:url" content="https://tunzor.github.io/posts/hugo-on-gh-and-gcs/" />
 <meta property="og:type" content="website" />
@@ -222,31 +222,31 @@ Why go static? Since the pages are HTML, you don&rsquo;t need to worry about hav
 
 <p><a href="https://gohugo.io/" target=_blank>Hugo</a>, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.</p>
 
-<p>This in and of itself might not be very interesting. The potential hosting environment is what is of particular interest to me.</p>
+<p>This in and of itself might not be very interesting but the potential hosting environments are what particularly interest me.</p>
 
 <h2 id="why-go-static">Why go static?</h2>
 
 <p>Since the pages are HTML, you don&rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site.</p>
 
-<p>No rendering engine (JSP, PHP, NodeJS, etc.) means no application to run.</p>
+<p>No rendering language (JSP, PHP, NodeJS, etc.) means no application to run.</p>
 
 <p>No application to run means no paying for or dealing with backend server hosting.</p>
 
 <p>This is beneficial in two ways: cost and simplicity.</p>
 
 <ol>
-<li><p>Cost is pretty obvious; dynamic hosting can get relatively expensive when we compare it to free.</p></li>
+<li><p>Cost is pretty obvious; dynamic hosting can get relatively expensive when we compare it to <em>free</em>.</p></li>
 
-<li><p>Simple HTML pages don&rsquo;t need any server-side processing to serve as they&rsquo;re just static text files. This cuts down on the time it takes to actually deliver the page to the user.</p></li>
+<li><p>Simple HTML pages don&rsquo;t need any server-side processing prior to serving as they&rsquo;re already HTML. This cuts down on the time it takes to actually deliver the page to the user.</p></li>
 </ol>
 
 <p><strong>no server-side processing + small file size = super fast website</strong></p>
 
 <p>One really good <em>free</em> option for hosting static pages is <a href="https://pages.github.com/" target=_blank>Github Pages</a>. You create a repo with the name <code>username.github.io</code> and drop your content in. Easy.</p>
 
-<p>Another option is Google Cloud Storage; Google&rsquo;s object storage. Similar process: create a bucket, drop your files in, and profit.</p>
+<p>Another <a href="https://cloud.google.com/free/docs/gcp-free-tier" target=_blank><em>essentially free</em></a> option is Google Cloud Storage; Google Cloud&rsquo;s object storage. Similar process: create a bucket, drop your files in, and profit.</p>
 
-<p>We&rsquo;ll be tackling both today; let&rsquo;s jump in.</p>
+<p>We&rsquo;ll be taking a look at both today so let&rsquo;s jump in.</p>
 
 <h2 id="forget-a-href-https-simpsons-fandom-com-wiki-hugo-simpson-ii-target-blank-bart-a-let-s-go-with-hugo">Forget <a href="https://simpsons.fandom.com/wiki/Hugo_Simpson_II" target="blank">Bart</a>, let&rsquo;s go with Hugo</h2>
 
@@ -260,7 +260,7 @@ Why go static? Since the pages are HTML, you don&rsquo;t need to worry about hav
 <pre><code>hugo version
 </code></pre>
 
-<p>Sweet. Now we tell Hugo to create a new site for us (<em>my-site</em> can be whatever you like):</p>
+<p>Sweet. Now we tell Hugo to create a new site for us (<code>my-site</code> can be whatever you like):</p>
 
 <pre><code>hugo new site my-site
 </code></pre>
@@ -272,17 +272,17 @@ Why go static? Since the pages are HTML, you don&rsquo;t need to worry about hav
 ...
 </code></pre>
 
-<p>Almost there. Now we need to setup a theme. There are lots to choose from <a href="https://themes.gohugo.io/" target=_blank>here</a>; we&rsquo;ll use the <a href="https://themes.gohugo.io/gohugo-theme-ananke/" target=_blank>ananke theme</a>. We&rsquo;ll need to check out the theme&rsquo;s files from github and then tell Hugo we want to use it.</p>
+<p>Almost there. Now we need to setup a theme. There are lots to choose from <a href="https://themes.gohugo.io/" target=_blank>here</a>; we&rsquo;ll use the <a href="https://themes.gohugo.io/beautifulhugo/" target=_blank>beautifulhugo theme</a>. We need to check out the theme&rsquo;s files from github and then tell Hugo we want to use it.</p>
 
 <pre><code># Move to our site's directory
 cd my-site
 
 # Checkout the theme's files
 git init
-git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo
 
 # Tell Hugo we want to use the ananke theme by appending it to the config file
-echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml
+echo 'theme = &quot;beautifulhugo&quot;' &gt;&gt; config.toml
 </code></pre>
 
 <p>Success! We&rsquo;ve installed and configured Hugo!</p>
@@ -309,7 +309,7 @@ draft: true
 # Hello World from Hugo!
 </code></pre>
 
-<p>The final step is to test that Hugo works and our ground-breaking content displays correctly. We&rsquo;ll run the hugo server with drafts mode enabled so that we can see our post from above since Hugo marks new posts as drafts by default (more info about draft mode <a href="https://gohugo.io/getting-started/usage/#draft-future-and-expired-content" target=_blank>here</a>):</p>
+<p>The final step is to test that Hugo works and our ground-breaking content displays correctly. We&rsquo;ll run the hugo server with drafts mode enabled so that we can see our post from above. This is because Hugo marks new posts as drafts by default (more info about draft mode <a href="https://gohugo.io/getting-started/usage/#draft-future-and-expired-content" target=_blank>here</a>):</p>
 
 <pre><code># -D and --buildDrafts are equivalent flags
 hugo server -D
@@ -318,34 +318,35 @@ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 ...
 </code></pre>
 
-<p>Navigate to <a href="http://localhost:1313/" target=_blank>localhost:1313/</a> and marvel at all that we&rsquo;ve accomplished in such a short time. You can also hit the post directly with <a href="http://localhost:1313/posts/my-first-post/" target=_blank>localhost:1313/posts/my-first-post</a>.</p>
+<p>Navigate to <a href="http://localhost:1313/" target=_blank>localhost:1313</a> and marvel at all that we&rsquo;ve accomplished in such a short time. You can also hit the post directly with <a href="http://localhost:1313/posts/my-first-post/" target=_blank>localhost:1313/posts/my-first-post</a>.</p>
 
 <h2 id="gimme-gimme-gimme-sup-some-html-sup">Gimme, Gimme, Gimme <sup>(some HTML)</sup></h2>
 
-<p>We&rsquo;ve got our site ready to go and all we need are the generated files.</p>
+<p>We&rsquo;ve got our site ready to go and all we need are the generated HTML files.</p>
 
 <p>Before we start generating, we need to do one important thing: we need to move the posts out of the draft mode. For each post that we want to publish, set the draft option at the top of the post Markdown file to false: <code>draft: false</code>.</p>
 
-<p><em>NOW</em> we can generate the files and this is super simple to do with Hugo. In our site&rsquo;s main directory we run:</p>
+<p><em>Now</em> we can generate the files and this is super simple to do with Hugo. In our site&rsquo;s main directory we run:</p>
 
 <pre><code>hugo 
 </code></pre>
 
-<p>That&rsquo;s it. Really.<br />
-Hugo will let you know what it generated and you&rsquo;ll now notice there&rsquo;s a <code>public</code> directory. This is what we&rsquo;re after.</p>
+<p>That&rsquo;s it. Really.</p>
+
+<p>Hugo will let you know what it generated and you&rsquo;ll now notice there&rsquo;s a <code>public</code> directory. This is what we&rsquo;re after. It contains our HTML pages as well as any additional CSS, Javascript, etc. required by the theme.</p>
 
 <p>Now that we know Hugo works (I never doubted him), it&rsquo;s time to take it to the cloud!</p>
 
-<h2 id="git-ready-git-set-go">Git ready, git set, go!</h2>
+<h2 id="git-ready-git-set-go">Git ready, Git set, go!</h2>
 
 <p>Now that we have those sweet, sweet generated files, we can push them <sup>real good</sup> to the cloud(s) for hosting. The first hosted option we&rsquo;re going to use is Github Pages and it&rsquo;s pretty <del>difficult</del> <del>error-prone</del> <del>convoluted</del> straightforward.</p>
 
-<p>Head over to your github account and create a new repo with the name <code>YOUR_USERNAME.github.io</code>; mine will be:</p>
+<p>Head over to your github account and create a new repo with the name <code>YOUR_USERNAME.github.io</code>. Mine will be:</p>
 
 <pre><code>tunzor.github.io
 </code></pre>
 
-<p>Before we copy our generated files over, we need to make one important change: update the base URL in our site&rsquo;s <code>config.toml</code> file. You should see the <code>baseURL</code> configured as <code>&quot;http://example.org/&quot;</code>, we need to change that to use the Github Pages URL (which is the name of our repo: <code>YOUR_USERNAME.github.io</code>):</p>
+<p>Before we copy our generated files over, we need to make one very important change: update the base URL in our site&rsquo;s <code>config.toml</code> file. You should see the <code>baseURL</code> configured as <code>&quot;http://example.org/&quot;</code>, we need to change that to use the Github Pages URL (which is the name of our repo: <code>YOUR_USERNAME.github.io</code>):</p>
 
 <pre><code>baseURL = &quot;tunzor.github.io&quot;
 </code></pre>
@@ -373,13 +374,13 @@ git remote add origin https://github.com/tunzor/tunzor.github.io.git
 git push -u origin master
 </code></pre>
 
-<p>Navigate to your github pages URL, which is conveniently the name of our repo <code>YOUR_USERNAME.github.io</code>, and bask in its glow.</p>
+<p>Navigate to your github pages URL, which is conveniently the name of our repo <code>YOUR_USERNAME.github.io</code>, and bask in its <a href="https://frinkiac.com/video/S06E06/Maouq-giBMAq9XVrMyFcCjQq0lM=.gif" target=_blank>warm, glowing, warming glow</a>.</p>
 
 <h2 id="we-re-going-to-be-on-cloud-nine">We&rsquo;re [going to be] on cloud nine!</h2>
 
 <p><img src="https://frinkiac.com/video/S11E07/-yWtvkxozLtgkpGtVvLg6WYUzJk=.gif" alt="We're on cloud nine!" title="They even have a better sound bite than us!" style="width: 50%"/></p>
 
-<p>To get our site into the Google Cloud, we&rsquo;ll use the Google CLI tool <code>gsutil</code> to actually do the upload but before we can use it, we have to install it. It comes packaged with the <code>gcloud</code> tool which is how we can interact with Google Cloud. Instructions for setting it up are well documented <a href="https://cloud.google.com/sdk/docs/downloads-interactive" target=_blank>here</a>. Once we&rsquo;ve got it installed and working, we&rsquo;ll need to initialize it so we can authenticate and start doing cool stuff.</p>
+<p>To get our site into the Google Cloud, we&rsquo;ll use the Google CLI tool <code>gsutil</code> to actually do the upload but before we can use it, we have to install it. It comes packaged with the <code>gcloud</code> tool which is how we can interact with the Google Cloud APIs. Instructions for setting it up are well documented <a href="https://cloud.google.com/sdk/docs/downloads-interactive" target=_blank>here</a>. Once we&rsquo;ve got it installed and working, we&rsquo;ll need to initialize it so we can authenticate and start doing cool stuff.</p>
 
 <blockquote>
 <p><strong>Side note</strong><br />
@@ -393,12 +394,25 @@ gcloud init
 gcloud projects create my-super-unique-projects-name
 </code></pre>
 
-<p>Now that we&rsquo;ve got our project up and running, we have to create a GCS bucket. We&rsquo;ll be creating it in the <code>us-east1</code> region (this is part of the GCP free tier). Then we&rsquo;ll modify the access control list to make the bucket and its contents public.</p>
+<p>Now that we&rsquo;ve got our project up and running, we have to create a GCS bucket.</p>
 
-<pre><code># -p specifies the GCP project ID
-# -l is the bucket location
-gsutil mb -p toninos-hugo-blog -l us-east1 gs://toninos-blog
+<blockquote>
+<p><strong>Side Note</strong><br />
+Unlike the project ID that can be unique, the bucket name <strong>must</strong> be unique, so be specific.</p>
+</blockquote>
 
+<p>We&rsquo;ll be creating it in the <code>us-east1</code> region (this is part of the GCP free tier). Then we&rsquo;ll modify the access control list to make the bucket and its contents public.</p>
+
+<blockquote>
+<p><strong>Side Note</strong><br />
+The <code>gsutil web set</code> command below is NOT necessary when using a bucket name as it doesn&rsquo;t seem to work for them. You&rsquo;ll need to setup a domain and use that as the bucket name for it to work. For example, <code>/posts/my-first-post</code> won&rsquo;t serve <code>/posts/my-first-post/index.html</code>. The site however will still <em>technically</em> work if we path directly to the index file <code>https://storage.googleapis.com/BLOG-NAME/posts/my-first-post/index.html</code>. This seems like it might be related to <a href="https://cloud.google.com/storage/docs/gsutil/commands/web#set" target=_blank>DNS CNAME configuration</a>.</p>
+</blockquote>
+
+<pre><code># -p specifies the GCP project ID; we created it above
+# -l is the bucket region 
+gsutil mb -p my-super-unique-projects-name -l us-east1 gs://toninos-blog
+
+# Give everyone (read: unauthenticated users) read access
 gsutil iam ch allUsers:objectViewer gs://toninos-blog
 
 # Sets the index.html as the default page if the path is a directory
@@ -436,11 +450,6 @@ gsutil -m cp -r * gs://toninos-blog
 
 <pre><code>https://storage.googleapis.com/toninos-blog/index.html
 </code></pre>
-
-<blockquote>
-<p><strong>Side Note</strong><br />
-The one issue we have with this method is that the default index.html page for the individual posts won&rsquo;t be served unless we navigate directly to them. For example, <code>/posts/my-first-post</code> won&rsquo;t serve <code>/posts/my-first-post/index.html</code>. The site however still <em>technically</em> works and we can view it by hitting <code>https://storage.googleapis.com/BLOG-NAME/index.html</code></p>
-</blockquote>
 
 
         
