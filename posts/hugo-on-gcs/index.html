@@ -7,14 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Running a Hugo generated site on Google Cloud Storage - My New Hugo Site</title>
+  <title>Running a Hugo generated site on Google Cloud Storage - tunzor: a blog in one act</title>
   <meta name="description" content="Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.
 This in and of itself might not be very interesting. The potential hosting environment is what is of particular interest to me.
 Why go static? Since the pages are HTML, you don&rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site."><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
-    "name": "My New Hugo Site",
+    "name": "tunzor: a blog in one act",
     
     "url": "tunzor.github.io"
 }
@@ -60,7 +60,7 @@ Why go static? Since the pages are HTML, you don&rsquo;t need to worry about hav
   "headline": "Running a Hugo generated site on Google Cloud Storage",
   "description" : "Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.\nThis in and of itself might not be very interesting. The potential hosting environment is what is of particular interest to me.\nWhy go static? Since the pages are HTML, you don\x26rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site.",
   "inLanguage" : "en",
-  "wordCount":  1400 ,
+  "wordCount":  1428 ,
   "datePublished" : "2019-12-10T09:45:13",
   "dateModified" : "2019-12-10T09:45:13",
   "image" : "tunzor.github.io",
@@ -85,13 +85,13 @@ This in and of itself might not be very interesting. The potential hosting envir
 Why go static? Since the pages are HTML, you don&rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site.">
 <meta property="og:url" content="tunzor.github.io/tunzor.github.io/posts/hugo-on-gcs/" />
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="My New Hugo Site" />
+<meta property="og:site_name" content="tunzor: a blog in one act" />
 
   <meta name="twitter:title" content="Running a Hugo generated site on Google Cloud Storage" />
   <meta name="twitter:description" content="Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for …">
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.55.4" />
-  <link rel="alternate" href="tunzor.github.io/index.xml" type="application/rss+xml" title="My New Hugo Site"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="alternate" href="tunzor.github.io/index.xml" type="application/rss+xml" title="tunzor: a blog in one act"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="tunzor.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="tunzor.github.io/css/syntax.css" /><link rel="stylesheet" href="tunzor.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
@@ -110,7 +110,7 @@ Why go static? Since the pages are HTML, you don&rsquo;t need to worry about hav
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="tunzor.github.io">My New Hugo Site</a>
+      <a class="navbar-brand" href="tunzor.github.io">tunzor: a blog in one act</a>
     </div>
 
     <div class="collapse navbar-collapse" id="main-navbar">
@@ -338,7 +338,7 @@ Hugo will let you know what it generated and you&rsquo;ll now notice there&rsquo
 
 <h2 id="git-ready-git-set-go">Git ready, git set, go!</h2>
 
-<p>The first hosted option we&rsquo;re going to use is Github Pages and it&rsquo;s <del>difficult</del> <del>a doozy</del> <del>convoluted</del> easy.</p>
+<p>Now that we have those sweet, sweet generated files, we can push them <sup>real good</sup> to the cloud(s) for hosting. The first hosted option we&rsquo;re going to use is Github Pages and it&rsquo;s pretty <del>difficult</del> <del>error-prone</del> <del>convoluted</del> straightforward.</p>
 
 <p>Head over to your github account and create a new repo with the name <code>YOUR_USERNAME.github.io</code>; mine will be:</p>
 
@@ -359,13 +359,13 @@ git remote add origin https://github.com/tunzor/tunzor.github.io.git
 git push -u origin master
 </code></pre>
 
+<p>Navigate to your github pages URL, which is conveniently the name of our repo <code>YOUR_USERNAME.github.io</code>, and bask in its glow.</p>
+
 <h2 id="we-re-going-to-be-on-cloud-nine">We&rsquo;re [going to be] on cloud nine!</h2>
 
 <p><img src="https://frinkiac.com/video/S11E07/-yWtvkxozLtgkpGtVvLg6WYUzJk=.gif" alt="We're on cloud nine!" title="They even have a better sound bite than us!" style="width: 50%"/></p>
 
-<p>Now that we have those sweet, sweet generated files, we can push them <sup>real good</sup> to the cloud for hosting.</p>
-
-<p>We&rsquo;ll use the Google CLI tool <code>gsutil</code> to actually do the upload but before we can use it, we have to install it. It comes packaged with the <code>gcloud</code> tool which is how we can interact with Google Cloud. Instructions for setting it up are well documented <a href="https://cloud.google.com/sdk/docs/downloads-interactive" target=_blank>here</a>. Once we&rsquo;ve got it installed and working, we&rsquo;ll need to initialize it so we can authenticate and start doing cool stuff.</p>
+<p>To get our site into the Google Cloud, we&rsquo;ll use the Google CLI tool <code>gsutil</code> to actually do the upload but before we can use it, we have to install it. It comes packaged with the <code>gcloud</code> tool which is how we can interact with Google Cloud. Instructions for setting it up are well documented <a href="https://cloud.google.com/sdk/docs/downloads-interactive" target=_blank>here</a>. Once we&rsquo;ve got it installed and working, we&rsquo;ll need to initialize it so we can authenticate and start doing cool stuff.</p>
 
 <blockquote>
 <p><strong>Side note</strong><br />
@@ -469,7 +469,7 @@ The one issue we have with this method is that the default index.html page for t
 
           
             &nbsp;&bull;&nbsp;
-            <a href="tunzor.github.io">My New Hugo Site</a>
+            <a href="tunzor.github.io">tunzor: a blog in one act</a>
           
         </p>
         
