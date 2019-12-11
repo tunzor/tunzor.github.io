@@ -3,29 +3,29 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>tunzor.github.io/posts/</loc>
+    <loc>https://tunzor.github.io/posts/</loc>
     <lastmod>2019-12-10T09:45:13-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>tunzor.github.io/posts/hugo-on-gcs/</loc>
+    <loc>https://tunzor.github.io/posts/hugo-on-gcs/</loc>
     <lastmod>2019-12-10T09:45:13-05:00</lastmod>
   </url>
   
   <url>
-    <loc>tunzor.github.io/</loc>
+    <loc>https://tunzor.github.io/</loc>
     <lastmod>2019-12-10T09:45:13-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>tunzor.github.io/categories/</loc>
+    <loc>https://tunzor.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>tunzor.github.io/tags/</loc>
+    <loc>https://tunzor.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
