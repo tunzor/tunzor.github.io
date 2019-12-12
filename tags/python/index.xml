@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on tunzor</title>
@@ -17,8 +17,8 @@
       <pubDate>Wed, 11 Dec 2019 18:56:27 -0500</pubDate>
       
       <guid>https://tunzor.github.io/posts/k8s-two-tier-deploy/</guid>
-      <description>For a great deal of developers, myself included, actually doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that actually creating a deployment from scratch was invaluable. I&#39;d like to walk you through that deployment and explain everything along the way.
-Before we jump in, you&#39;ll need to have:</description>
+      <description>For a great deal of developers, myself included, actually doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that actually creating a deployment from scratch was invaluable. I&amp;rsquo;d like to walk you through that deployment and explain everything along the way.
+Before we jump in, you&amp;rsquo;ll need to have:</description>
     </item>
     
   </channel>
