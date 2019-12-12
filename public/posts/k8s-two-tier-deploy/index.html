@@ -241,7 +241,7 @@ Before we jump in, you&#39;ll need to have:">
 <h2 id="weathering-the-storm">Weathering the storm</h2>
 <p>The example application we'll be deploying (which I loving call Pyweather) is a stateless two tier affair written in Python and leveraging the Flask web framework. It will return the 5 day forecast for a given city and retrieves data from the <a href="https://www.metaweather.com/" target=_blank>Metaweather API</a>.</p>
 <p>It's been styled very humbly, as evidenced by the below screenshot.
-<img src="/k8s-two-tier-deploy/pyweather-screenshot.jpg" alt="Pyweather's humble styling"></p>
+<img src="/k8s-two-tier-deploy-img/pyweather-screenshot.jpg" alt="Pyweather's humble styling"></p>
 <p>Quite the looker, huh? Let's go over how to deploy it on kubernetes and cover how it works as we go.</p>
 <h2 id="look-at-me-im-the-captain-now">Look at me, I'm the captain now</h2>
 <p><a href="https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/" target=_blank>Kubernetes</a> is a container orchestrator; it manages (among other things) the lifecycle of containers. It takes care of starting them, monitoring them, and destroying them when the times comes.</p>
@@ -315,7 +315,7 @@ Kubernetes master is running at https://192.168.99.100:8443
 </blockquote>
 <p>We then substitute the node's IP address into our URL from above and navigate to it in our browser. For me it'd be <code>https://192.168.99.100:30003/seattle</code>.</p>
 <p>Lo and behold, there's our Pyweather page!<br>
-<img src="/k8s-two-tier-deploy/pyweather-screenshot-with-address-bar.jpg" alt="Pyweather page showing address bar"></p>
+<img src="/k8s-two-tier-deploy-img/pyweather-screenshot-with-address-bar.jpg" alt="Pyweather page showing address bar"></p>
 <p>That's it, you've deployed and tested an application successfully on a kubernetes cluster. If you want to know <em>how</em> we got kubernetes to do it, continue reading below.</p>
 <h2 id="the-secret-sauce">The secret sauce</h2>
 <p>Kubernetes may seem magical but it's only doing what we've asked it to do. Let's pull back the sheet on this magic.</p>
