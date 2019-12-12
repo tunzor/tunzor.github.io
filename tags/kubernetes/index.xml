@@ -17,7 +17,7 @@
       <pubDate>Wed, 11 Dec 2019 18:56:27 -0500</pubDate>
       
       <guid>https://tunzor.github.io/posts/k8s-two-tier-deploy/</guid>
-      <description>For a great deal of developers, myself included, actually doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that actually creating a deployment from scratch was invaluable. I&amp;rsquo;d like to walk you through that deployment and explain everything along the way.
+      <description>For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I&amp;rsquo;d like to walk you through that deployment and explain everything along the way.
 Before we jump in, you&amp;rsquo;ll need to have:</description>
     </item>
     
