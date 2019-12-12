@@ -60,7 +60,7 @@ Before we jump in, you&#39;ll need to have:">
   "headline": "Deploying a dockerized two-tier app on Kubernetes",
   "description" : "For a great deal of developers, myself included, actually doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that actually creating a deployment from scratch was invaluable. I\x27d like to walk you through that deployment and explain everything along the way.\nBefore we jump in, you\x27ll need to have:",
   "inLanguage" : "en",
-  "wordCount":  1273 ,
+  "wordCount":  1277 ,
   "datePublished" : "2019-12-11T18:56:27",
   "dateModified" : "2019-12-11T18:56:27",
   "image" : "https:\/\/tunzor.github.io",
@@ -232,19 +232,19 @@ Before we jump in, you&#39;ll need to have:">
         <p>For a great deal of developers, myself included, actually <em>doing</em> something is the preferred method of learning as opposed to <em>reading</em> how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that actually creating a deployment from scratch was invaluable. I'd like to walk you through that deployment and explain everything along the way.</p>
 <p>Before we jump in, you'll need to have:</p>
 <ol>
-<li>docker <!-- raw HTML omitted -->installed<!-- raw HTML omitted --></li>
-<li>access to a kubernetes cluster (this can be a hosted cluster in the cloud or a local cluster via docker desktop or <!-- raw HTML omitted -->minikube<!-- raw HTML omitted -->)</li>
-<li>kubectl <!-- raw HTML omitted -->installed and configured<!-- raw HTML omitted --> to access the cluster from 2</li>
-<li><!-- raw HTML omitted -->this<!-- raw HTML omitted --> example repo downloaded locally</li>
-<li>a cup of your beverage of choice <!-- raw HTML omitted -->(recommended but not required)<!-- raw HTML omitted --></li>
+<li>docker <a href="https://docs.docker.com/v17.09/engine/installation/#supported-platforms" target=_blank>installed</a></li>
+<li>access to a kubernetes cluster (this can be a hosted cluster in the cloud or a local cluster via docker desktop or <a href="https://minikube.sigs.k8s.io/" target=_blank>minikube</a>)</li>
+<li>kubectl <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" target=_blank>installed and configured</a> to access the cluster from 2</li>
+<li><a href="https://github.com/tunzor/k8s-practice.git" target=_blank>this</a> example repo downloaded locally</li>
+<li>a cup of your beverage of choice <sup>(recommended but not required)</sup></li>
 </ol>
 <h2 id="weathering-the-storm">Weathering the storm</h2>
-<p>The example application we'll be deploying (which I loving call Pyweather) is a stateless two tier affair written in Python and leveraging the Flask web framework. It will return the 5 day forecast for a given city and retrieves data from the <!-- raw HTML omitted -->Metaweather API<!-- raw HTML omitted -->.</p>
+<p>The example application we'll be deploying (which I loving call Pyweather) is a stateless two tier affair written in Python and leveraging the Flask web framework. It will return the 5 day forecast for a given city and retrieves data from the <a href="https://www.metaweather.com/" target=_blank>Metaweather API</a>.</p>
 <p>It's been styled very humbly, as evidenced by the below screenshot.
 <img src="/k8s-two-tier-deploy/pyweather-screenshot.jpg" alt="Pyweather's humble styling"></p>
 <p>Quite the looker, huh? Let's go over how to deploy it on kubernetes and cover how it works as we go.</p>
 <h2 id="look-at-me-im-the-captain-now">Look at me, I'm the captain now</h2>
-<p><!-- raw HTML omitted -->Kubernetes<!-- raw HTML omitted --> is a container orchestrator; it manages (among other things) the lifecycle of containers. It takes care of starting them, monitoring them, and destroying them when the times comes.</p>
+<p><a href="https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/" target=_blank>Kubernetes</a> is a container orchestrator; it manages (among other things) the lifecycle of containers. It takes care of starting them, monitoring them, and destroying them when the times comes.</p>
 <p>It is a declarative tool and this means that instead of saying, <em>&ldquo;Hey kubernetes, start 4 containers from this image&rdquo;</em> (an imperative approach), we give it a config file called a manifest with instructions on what we want to run and how it should be configured. It's job is to then make sure that this configuration or spec is always running in the cluster.</p>
 <p>For example, this is part of the deployment manifest of the Pyweather frontend:</p>
 <pre><code>apiVersion: apps/v1
@@ -262,7 +262,7 @@ spec:
         ports:
         - containerPort: 5002
 </code></pre><p>Here we're giving kubernetes an overview of how we want to run our application. We're telling it to use this image <code>image: tunzor/pyweather-frontend:distroless</code> that listens on this port <code>containerPort: 5002</code> and ensure that there are always 3 instances of it <code>replicas: 3</code>.</p>
-<p>These manifest files represent kubernetes <!-- raw HTML omitted -->objects<!-- raw HTML omitted --> and are used for things like pods (read: a docker container), services (a way to reach several pods), and volumes (data storage).</p>
+<p>These manifest files represent kubernetes <a href="https://kubernetes.io/docs/concepts/#kubernetes-objects" target=_blank>objects</a> and are used for things like pods (read: a docker container), services (a way to reach several pods), and volumes (data storage).</p>
 <p><strong>TL;DR</strong><br>
 We give kubernetes manifest files that describe our application and it makes it so.</p>
 <h2 id="kubernetes-iceberg-pellets-ahead-in-the-forecast">Kubernetes, ice<del>berg</del> pellets ahead [in the forecast]!</h2>
