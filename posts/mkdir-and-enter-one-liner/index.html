@@ -8,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Quick Tip: Make a directory and enter it with one command - tunzor</title>
-  <meta name="description" content="We all make directories. It&rsquo;s one way that we attempt to bring order to the chaos that is the filesystem.
-We&rsquo;re also pretty lazy. Creating a new directory and navigating into it is usually a two command affair:
-mkdir order-i-say cd order-i-say  Not anymore it isn&rsquo;t:
-mkdir quickly-now &amp;&amp; cd $_   Explanation
-$_ is the last argument passed to the previous command. In our case, it&rsquo;s the directory name.">
+  <meta name="description" content="We all make directories. It&#39;s one way that we attempt to bring order to the chaos that is the filesystem.
+We&#39;re also pretty lazy. Creating a new directory and navigating into it is usually a two command affair:
+mkdir order-i-saycd order-i-sayNot anymore it isn&#39;t:
+mkdir quickly-now &amp;&amp; cd $_ Explanation
+$_ is the last argument passed to the previous command. In our case, it&#39;s the directory name. There&#39;s a lot more here.">
   <meta name="author" content="Anthony"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,7 +61,7 @@ $_ is the last argument passed to the previous command. In our case, it&rsquo;s 
     "name" : "Anthony"
   },
   "headline": "Quick Tip: Make a directory and enter it with one command",
-  "description" : "We all make directories. It\x26rsquo;s one way that we attempt to bring order to the chaos that is the filesystem.\nWe\x26rsquo;re also pretty lazy. Creating a new directory and navigating into it is usually a two command affair:\nmkdir order-i-say cd order-i-say  Not anymore it isn\x26rsquo;t:\nmkdir quickly-now \x26amp;\x26amp; cd $_   Explanation\n$_ is the last argument passed to the previous command. In our case, it\x26rsquo;s the directory name.",
+  "description" : "We all make directories. It\x27s one way that we attempt to bring order to the chaos that is the filesystem.\nWe\x27re also pretty lazy. Creating a new directory and navigating into it is usually a two command affair:\nmkdir order-i-say\rcd order-i-say\rNot anymore it isn\x27t:\nmkdir quickly-now \x26amp;\x26amp; cd $_\r Explanation\n$_ is the last argument passed to the previous command. In our case, it\x27s the directory name. There\x27s a lot more here.",
   "inLanguage" : "en",
   "wordCount":  81 ,
   "datePublished" : "2019-12-11T18:41:10",
@@ -83,20 +83,20 @@ $_ is the last argument passed to the previous command. In our case, it&rsquo;s 
 </script>
 
 <meta property="og:title" content="Quick Tip: Make a directory and enter it with one command" />
-<meta property="og:description" content="We all make directories. It&rsquo;s one way that we attempt to bring order to the chaos that is the filesystem.
-We&rsquo;re also pretty lazy. Creating a new directory and navigating into it is usually a two command affair:
-mkdir order-i-say cd order-i-say  Not anymore it isn&rsquo;t:
-mkdir quickly-now &amp;&amp; cd $_   Explanation
-$_ is the last argument passed to the previous command. In our case, it&rsquo;s the directory name.">
+<meta property="og:description" content="We all make directories. It&#39;s one way that we attempt to bring order to the chaos that is the filesystem.
+We&#39;re also pretty lazy. Creating a new directory and navigating into it is usually a two command affair:
+mkdir order-i-saycd order-i-sayNot anymore it isn&#39;t:
+mkdir quickly-now &amp;&amp; cd $_ Explanation
+$_ is the last argument passed to the previous command. In our case, it&#39;s the directory name. There&#39;s a lot more here.">
 <meta property="og:url" content="https://tunzor.github.io/posts/mkdir-and-enter-one-liner/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="tunzor" />
 
   <meta name="twitter:title" content="Quick Tip: Make a directory and enter it with one command" />
-  <meta name="twitter:description" content="We all make directories. It&rsquo;s one way that we attempt to bring order to the chaos that is the filesystem.
-We&rsquo;re also pretty lazy. Creating a new directory and navigating into it is usually …">
+  <meta name="twitter:description" content="We all make directories. It&#39;s one way that we attempt to bring order to the chaos that is the filesystem.
+We&#39;re also pretty lazy. Creating a new directory and navigating into it is usually a two …">
   <meta name="twitter:card" content="summary" />
-  <meta name="generator" content="Hugo 0.55.4" />
+  <meta name="generator" content="Hugo 0.61.0" />
   <link rel="alternate" href="https://tunzor.github.io/index.xml" type="application/rss+xml" title="tunzor"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://tunzor.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -236,24 +236,16 @@ We&rsquo;re also pretty lazy. Creating a new directory and navigating into it is
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>We all make directories. It&rsquo;s one way that we attempt to bring order to the chaos that is the filesystem.</p>
-
-<p>We&rsquo;re also pretty lazy. Creating a new directory and navigating into it is usually a two command affair:</p>
-
+        <p>We all make directories. It's one way that we attempt to bring order to the chaos that is the filesystem.</p>
+<p>We're also pretty lazy. Creating a new directory and navigating into it is usually a two command affair:</p>
 <pre><code>mkdir order-i-say
 cd order-i-say
-</code></pre>
-
-<p>Not anymore it isn&rsquo;t:</p>
-
+</code></pre><p>Not anymore it isn't:</p>
 <pre><code>mkdir quickly-now &amp;&amp; cd $_
-</code></pre>
-
-<blockquote>
-<p><strong>Explanation</strong><br />
-<code>$_</code> is the last argument passed to the previous command. In our case, it&rsquo;s the directory name. There&rsquo;s a lot more <a href="https://www.thegeekstuff.com/2010/05/bash-shell-special-parameters/" target=_blank>here</a>.</p>
+</code></pre><blockquote>
+<p><strong>Explanation</strong><br>
+<code>$_</code> is the last argument passed to the previous command. In our case, it's the directory name. There's a lot more <a href="https://www.thegeekstuff.com/2010/05/bash-shell-special-parameters/" target=_blank>here</a>.</p>
 </blockquote>
-
 <p>Just think of all those saved keystrokes.</p>
 
 
@@ -373,10 +365,26 @@ cd order-i-say
                 </a>
               </li>
               <li>
+                <a href="https://play.google.com/store/apps/developer?id=Tunzor" title="Google Play Apps">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-google-play fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
                 <a href="https://linkedin.com/in/anthony-russo-toronto" title="LinkedIn">
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/toonie55" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
@@ -401,7 +409,7 @@ cd order-i-say
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.55.4</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.61.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>
