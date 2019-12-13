@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on tunzor</title>
@@ -17,11 +17,11 @@
       <pubDate>Wed, 11 Dec 2019 18:41:10 -0500</pubDate>
       
       <guid>https://tunzor.github.io/posts/mkdir-and-enter-one-liner/</guid>
-      <description>We all make directories. It&#39;s one way that we attempt to bring order to the chaos that is the filesystem.
-We&#39;re also pretty lazy. Creating a new directory and navigating into it is usually a two command affair:
-mkdir order-i-saycd order-i-sayNot anymore it isn&#39;t:
-mkdir quickly-now &amp;amp;&amp;amp; cd $_ Explanation
-$_ is the last argument passed to the previous command. In our case, it&#39;s the directory name. There&#39;s a lot more here.</description>
+      <description>We all make directories. It&amp;rsquo;s one way that we attempt to bring order to the chaos that is the filesystem.
+We&amp;rsquo;re also pretty lazy. Creating a new directory and navigating into it is usually a two command affair:
+mkdir order-i-say cd order-i-say  Not anymore it isn&amp;rsquo;t:
+mkdir quickly-now &amp;amp;&amp;amp; cd $_   Explanation
+$_ is the last argument passed to the previous command. In our case, it&amp;rsquo;s the directory name.</description>
     </item>
     
   </channel>

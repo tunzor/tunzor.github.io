@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Deploying a dockerized two-tier app on Kubernetes - tunzor</title>
-  <meta name="description" content="For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I&#39;d like to walk you through that deployment and explain everything along the way.
-Before we jump in, you&#39;ll need to have:">
+  <meta name="description" content="For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I&rsquo;d like to walk you through that deployment and explain everything along the way.
+Before we jump in, you&rsquo;ll need to have:">
   <meta name="author" content="Anthony"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,7 +58,7 @@ Before we jump in, you&#39;ll need to have:">
     "name" : "Anthony"
   },
   "headline": "Deploying a dockerized two-tier app on Kubernetes",
-  "description" : "For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I\x27d like to walk you through that deployment and explain everything along the way.\nBefore we jump in, you\x27ll need to have:",
+  "description" : "For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I\x26rsquo;d like to walk you through that deployment and explain everything along the way.\nBefore we jump in, you\x26rsquo;ll need to have:",
   "inLanguage" : "en",
   "wordCount":  1273 ,
   "datePublished" : "2019-12-11T18:56:27",
@@ -80,8 +80,8 @@ Before we jump in, you&#39;ll need to have:">
 </script>
 
 <meta property="og:title" content="Deploying a dockerized two-tier app on Kubernetes" />
-<meta property="og:description" content="For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I&#39;d like to walk you through that deployment and explain everything along the way.
-Before we jump in, you&#39;ll need to have:">
+<meta property="og:description" content="For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I&rsquo;d like to walk you through that deployment and explain everything along the way.
+Before we jump in, you&rsquo;ll need to have:">
 <meta property="og:url" content="https://tunzor.github.io/posts/k8s-two-tier-deploy/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="tunzor" />
@@ -89,7 +89,7 @@ Before we jump in, you&#39;ll need to have:">
   <meta name="twitter:title" content="Deploying a dockerized two-tier app on Kubernetes" />
   <meta name="twitter:description" content="For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage …">
   <meta name="twitter:card" content="summary" />
-  <meta name="generator" content="Hugo 0.61.0" />
+  <meta name="generator" content="Hugo 0.55.4" />
   <link rel="alternate" href="https://tunzor.github.io/index.xml" type="application/rss+xml" title="tunzor"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://tunzor.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -229,8 +229,12 @@ Before we jump in, you&#39;ll need to have:">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>For a great deal of developers, myself included, <em>doing</em> something is the preferred method of learning as opposed to <em>reading</em> how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I'd like to walk you through that deployment and explain everything along the way.</p>
-<p>Before we jump in, you'll need to have:</p>
+        
+
+<p>For a great deal of developers, myself included, <em>doing</em> something is the preferred method of learning as opposed to <em>reading</em> how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I&rsquo;d like to walk you through that deployment and explain everything along the way.</p>
+
+<p>Before we jump in, you&rsquo;ll need to have:</p>
+
 <ol>
 <li>docker <a href="https://docs.docker.com/v17.09/engine/installation/#supported-platforms" target=_blank>installed</a></li>
 <li>access to a kubernetes cluster (this can be a hosted cluster in the cloud or a local cluster via docker desktop or <a href="https://minikube.sigs.k8s.io/" target=_blank>minikube</a>)</li>
@@ -238,15 +242,24 @@ Before we jump in, you&#39;ll need to have:">
 <li><a href="https://github.com/tunzor/k8s-practice.git" target=_blank>this</a> example repo downloaded locally</li>
 <li>a cup of your beverage of choice <sup>(recommended but not required)</sup></li>
 </ol>
+
 <h2 id="weathering-the-storm">Weathering the storm</h2>
-<p>The example application we'll be deploying (which I loving call Pyweather) is a stateless two tier affair written in Python and leverages the Flask web framework. It will return the 5 day forecast for a given city and retrieves data from the <a href="https://www.metaweather.com/" target=_blank>Metaweather API</a>.</p>
-<p>It's been styled very humbly, as evidenced by the below screenshot.
-<img src="pyweather-screenshot.jpg" alt="Pyweather's humble styling"></p>
-<p>Quite the looker, huh? Let's go over how to deploy it on kubernetes and its inner workings.</p>
-<h2 id="look-at-me-im-the-captain-now">Look at me, I'm the captain now</h2>
+
+<p>The example application we&rsquo;ll be deploying (which I loving call Pyweather) is a stateless two tier affair written in Python and leverages the Flask web framework. It will return the 5 day forecast for a given city and retrieves data from the <a href="https://www.metaweather.com/" target=_blank>Metaweather API</a>.</p>
+
+<p>It&rsquo;s been styled very humbly, as evidenced by the below screenshot.
+<img src="pyweather-screenshot.jpg" alt="Pyweather's humble styling" /></p>
+
+<p>Quite the looker, huh? Let&rsquo;s go over how to deploy it on kubernetes and its inner workings.</p>
+
+<h2 id="look-at-me-i-m-the-captain-now">Look at me, I&rsquo;m the captain now</h2>
+
 <p><a href="https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/" target=_blank>Kubernetes</a> is a container orchestrator; it manages (among other things) the lifecycle of containers. It takes care of starting them, monitoring them, and destroying them when the inevitable time comes.</p>
+
 <p>It is a declarative tool and this means instead of saying, <em>&ldquo;Hey kubernetes, start 4 containers from this image&rdquo;</em> (an imperative approach), we give it a config file called a <strong>manifest</strong> with instructions on what we want to run and how it should be configured. Its job is to then make sure that this configuration or spec is always running in the cluster.</p>
+
 <p>For example, this is part of the deployment manifest of the Pyweather frontend:</p>
+
 <pre><code>apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -261,30 +274,49 @@ spec:
         image: tunzor/pyweather-frontend:distroless
         ports:
         - containerPort: 5002
-</code></pre><p>Here we're giving kubernetes an overview of what we want our application to look like. We're telling it to use this image <code>image: tunzor/pyweather-frontend:distroless</code> that listens on this port <code>containerPort: 5002</code> and ensure that there are always 3 instances of it <code>replicas: 3</code>.</p>
+</code></pre>
+
+<p>Here we&rsquo;re giving kubernetes an overview of what we want our application to look like. We&rsquo;re telling it to use this image <code>image: tunzor/pyweather-frontend:distroless</code> that listens on this port <code>containerPort: 5002</code> and ensure that there are always 3 instances of it <code>replicas: 3</code>.</p>
+
 <p>These manifest files represent kubernetes <a href="https://kubernetes.io/docs/concepts/#kubernetes-objects" target=_blank>objects</a> and are used for many things including pods (read: effectively a docker container), services (a way to reach several pods), and volumes (data storage).</p>
-<p><strong>TL;DR</strong><br>
+
+<p><strong>TL;DR</strong><br />
 We give kubernetes manifest files that describe our application and it makes it so.</p>
-<h2 id="kubernetes-iceberg-pellets-ahead-in-the-forecast">Kubernetes, ice<del>berg</del> pellets ahead [in the forecast]!</h2>
-<p>If we dive into our example repo from above (specifically the <code>pyweather</code> directory), we see two more directories <code>weather-backend</code> and <code>weather-frontend</code> which represent, you guessed it, the front and back ends of Pyweather. If you're feeling adventurous, peruse them to see the python code, dockerfiles, and manifests of the application.</p>
+
+<h2 id="kubernetes-ice-berg-pellets-ahead-in-the-forecast">Kubernetes, ice<del>berg</del> pellets ahead [in the forecast]!</h2>
+
+<p>If we dive into our example repo from above (specifically the <code>pyweather</code> directory), we see two more directories <code>weather-backend</code> and <code>weather-frontend</code> which represent, you guessed it, the front and back ends of Pyweather. If you&rsquo;re feeling adventurous, peruse them to see the python code, dockerfiles, and manifests of the application.</p>
+
 <p>Now draw your attention the <code>README.md</code> file, specifically the <code>kubectl</code> command in it:</p>
+
 <pre><code>kubectl apply -f weather-frontend/manifests/ -f weather-backend/manifests/
-</code></pre><p>What this magical <code>apply</code> command does is feed the manifests files for both tiers to kubernetes. This is all it takes to get the entire application up and running. What a time to be alive.</p>
+</code></pre>
+
+<p>What this magical <code>apply</code> command does is feed the manifests files for both tiers to kubernetes. This is all it takes to get the entire application up and running. What a time to be alive.</p>
+
 <p>Go ahead and run it from within the <code>pyweather</code> directory. Assuming you have a cluster to connect to and your <code>kubectl</code> is configured correctly, you should see the following output:</p>
+
 <pre><code>$ kubectl apply -f weather-frontend/manifests/ -f weather-backend/manifests/
 configmap/frontend-configmap created
 deployment.apps/pyweather-frontend-deployment created
 service/pyweather-frontend-svc created
 deployment.apps/pyweather-backend-deployment created
 service/pyweather-backend-svc created
-</code></pre><p>You did it, you created the application!
-Let's take a look and make sure everything is okay:</p>
+</code></pre>
+
+<p>You did it, you created the application!
+Let&rsquo;s take a look and make sure everything is okay:</p>
+
 <pre><code>kubectl get all
-</code></pre><blockquote>
-<p><strong>Side Note</strong><br>
+</code></pre>
+
+<blockquote>
+<p><strong>Side Note</strong><br />
 <code>kubectl get all</code> will return all resources (deployments, pods, services, etc.) and since Pyweather consists of several different kinds, this is the fastest way to see them all at once. You can alternatively use the <code>kubectl get</code> command to retrieve specific resources like pods <code>kubectl get pods</code> or services <code>kubectl get svc</code>.</p>
 </blockquote>
+
 <p>Look at all those beautiful resources.</p>
+
 <pre><code>$ k get all
 NAME                                                 READY   STATUS    RESTARTS   AGE
 pod/pyweather-backend-deployment-db76c7c9d-pgbqc     1/1     Running   0          54m
@@ -305,21 +337,34 @@ deployment.apps/pyweather-frontend-deployment   3/3     3            3          
 NAME                                                       DESIRED   CURRENT   READY   AGE
 replicaset.apps/pyweather-backend-deployment-db76c7c9d     2         2         2       54m
 replicaset.apps/pyweather-frontend-deployment-654dbf4848   3         3         3       54m
-</code></pre><p>Resources are great and all but what now? Where's my weather?!</p>
-<p>From the readme above, we can see that in order to access the application, we need to hit <code>http://{nodeIP}:30003/{city}</code> and pass a city in place of <code>{city}</code>. But what's that <code>{nodeIP}</code> bit? The <code>nodeIP</code> is the IP address of <em>any</em> of the kubernetes nodes. We can find them by running <code>kubectl cluster-info</code> (the output below is from <code>minikube</code> so only one node exists):</p>
+</code></pre>
+
+<p>Resources are great and all but what now? Where&rsquo;s my weather?!</p>
+
+<p>From the readme above, we can see that in order to access the application, we need to hit <code>http://{nodeIP}:30003/{city}</code> and pass a city in place of <code>{city}</code>. But what&rsquo;s that <code>{nodeIP}</code> bit? The <code>nodeIP</code> is the IP address of <em>any</em> of the kubernetes nodes. We can find them by running <code>kubectl cluster-info</code> (the output below is from <code>minikube</code> so only one node exists):</p>
+
 <pre><code>$ kubectl cluster-info
 Kubernetes master is running at https://192.168.99.100:8443
-</code></pre><blockquote>
-<p><strong>Side Note</strong><br>
-<code>NodePort</code> is a type of service that exposes the service on a static port that's accessible via <em>any</em> of the cluster's nodes.</p>
+</code></pre>
+
+<blockquote>
+<p><strong>Side Note</strong><br />
+<code>NodePort</code> is a type of service that exposes the service on a static port that&rsquo;s accessible via <em>any</em> of the cluster&rsquo;s nodes.</p>
 </blockquote>
-<p>We then substitute the node's IP address into our URL from above and navigate to it in our browser. For me it'd be <code>https://192.168.99.100:30003/seattle</code>.</p>
-<p>Lo and behold, there's our Pyweather page!<br>
-<img src="pyweather-screenshot-with-address-bar.jpg" alt="Pyweather page showing address bar"></p>
-<p>That's it, you've deployed and tested an application successfully on a kubernetes cluster. If you want to know <em>how</em> we got kubernetes to do it, continue reading below.</p>
+
+<p>We then substitute the node&rsquo;s IP address into our URL from above and navigate to it in our browser. For me it&rsquo;d be <code>https://192.168.99.100:30003/seattle</code>.</p>
+
+<p>Lo and behold, there&rsquo;s our Pyweather page!<br />
+<img src="pyweather-screenshot-with-address-bar.jpg" alt="Pyweather page showing address bar" /></p>
+
+<p>That&rsquo;s it, you&rsquo;ve deployed and tested an application successfully on a kubernetes cluster. If you want to know <em>how</em> we got kubernetes to do it, continue reading below.</p>
+
 <h2 id="the-secret-sauce">The secret sauce</h2>
-<p>Kubernetes may seem magical but it's only doing what we've asked it to do. Let's pull back the sheet on this magic.</p>
+
+<p>Kubernetes may seem magical but it&rsquo;s only doing what we&rsquo;ve asked it to do. Let&rsquo;s pull back the sheet on this magic.</p>
+
 <p>In <code>pyweather/weather-backend/manifests/deploy-backend.yaml</code> we see that our backend container is configured to listen on port <code>5003</code> (check out the <code>containerPort</code> line below):</p>
+
 <pre><code>apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -341,7 +386,10 @@ spec:
         image: tunzor/pyweather-backend:distroless
         ports:
         - containerPort: 5003
-</code></pre><p>We then see in <code>pyweather/weather-backend/manifests/svc-backend.yaml</code> that the service named <code>pyweather-backend-svc</code> will map its service port <code>8053</code> to the target container port of <code>5003</code>. This means when we hit this service on port <code>8053</code>, it'll forward the request to the container listening on port <code>5003</code>.</p>
+</code></pre>
+
+<p>We then see in <code>pyweather/weather-backend/manifests/svc-backend.yaml</code> that the service named <code>pyweather-backend-svc</code> will map its service port <code>8053</code> to the target container port of <code>5003</code>. This means when we hit this service on port <code>8053</code>, it&rsquo;ll forward the request to the container listening on port <code>5003</code>.</p>
+
 <pre><code>apiVersion: v1
 kind: Service
 metadata:
@@ -353,16 +401,24 @@ spec:
   ports:
     - port: 8053
       targetPort: 5003
-</code></pre><p>But how does the service know which container to forward requests to? One piece of kubernetes magic is the <code>label</code>; it's how we can attach things like services to pods (which run our containers).</p>
+</code></pre>
+
+<p>But how does the service know which container to forward requests to? One piece of kubernetes magic is the <code>label</code>; it&rsquo;s how we can attach things like services to pods (which run our containers).</p>
+
 <p>The deployment above adds a <code>label</code> to the pods via the <code>metadata</code> part of the spec and the service then selects them with the <code>selector</code> bit of its own manifest. They both use the label <code>tier: backend</code>. The backend service is then exposed cluster-wide via its hostname <code>pyweather-backend-svc</code> and port <code>8053</code>; any pod in the cluster can access it via the URL <code>http://pyweather-backend-svc:8053</code>.</p>
+
 <p>We then take it a step further by providing this backend URL as a configuration variable to the frontend via a <code>ConfigMap</code> object defined in <code>pyweather/weather-frontend/manifests/configmap-frontend.yaml</code>:</p>
+
 <pre><code>apiVersion: v1
 kind: ConfigMap
 metadata:
   name: frontend-configmap
 data:
   backend_url: http://pyweather-backend-svc:8053
-</code></pre><p>The frontend deployment manifest <code>pyweather/weather-frontend/manifests/deploy-frontend.yaml</code> loads this <code>ConfigMap</code> and makes it available to the frontend container via the <code>WEATHER_SVC_URL</code> environment variable:</p>
+</code></pre>
+
+<p>The frontend deployment manifest <code>pyweather/weather-frontend/manifests/deploy-frontend.yaml</code> loads this <code>ConfigMap</code> and makes it available to the frontend container via the <code>WEATHER_SVC_URL</code> environment variable:</p>
+
 <pre><code>...
 spec:
   containers:
@@ -376,10 +432,15 @@ spec:
         configMapKeyRef:
           name: frontend-configmap
           key: backend_url
-</code></pre><p>Finally, in the python code <code>pyweather/weather-frontend/weather-frontend.py</code>, it checks for the <code>WEATHER_SVC_URL</code> environment variable and sets it locally for use.</p>
+</code></pre>
+
+<p>Finally, in the python code <code>pyweather/weather-frontend/weather-frontend.py</code>, it checks for the <code>WEATHER_SVC_URL</code> environment variable and sets it locally for use.</p>
+
 <pre><code>if &quot;WEATHER_SVC_URL&quot; in os.environ:
     weather_svc_url = os.environ['WEATHER_SVC_URL']
-</code></pre><p>Now we now <em>how</em> our application works in kubernetes: it's not magic, it's just <em>very</em> careful configuration.</p>
+</code></pre>
+
+<p>Now we now <em>how</em> our application works in kubernetes: it&rsquo;s not magic, it&rsquo;s just <em>very</em> careful configuration.</p>
 
 
         
@@ -462,6 +523,10 @@ spec:
             </li>
           
           
+            <li class="next">
+              <a href="https://tunzor.github.io/posts/devops-tools-101-consul/" data-toggle="tooltip" data-placement="top" title="DevOps Tools 101 - Consul">Next Post &rarr;</a>
+            </li>
+          
         </ul>
       
 
@@ -540,7 +605,7 @@ spec:
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.61.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.55.4</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>
