@@ -6,10 +6,23 @@
     <description>Recent content in quick-tip on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Dec 2019 18:41:10 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 16 Dec 2019 10:31:48 -0500</lastBuildDate>
     
 	<atom:link href="https://tunzor.github.io/tags/quick-tip/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Quick Tip: List docker images sorted by size</title>
+      <link>https://tunzor.github.io/posts/docker-list-images-by-size/</link>
+      <pubDate>Mon, 16 Dec 2019 10:31:48 -0500</pubDate>
+      
+      <guid>https://tunzor.github.io/posts/docker-list-images-by-size/</guid>
+      <description>The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.
+Huh? What&amp;rsquo;s that, docker? You can&amp;rsquo;t do that.
+If you want something done right&amp;hellip;
+It ain&amp;rsquo;t pretty but it works.
+docker image ls --format &amp;quot;{{.Repository}}:{{.Tag}} {{.Size}}&amp;quot; | \ awk &#39;{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &amp;quot;MB - &amp;quot; $1 ; else print $2 &amp;quot; - &amp;quot; $1 }&#39; | \ sed &#39;/^0/d&#39; | \ sort -n   Side Note</description>
+    </item>
     
     <item>
       <title>Quick Tip: Make a directory and enter it with one command</title>

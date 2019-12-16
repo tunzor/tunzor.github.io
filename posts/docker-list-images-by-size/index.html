@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>DevOps Tools 101 - Consul - tunzor</title>
-  <meta name="description" content="DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
-Today we&rsquo;ll be learning about Consul by Hashicorp.
-The Official Description From Hashicorp&rsquo;s site
- Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.
- The Breakdown service mesh solution - a solution that allows individual services to discover and communicate quickly/securely/reliably with each other">
+  <title>Quick Tip: List docker images sorted by size - tunzor</title>
+  <meta name="description" content="The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.
+Huh? What&rsquo;s that, docker? You can&rsquo;t do that.
+If you want something done right&hellip;
+It ain&rsquo;t pretty but it works.
+docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \ awk &#39;{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &quot;MB - &quot; $1 ; else print $2 &quot; - &quot; $1 }&#39; | \ sed &#39;/^0/d&#39; | \ sort -n   Side Note">
   <meta name="author" content="Anthony"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -48,8 +48,8 @@ The Official Description From Hashicorp&rsquo;s site
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/tunzor.github.io\/posts\/devops-tools-101-consul\/",
-          "name": "Dev ops tools 101 consul"
+          "@id": "https:\/\/tunzor.github.io\/posts\/docker-list-images-by-size\/",
+          "name": "Quick tip list docker images sorted by size"
         }
     }]
 }
@@ -60,15 +60,15 @@ The Official Description From Hashicorp&rsquo;s site
   "author": {
     "name" : "Anthony"
   },
-  "headline": "DevOps Tools 101 - Consul",
-  "description" : "DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.\nToday we\x26rsquo;ll be learning about Consul by Hashicorp.\nThe Official Description From Hashicorp\x26rsquo;s site\n Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.\n The Breakdown service mesh solution - a solution that allows individual services to discover and communicate quickly\/securely\/reliably with each other",
+  "headline": "Quick Tip: List docker images sorted by size",
+  "description" : "The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.\nHuh? What\x26rsquo;s that, docker? You can\x26rsquo;t do that.\nIf you want something done right\x26hellip;\nIt ain\x26rsquo;t pretty but it works.\ndocker image ls --format \x26quot;{{.Repository}}:{{.Tag}} {{.Size}}\x26quot; | \\ awk \x27{if ($2~\/GB\/) print substr($2, 1, length($2)-2) * 1000 \x26quot;MB - \x26quot; $1 ; else print $2 \x26quot; - \x26quot; $1 }\x27 | \\ sed \x27\/^0\/d\x27 | \\ sort -n   Side Note",
   "inLanguage" : "en",
-  "wordCount":  625 ,
-  "datePublished" : "2019-12-13T09:54:14",
-  "dateModified" : "2019-12-13T09:54:14",
+  "wordCount":  435 ,
+  "datePublished" : "2019-12-16T10:31:48",
+  "dateModified" : "2019-12-16T10:31:48",
   "image" : "https:\/\/tunzor.github.io\/img\/me.jpg",
-  "keywords" : [ "devops-tools-101, consul" ],
-  "mainEntityOfPage" : "https:\/\/tunzor.github.io\/posts\/devops-tools-101-consul\/",
+  "keywords" : [ "quick-tip, docker" ],
+  "mainEntityOfPage" : "https:\/\/tunzor.github.io\/posts\/docker-list-images-by-size\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/tunzor.github.io",
@@ -82,21 +82,19 @@ The Official Description From Hashicorp&rsquo;s site
 }
 </script>
 
-<meta property="og:title" content="DevOps Tools 101 - Consul" />
-<meta property="og:description" content="DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
-Today we&rsquo;ll be learning about Consul by Hashicorp.
-The Official Description From Hashicorp&rsquo;s site
- Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.
- The Breakdown service mesh solution - a solution that allows individual services to discover and communicate quickly/securely/reliably with each other">
+<meta property="og:title" content="Quick Tip: List docker images sorted by size" />
+<meta property="og:description" content="The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.
+Huh? What&rsquo;s that, docker? You can&rsquo;t do that.
+If you want something done right&hellip;
+It ain&rsquo;t pretty but it works.
+docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \ awk &#39;{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &quot;MB - &quot; $1 ; else print $2 &quot; - &quot; $1 }&#39; | \ sed &#39;/^0/d&#39; | \ sort -n   Side Note">
 <meta property="og:image" content="https://tunzor.github.io/img/me.jpg" />
-<meta property="og:url" content="https://tunzor.github.io/posts/devops-tools-101-consul/" />
+<meta property="og:url" content="https://tunzor.github.io/posts/docker-list-images-by-size/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="tunzor" />
 
-  <meta name="twitter:title" content="DevOps Tools 101 - Consul" />
-  <meta name="twitter:description" content="DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
-Today we&rsquo;ll be learning about Consul by Hashicorp.
-The Official …">
+  <meta name="twitter:title" content="Quick Tip: List docker images sorted by size" />
+  <meta name="twitter:description" content="The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller. …">
   <meta name="twitter:image" content="https://tunzor.github.io/img/me.jpg" />
   <meta name="twitter:card" content="summary" />
   <link href='https://tunzor.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -228,7 +226,7 @@ The Official …">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="posts-heading">
               
-                <h1>DevOps Tools 101 - Consul</h1>
+                <h1>Quick Tip: List docker images sorted by size</h1>
               
               
                 <hr class="small">
@@ -250,92 +248,106 @@ The Official …">
       <article role="main" class="blog-post">
         
 
-<p><em>DevOps Tools 101</em> is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.</p>
+<p>The <code>docker image ls</code> command has an <a href="https://docs.docker.com/engine/reference/commandline/images/#filtering" target=_blank>option for filtering output</a> but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.</p>
 
-<p>Today we&rsquo;ll be learning about <strong>Consul</strong> by Hashicorp.</p>
+<p>Huh? What&rsquo;s that, docker? You <em>can&rsquo;t</em> do that.<br />
+<em>If you want something done right&hellip;</em></p>
 
-<h2 id="the-official-description">The Official Description</h2>
+<p>It ain&rsquo;t pretty but it works.</p>
 
-<p>From <a href="https://www.consul.io/intro/index.html#what-is-consul-" target=_blank>Hashicorp&rsquo;s site</a></p>
+<pre><code>docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \
+awk '{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &quot;MB - &quot; $1 ; else print $2 &quot; - &quot; $1 }' | \
+sed '/^0/d' | \
+sort -n
+</code></pre>
 
 <blockquote>
-<p>Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.</p>
+<p><strong>Side Note</strong><br />
+This assumes that you don&rsquo;t have images &gt; 999GB.<br />
+If you do &ndash; I pity you.</p>
 </blockquote>
 
-<h2 id="the-breakdown">The Breakdown</h2>
+<p><strong>Old and busted</strong> (<code>docker image ls</code> sample output):</p>
 
-<p><code>service mesh solution</code> - a solution that allows individual services to discover and communicate quickly/securely/reliably with each other</p>
+<pre><code>python                                                                    alpine3.10          992aef1d798f        4 months ago        98.7MB
+tomcat-fun                                                                alpine              2b7c7bec86f6        5 months ago        140MB
+tomcat-fun                                                                latest              04af324bcf10        6 months ago        463MB
+python                                                                    latest              7c5fd2af3815        11 months ago       927MB
+python                                                                    alpine3.7           a94f1b57a462        11 months ago       81.1MB
+tomcatweather                                                             latest              2353bdd18c19        13 months ago       315MB
+tomcat                                                                    latest              ca9e2fccef98        13 months ago       463MB
+tomcat                                                                    9-jre11-slim        8528526b1274        14 months ago       305MB
+python                                                                    v1                  76031d3d6d90        14 months ago       74.2MB
+python                                                                    3.6-alpine          a78e257617d1        14 months ago       74.2MB
+busybox                                                                   latest              59788edf1f3e        14 months ago       1.15MB
+</code></pre>
 
-<p><code>full featured control plane</code> - central control mechanism that can do a lot of stuff</p>
+<p><strong>New hotness</strong> (sort script sample output):</p>
 
-<p><code>service discovery</code> - services like an API can be discovered and made available to other services in the mesh</p>
+<pre><code>1MB - busybox:latest
+74MB - python:3.6-alpine
+74MB - python:v1
+81MB - python:alpine3.7
+98MB - python:alpine3.10
+140MB - tomcat-fun:alpine
+305MB - tomcat:9-jre11-slim
+315MB - tomcatweather:latest
+463MB - tomcat-fun:latest
+463MB - tomcat:latest
+927MB - python:latest
+</code></pre>
 
-<p><code>[service] configuration</code> - services can be configured from a centralized configuration store</p>
+<h2 id="explanation">Explanation</h2>
 
-<p><code>[service] segmentation functionality</code> - services can be separated from each other and have communication rules applied to the traffic between them</p>
+<p>This monster of Frankenstein needs a proper break down:</p>
 
-<h2 id="the-explanation">The Explanation</h2>
+<h3 id="1-list-docker-images-with-filter">1. List docker images with filter</h3>
 
-<p>Hashicorp&rsquo;s co-founder Armon Dadgar has a <a href="https://www.youtube.com/watch?v=mxeMdl0KvBI" target=_blank>really good video that explains Consul</a> but is also 15 minutes long (well worth a watch though). We&rsquo;re going to try and summarize and explain it a little quicker.</p>
+<p>List all images but format the output to just show <code>imageName:tag size</code>.</p>
 
-<p>As we now know, Consul is a service mesh solution that offers a few key functionalities: service discovery, configuration, and segmentation.</p>
+<pre><code>docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot;
+</code></pre>
 
-<p>In order for it to accomplish this, Consul runs an agent on each of the nodes/servers in a datacenter (on-prem or cloud-based). This agent is responsible for communicating with the services available and enabling the functionalities we looked at above.</p>
+<h3 id="2-convert-all-image-sizes-to-mb">2. Convert all image sizes to MB</h3>
 
-<h3 id="service-discovery">Service Discovery</h3>
+<p>Check if the size (second argument - <code>$2</code>) is listed in gigabytes (<code>$2~/GB/</code> checks if <code>GB</code> is in <code>$2</code>) and convert it to megabytes by stripping the size unit (<code>substr($2, 1, length($2)-2)</code>) and multiplying it by 1000. Then append <code>MB</code> and the image name (<code>$1</code>).</p>
 
-<p>When an instance of a service starts, the agent registers it with the Consul registry and makes it available for traffic. If <code>service A</code> wants to communicate with <code>service B</code>, it queries the registry, which returns one instance of the service, and communicates directly with that instance.</p>
+<pre><code>awk '{
+    if ($2~/GB/) 
+        print substr($2, 1, length($2)-2) * 1000 &quot;MB - &quot; $1 ; 
+</code></pre>
 
-<p>The agent also maintains health checks for services and nodes so if that instance of <code>service B</code> should go down or fail a health check, the agent will report it to the registry and it will no longer be returned when a query is made for <code>service B</code>.</p>
+<p>If it&rsquo;s not in gigabytes, assume it&rsquo;s in megabytes and print out the size and image name.</p>
 
-<h3 id="service-configuration">Service Configuration</h3>
+<pre><code>    else 
+        print $2 &quot; - &quot; $1
+}'
+</code></pre>
 
-<p>Each service has some configurations that might be different from other services in the mesh but there might be some that are shared between them (something like a database port or whether the database is in maintenance mode).</p>
+<h3 id="3-delete-any-lines-with-sizes-of-0-optional">3. Delete any lines with sizes of 0 (optional)</h3>
 
-<p>Consul can make this available in a centralized key/value store and push it out to each of the services&rsquo; configurations. This saves us from having to make the same config change to each service and push it out manually ourselves.</p>
+<p>I had some images that must have broken during creation so they&rsquo;re listed as 0. Feel free to omit this command.
+Look for any line starting with <code>0</code> and delete it.</p>
 
-<h3 id="service-segmentation">Service Segmentation</h3>
+<pre><code>sed '/^0/d'
+</code></pre>
 
-<p>We have all of these services running and assuming that they have network connectivity, they can communicate without issue. However, just because they <em>can</em> talk to each other, doesn&rsquo;t mean that they <em>should</em> be able to talk to each other. Consul uses a component called <a href="https://www.consul.io/docs/connect/index.html" target=_blank>Connect</a> to address this problem.</p>
+<h3 id="4-sort-from-smallest-to-largest">4. Sort from smallest to largest</h3>
 
-<p>Each of our services will have a proxy that runs alongside it (known as a <strong>sidecar</strong>) and it will handle all communication to and from that service. This proxy verifies TLS certificates for encrypted communication and enforces the policy for service communication maintained by Connect (these policies are called <a href="https://www.consul.io/docs/connect/intentions.html" target=_blank>intentions</a>).</p>
+<p>If you prefer, you can pass the flag <code>-r</code> to reverse sort (largest to smallest).</p>
 
-<p>If <code>service A</code> wants to communicate with <code>service B</code>, the proxy of <code>service B</code> will verify the certificate of <code>service A</code> and then check if there is an intention from Connect that allows this traffic.</p>
+<pre><code>sort -n
+</code></pre>
 
-<h2 id="the-alternatives">The Alternatives</h2>
-
-<p>Many people are working to solve the same problems which means that each problem will more than likely have a multitude of available solutions. Here are a few competing products to Consul.</p>
-
-<p>Hashicorp also has a set of <a href="https://www.consul.io/intro/vs/index.html" target=_blank>comparison pages</a> that discuss the alternatives to and pros/cons of using Consul versus the other tools.</p>
-
-<h3 id="a-href-https-technologyconversations-com-2015-09-08-service-discovery-zookeeper-vs-etcd-vs-consul-target-blank-service-discovery-tools-a"><a href="https://technologyconversations.com/2015/09/08/service-discovery-zookeeper-vs-etcd-vs-consul/" target=_blank>Service Discovery tools</a></h3>
-
-<ul>
-<li><a href="https://zookeeper.apache.org/" target=_blank>Zookeeper</a></li>
-<li><a href="https://etcd.io/" target=_blank>etcd</a></li>
-</ul>
-
-<h3 id="service-configuration-1">Service Configuration</h3>
-
-<ul>
-<li><a href="https://www.chef.io/" target=_blank>Chef</a></li>
-<li><a href="https://puppet.com/" target=_blank>Puppet</a></li>
-<li><a href="https://www.ansible.com/" target=_blank>Ansible</a></li>
-</ul>
-
-<h3 id="service-segmentation-1">Service Segmentation</h3>
-
-<ul>
-<li><a href="https://istio.io/" target=_blank>Istio</a></li>
-</ul>
+<p>Quick tip; long explanation.</p>
 
 
         
           <div class="blog-tags">
             
-              <a href="https://tunzor.github.io/tags/devops-tools-101/">devops-tools-101</a>&nbsp;
+              <a href="https://tunzor.github.io/tags/quick-tip/">quick-tip</a>&nbsp;
             
-              <a href="https://tunzor.github.io/tags/consul/">consul</a>&nbsp;
+              <a href="https://tunzor.github.io/tags/docker/">docker</a>&nbsp;
             
           </div>
         
@@ -350,42 +362,42 @@ The Official …">
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2ftunzor.github.io%2fposts%2fdevops-tools-101-consul%2f&amp;text=DevOps%20Tools%20101%20-%20Consul&amp;via=" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2ftunzor.github.io%2fposts%2fdocker-list-images-by-size%2f&amp;text=Quick%20Tip%3a%20List%20docker%20images%20sorted%20by%20size&amp;via=" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftunzor.github.io%2fposts%2fdevops-tools-101-consul%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftunzor.github.io%2fposts%2fdocker-list-images-by-size%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2ftunzor.github.io%2fposts%2fdevops-tools-101-consul%2f&amp;title=DevOps%20Tools%20101%20-%20Consul" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2ftunzor.github.io%2fposts%2fdocker-list-images-by-size%2f&amp;title=Quick%20Tip%3a%20List%20docker%20images%20sorted%20by%20size" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ftunzor.github.io%2fposts%2fdevops-tools-101-consul%2f&amp;title=DevOps%20Tools%20101%20-%20Consul" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ftunzor.github.io%2fposts%2fdocker-list-images-by-size%2f&amp;title=Quick%20Tip%3a%20List%20docker%20images%20sorted%20by%20size" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2ftunzor.github.io%2fposts%2fdevops-tools-101-consul%2f&amp;title=DevOps%20Tools%20101%20-%20Consul" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2ftunzor.github.io%2fposts%2fdocker-list-images-by-size%2f&amp;title=Quick%20Tip%3a%20List%20docker%20images%20sorted%20by%20size" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2ftunzor.github.io%2fposts%2fdevops-tools-101-consul%2f&amp;description=DevOps%20Tools%20101%20-%20Consul" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2ftunzor.github.io%2fposts%2fdocker-list-images-by-size%2f&amp;description=Quick%20Tip%3a%20List%20docker%20images%20sorted%20by%20size" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -404,13 +416,9 @@ The Official …">
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://tunzor.github.io/posts/k8s-two-tier-deploy/" data-toggle="tooltip" data-placement="top" title="Deploying a dockerized two-tier app on Kubernetes">&larr; Previous Post</a>
+              <a href="https://tunzor.github.io/posts/devops-tools-101-consul/" data-toggle="tooltip" data-placement="top" title="DevOps Tools 101 - Consul">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://tunzor.github.io/posts/docker-list-images-by-size/" data-toggle="tooltip" data-placement="top" title="Quick Tip: List docker images sorted by size">Next Post &rarr;</a>
-            </li>
           
         </ul>
       

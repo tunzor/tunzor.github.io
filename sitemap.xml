@@ -3,20 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://tunzor.github.io/posts/devops-tools-101-consul/</loc>
-    <lastmod>2019-12-13T09:54:14-05:00</lastmod>
+    <loc>https://tunzor.github.io/posts/</loc>
+    <lastmod>2019-12-16T10:31:48-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://tunzor.github.io/posts/</loc>
-    <lastmod>2019-12-13T09:54:14-05:00</lastmod>
-    <priority>0</priority>
+    <loc>https://tunzor.github.io/posts/docker-list-images-by-size/</loc>
+    <lastmod>2019-12-16T10:31:48-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://tunzor.github.io/tags/</loc>
-    <lastmod>2019-12-13T09:54:14-05:00</lastmod>
+    <lastmod>2019-12-16T10:31:48-05:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tunzor.github.io/tags/docker/</loc>
+    <lastmod>2019-12-16T10:31:48-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tunzor.github.io/tags/quick-tip/</loc>
+    <lastmod>2019-12-16T10:31:48-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tunzor.github.io/</loc>
+    <lastmod>2019-12-16T10:31:48-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tunzor.github.io/posts/devops-tools-101-consul/</loc>
+    <lastmod>2019-12-13T09:54:14-05:00</lastmod>
   </url>
   
   <url>
@@ -32,20 +55,8 @@
   </url>
   
   <url>
-    <loc>https://tunzor.github.io/</loc>
-    <lastmod>2019-12-13T09:54:14-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://tunzor.github.io/posts/k8s-two-tier-deploy/</loc>
     <lastmod>2019-12-11T18:56:27-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tunzor.github.io/tags/docker/</loc>
-    <lastmod>2019-12-11T18:56:27-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -67,12 +78,6 @@
   
   <url>
     <loc>https://tunzor.github.io/tags/linux/</loc>
-    <lastmod>2019-12-11T18:41:10-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tunzor.github.io/tags/quick-tip/</loc>
     <lastmod>2019-12-11T18:41:10-05:00</lastmod>
     <priority>0</priority>
   </url>

@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Overview of all pages with the tag #docker - tunzor</title>
-  <meta name="description" content="Overview of all pages with the tag #docker, such as: Deploying a dockerized two-tier app on Kubernetes">
+  <meta name="description" content="Overview of all pages with the tag #docker, such as: Quick Tip: List docker images sorted by size">
   <meta name="author" content="Anthony"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -189,6 +189,59 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+    <a href="https://tunzor.github.io/posts/docker-list-images-by-size/">
+        <h2 class="post-title">Quick Tip: List docker images sorted by size</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 16, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;435&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Anthony
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.
+Huh? What&rsquo;s that, docker? You can&rsquo;t do that.
+If you want something done right&hellip;
+It ain&rsquo;t pretty but it works.
+docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \ awk '{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &quot;MB - &quot; $1 ; else print $2 &quot; - &quot; $1 }' | \ sed '/^0/d' | \ sort -n   Side Note
+        <a href="https://tunzor.github.io/posts/docker-list-images-by-size/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://tunzor.github.io/tags/quick-tip/">quick-tip</a>&nbsp;
+        
+        <a href="https://tunzor.github.io/tags/docker/">docker</a>&nbsp;
+        
+    </div>
+    
+
+</article>
           
             <article class="post-preview">
     <a href="https://tunzor.github.io/posts/k8s-two-tier-deploy/">
