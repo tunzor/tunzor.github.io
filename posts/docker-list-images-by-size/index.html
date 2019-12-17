@@ -63,7 +63,7 @@ docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \ awk 
   "headline": "Quick Tip: List docker images sorted by size",
   "description" : "The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.\nHuh? What\x26rsquo;s that, docker? You can\x26rsquo;t do that.\nIf you want something done right\x26hellip;\nIt ain\x26rsquo;t pretty but it works.\ndocker image ls --format \x26quot;{{.Repository}}:{{.Tag}} {{.Size}}\x26quot; | \\ awk \x27{if ($2~\/GB\/) print substr($2, 1, length($2)-2) * 1000 \x26quot;MB - \x26quot; $1 ; else print $2 \x26quot; - \x26quot; $1 }\x27 | \\ sed \x27\/^0\/d\x27 | \\ sort -n   Side Note",
   "inLanguage" : "en",
-  "wordCount":  435 ,
+  "wordCount":  499 ,
   "datePublished" : "2019-12-16T10:31:48",
   "dateModified" : "2019-12-16T10:31:48",
   "image" : "https:\/\/tunzor.github.io\/img\/me.jpg",
@@ -334,9 +334,28 @@ Look for any line starting with <code>0</code> and delete it.</p>
 
 <h3 id="4-sort-from-smallest-to-largest">4. Sort from smallest to largest</h3>
 
-<p>If you prefer, you can pass the flag <code>-r</code> to reverse sort (largest to smallest).</p>
+<p>The <code>-n</code> flag is the important piece as it sorts it numerically rather than lexicographically/alphabetically. If you prefer, you can also pass the <code>-r</code> flag to reverse sort (largest to smallest).</p>
 
 <pre><code>sort -n
+</code></pre>
+
+<pre><code># Lexicographically sorted
+109MB - nginx:&lt;none&gt;
+109MB - nginx:latest
+11.4MB - gcr.io/cloud-builders/metadata:latest
+113MB - simple-weather:1
+117MB - ubuntu:16.04
+1260MB - haskell:8.6
+132MB - httpd:2.4
+
+# Numerically sorted
+11.4MB - gcr.io/cloud-builders/metadata:latest
+109MB - nginx:&lt;none&gt;
+109MB - nginx:latest
+113MB - simple-weather:1
+117MB - ubuntu:16.04
+132MB - httpd:2.4
+1260MB - haskell:8.6
 </code></pre>
 
 <p>Quick tip; long explanation.</p>
