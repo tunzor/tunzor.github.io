@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>docker on tunzor</title>
@@ -18,10 +18,10 @@
       
       <guid>https://tunzor.github.io/posts/docker-list-images-by-size/</guid>
       <description>The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.
-Huh? What&amp;rsquo;s that, docker? You can&amp;rsquo;t do that.
+Huh? What&#39;s that, docker? You can&#39;t do that.
 If you want something done right&amp;hellip;
-It ain&amp;rsquo;t pretty but it works.
-docker image ls --format &amp;quot;{{.Repository}}:{{.Tag}} {{.Size}}&amp;quot; | \ awk &#39;{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &amp;quot;MB - &amp;quot; $1 ; else print $2 &amp;quot; - &amp;quot; $1 }&#39; | \ sed &#39;/^0/d&#39; | \ sort -n   Side Note</description>
+It ain&#39;t pretty but it works.
+docker image ls --format &amp;quot;{{.Repository}}:{{.Tag}} {{.Size}}&amp;quot; | \awk &#39;{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &amp;quot;MB - &amp;quot; $1 ; else print $2 &amp;quot; - &amp;quot; $1 }&#39; | \sed &#39;/^0/d&#39; | \sort -n Side Note</description>
     </item>
     
     <item>
@@ -30,8 +30,8 @@ docker image ls --format &amp;quot;{{.Repository}}:{{.Tag}} {{.Size}}&amp;quot; 
       <pubDate>Wed, 11 Dec 2019 18:56:27 -0500</pubDate>
       
       <guid>https://tunzor.github.io/posts/k8s-two-tier-deploy/</guid>
-      <description>For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I&amp;rsquo;d like to walk you through that deployment and explain everything along the way.
-Before we jump in, you&amp;rsquo;ll need to have:</description>
+      <description>For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I&#39;d like to walk you through that deployment and explain everything along the way.
+Before we jump in, you&#39;ll need to have:</description>
     </item>
     
   </channel>
