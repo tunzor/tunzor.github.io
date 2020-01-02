@@ -18,7 +18,7 @@
       
       <guid>https://tunzor.github.io/posts/devops-tools-101-k8s/</guid>
       <description>DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
-Today we&#39;ll be learning about Kubernetes (often abbreviated to k8s), which was originally developed and then open-sourced by Google.
+Today we&amp;rsquo;ll be learning about Kubernetes (often abbreviated to k8s), which was originally developed and then open-sourced by Google.
 The Official Description From kubernetes.io
  Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
  The Breakdown open-source system - you can look at and modify the underlying code that makes up kubernetes</description>
@@ -30,8 +30,8 @@ The Official Description From kubernetes.io
       <pubDate>Wed, 11 Dec 2019 18:56:27 -0500</pubDate>
       
       <guid>https://tunzor.github.io/posts/k8s-two-tier-deploy/</guid>
-      <description>For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I&#39;d like to walk you through that deployment and explain everything along the way.
-Before we jump in, you&#39;ll need to have:</description>
+      <description>For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I&amp;rsquo;d like to walk you through that deployment and explain everything along the way.
+Before we jump in, you&amp;rsquo;ll need to have:</description>
     </item>
     
   </channel>

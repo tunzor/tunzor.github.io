@@ -9,7 +9,7 @@
 
   <title>DevOps Tools 101 - Kubernetes - tunzor</title>
   <meta name="description" content="DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
-Today we&#39;ll be learning about Kubernetes (often abbreviated to k8s), which was originally developed and then open-sourced by Google.
+Today we&rsquo;ll be learning about Kubernetes (often abbreviated to k8s), which was originally developed and then open-sourced by Google.
 The Official Description From kubernetes.io
  Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
  The Breakdown open-source system - you can look at and modify the underlying code that makes up kubernetes">
@@ -61,7 +61,7 @@ The Official Description From kubernetes.io
     "name" : "Anthony"
   },
   "headline": "DevOps Tools 101 - Kubernetes",
-  "description" : "DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.\nToday we\x27ll be learning about Kubernetes (often abbreviated to k8s), which was originally developed and then open-sourced by Google.\nThe Official Description From kubernetes.io\n Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.\n The Breakdown open-source system - you can look at and modify the underlying code that makes up kubernetes",
+  "description" : "DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.\nToday we\x26rsquo;ll be learning about Kubernetes (often abbreviated to k8s), which was originally developed and then open-sourced by Google.\nThe Official Description From kubernetes.io\n Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.\n The Breakdown open-source system - you can look at and modify the underlying code that makes up kubernetes",
   "inLanguage" : "en",
   "wordCount":  537 ,
   "datePublished" : "2019-12-23T10:54:32",
@@ -84,7 +84,7 @@ The Official Description From kubernetes.io
 
 <meta property="og:title" content="DevOps Tools 101 - Kubernetes" />
 <meta property="og:description" content="DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
-Today we&#39;ll be learning about Kubernetes (often abbreviated to k8s), which was originally developed and then open-sourced by Google.
+Today we&rsquo;ll be learning about Kubernetes (often abbreviated to k8s), which was originally developed and then open-sourced by Google.
 The Official Description From kubernetes.io
  Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
  The Breakdown open-source system - you can look at and modify the underlying code that makes up kubernetes">
@@ -95,11 +95,11 @@ The Official Description From kubernetes.io
 
   <meta name="twitter:title" content="DevOps Tools 101 - Kubernetes" />
   <meta name="twitter:description" content="DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
-Today we&#39;ll be learning about Kubernetes (often abbreviated to k8s), …">
+Today we&rsquo;ll be learning about Kubernetes (often abbreviated to …">
   <meta name="twitter:image" content="https://tunzor.github.io/img/me.jpg" />
   <meta name="twitter:card" content="summary" />
   <link href='https://tunzor.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.61.0" />
+  <meta name="generator" content="Hugo 0.59.1" />
   <link rel="alternate" href="https://tunzor.github.io/index.xml" type="application/rss+xml" title="tunzor"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://tunzor.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -247,34 +247,62 @@ Today we&#39;ll be learning about Kubernetes (often abbreviated to k8s), …">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p><em>DevOps Tools 101</em> is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.</p>
-<p>Today we'll be learning about <strong>Kubernetes</strong> (often abbreviated to <strong>k8s</strong>), which was originally developed and then open-sourced by Google.</p>
+        
+
+<p><em>DevOps Tools 101</em> is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.</p>
+
+<p>Today we&rsquo;ll be learning about <strong>Kubernetes</strong> (often abbreviated to <strong>k8s</strong>), which was originally developed and then open-sourced by Google.</p>
+
 <h2 id="the-official-description">The Official Description</h2>
+
 <p>From <a href="https://kubernetes.io/" target=_blank>kubernetes.io</a></p>
+
 <blockquote>
 <p>Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.</p>
 </blockquote>
+
 <h2 id="the-breakdown">The Breakdown</h2>
+
 <p><code>open-source system</code> - you can look at and modify the underlying code that makes up kubernetes</p>
+
 <p><code>containerized applications</code> - applications that have been made to run in <a href="https://www.docker.com/resources/what-container" target=_blank>containers</a></p>
+
 <p><code>automating deployment, scaling, and management</code> - takes care of deploying the application, scaling it up and down, and managing the lifecycle (starting, stopping, deleting)</p>
+
 <h2 id="the-explanation">The Explanation</h2>
+
 <p>At the heart of it, kubernetes is a container orchestration tool that makes running containerized applications easy.</p>
+
 <p>It does this by using a <a href="https://kubernetes.io/docs/setup/production-environment/container-runtimes/" target=_blank>container runtime</a> (the most popular one right now being Docker) and manifest files that describe the desired state of your application. It will create and delete containers until it reaches this state.</p>
+
 <h3 id="containerized-applications">Containerized Applications</h3>
-<p>Containerized apps are a fancy way of saying that an entire application has been contained into one portable file known as a container <strong>image</strong>. This image is a blueprint for the application and describes everything in it: the executable, dependencies it relies on, and anything else required by the application. This is what we store in a repository or registry; it's the artifact of our application.</p>
+
+<p>Containerized apps are a fancy way of saying that an entire application has been contained into one portable file known as a container <strong>image</strong>. This image is a blueprint for the application and describes everything in it: the executable, dependencies it relies on, and anything else required by the application. This is what we store in a repository or registry; it&rsquo;s the artifact of our application.</p>
+
 <p>This image is then used by the container runtime to create a <strong>container</strong>; a running instantiation of the image. Depending on what kind of application we have, we could potentially interact with it at this point.</p>
+
 <p>If you want to read more about containers and their benefits, Google has a <a href="https://cloud.google.com/containers/" target=_blank>pretty good post</a> on them.</p>
+
 <h3 id="orchestration">Orchestration</h3>
-<p>Kubernetes is what's known as a declarative tool: you give it a desired state and it works to maintain it.</p>
-<p>Instead of going the imperative way (do this, then that) and saying <em>&ldquo;hey kubernetes, create 5 instances of my application now&rdquo;</em> then 10 minutes later saying <em>&ldquo;alright, 2 of them aren't responding, replace them&rdquo;</em>, you say <em>&ldquo;I know you're smart kubernetes, I want 5 instances of this container at all times, make it happen&rdquo;</em>.</p>
+
+<p>Kubernetes is what&rsquo;s known as a declarative tool: you give it a desired state and it works to maintain it.</p>
+
+<p>Instead of going the imperative way (do this, then that) and saying <em>&ldquo;hey kubernetes, create 5 instances of my application now&rdquo;</em> then 10 minutes later saying <em>&ldquo;alright, 2 of them aren&rsquo;t responding, replace them&rdquo;</em>, you say <em>&ldquo;I know you&rsquo;re smart kubernetes, I want 5 instances of this container at all times, make it happen&rdquo;</em>.</p>
+
 <p>It then orchestrates the creation, destruction, and overall lifecycle of the containers without any more intervention from you.</p>
+
 <h3 id="the-deployment">The Deployment</h3>
-<p>Kubernetes handles containers via a high level construct known as a <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/" target=_blank>deployment</a>. This manifest file outlines the specification of our application with things like the image name and registry location, any port numbers to expose, and the number of instances we'd like to have.</p>
+
+<p>Kubernetes handles containers via a high level construct known as a <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/" target=_blank>deployment</a>. This manifest file outlines the specification of our application with things like the image name and registry location, any port numbers to expose, and the number of instances we&rsquo;d like to have.</p>
+
 <p>This spec contained in the deployment is known as a <a href="https://kubernetes.io/docs/concepts/workloads/pods/pod/" target=_blank>Pod</a> spec. Pods are the smallest logical unit in kubernetes and can be thought of as a wrapper around our container(s).</p>
-<p>We don't generally manage the pods themselves as that would be taking the orchestration part away from kubernetes. Instead, we describe the desired state in the deployment and let kubernetes do the rest.</p>
+
+<p>We don&rsquo;t generally manage the pods themselves as that would be taking the orchestration part away from kubernetes. Instead, we describe the desired state in the deployment and let kubernetes do the rest.</p>
+
 <h2 id="the-alternatives">The Alternatives</h2>
+
 <p>Many people are working to solve the same problems which means that each problem will more than likely have a multitude of available solutions. Here are a few competing products to Kubernetes.</p>
+
 <ul>
 <li><a href="https://docs.docker.com/engine/swarm/" target=_blank>Docker Swarm</a></li>
 <li><a href="https://www.nomadproject.io/" target=_blank>Nomad</a></li>
@@ -438,7 +466,7 @@ Today we&#39;ll be learning about Kubernetes (often abbreviated to k8s), …">
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.61.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

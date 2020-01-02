@@ -9,10 +9,10 @@
 
   <title>Quick Tip: List docker images sorted by size - tunzor</title>
   <meta name="description" content="The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.
-Huh? What&#39;s that, docker? You can&#39;t do that.
+Huh? What&rsquo;s that, docker? You can&rsquo;t do that.
 If you want something done right&hellip;
-It ain&#39;t pretty but it works.
-docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \awk &#39;{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &quot;MB - &quot; $1 ; else print $2 &quot; - &quot; $1 }&#39; | \sed &#39;/^0/d&#39; | \sort -n Side Note">
+It ain&rsquo;t pretty but it works.
+docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \ awk &#39;{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &quot;MB - &quot; $1 ; else print $2 &quot; - &quot; $1 }&#39; | \ sed &#39;/^0/d&#39; | \ sort -n   Side Note">
   <meta name="author" content="Anthony"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,7 +61,7 @@ docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \awk 
     "name" : "Anthony"
   },
   "headline": "Quick Tip: List docker images sorted by size",
-  "description" : "The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.\nHuh? What\x27s that, docker? You can\x27t do that.\nIf you want something done right\x26hellip;\nIt ain\x27t pretty but it works.\ndocker image ls --format \x26quot;{{.Repository}}:{{.Tag}} {{.Size}}\x26quot; | \\\rawk \x27{if ($2~\/GB\/) print substr($2, 1, length($2)-2) * 1000 \x26quot;MB - \x26quot; $1 ; else print $2 \x26quot; - \x26quot; $1 }\x27 | \\\rsed \x27\/^0\/d\x27 | \\\rsort -n\r Side Note",
+  "description" : "The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.\nHuh? What\x26rsquo;s that, docker? You can\x26rsquo;t do that.\nIf you want something done right\x26hellip;\nIt ain\x26rsquo;t pretty but it works.\ndocker image ls --format \x26quot;{{.Repository}}:{{.Tag}} {{.Size}}\x26quot; | \\ awk \x27{if ($2~\/GB\/) print substr($2, 1, length($2)-2) * 1000 \x26quot;MB - \x26quot; $1 ; else print $2 \x26quot; - \x26quot; $1 }\x27 | \\ sed \x27\/^0\/d\x27 | \\ sort -n   Side Note",
   "inLanguage" : "en",
   "wordCount":  499 ,
   "datePublished" : "2019-12-16T10:31:48",
@@ -84,10 +84,10 @@ docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \awk 
 
 <meta property="og:title" content="Quick Tip: List docker images sorted by size" />
 <meta property="og:description" content="The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.
-Huh? What&#39;s that, docker? You can&#39;t do that.
+Huh? What&rsquo;s that, docker? You can&rsquo;t do that.
 If you want something done right&hellip;
-It ain&#39;t pretty but it works.
-docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \awk &#39;{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &quot;MB - &quot; $1 ; else print $2 &quot; - &quot; $1 }&#39; | \sed &#39;/^0/d&#39; | \sort -n Side Note">
+It ain&rsquo;t pretty but it works.
+docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \ awk &#39;{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &quot;MB - &quot; $1 ; else print $2 &quot; - &quot; $1 }&#39; | \ sed &#39;/^0/d&#39; | \ sort -n   Side Note">
 <meta property="og:image" content="https://tunzor.github.io/img/me.jpg" />
 <meta property="og:url" content="https://tunzor.github.io/posts/docker-list-images-by-size/" />
 <meta property="og:type" content="website" />
@@ -98,7 +98,7 @@ docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \awk 
   <meta name="twitter:image" content="https://tunzor.github.io/img/me.jpg" />
   <meta name="twitter:card" content="summary" />
   <link href='https://tunzor.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.61.0" />
+  <meta name="generator" content="Hugo 0.59.1" />
   <link rel="alternate" href="https://tunzor.github.io/index.xml" type="application/rss+xml" title="tunzor"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://tunzor.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -246,20 +246,29 @@ docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \awk 
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>The <code>docker image ls</code> command has an <a href="https://docs.docker.com/engine/reference/commandline/images/#filtering" target=_blank>option for filtering output</a> but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.</p>
-<p>Huh? What's that, docker? You <em>can't</em> do that.<br>
+        
+
+<p>The <code>docker image ls</code> command has an <a href="https://docs.docker.com/engine/reference/commandline/images/#filtering" target=_blank>option for filtering output</a> but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.</p>
+
+<p>Huh? What&rsquo;s that, docker? You <em>can&rsquo;t</em> do that.<br />
 <em>If you want something done right&hellip;</em></p>
-<p>It ain't pretty but it works.</p>
+
+<p>It ain&rsquo;t pretty but it works.</p>
+
 <pre><code>docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \
 awk '{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &quot;MB - &quot; $1 ; else print $2 &quot; - &quot; $1 }' | \
 sed '/^0/d' | \
 sort -n
-</code></pre><blockquote>
-<p><strong>Side Note</strong><br>
-This assumes that you don't have images &gt; 999GB.<br>
+</code></pre>
+
+<blockquote>
+<p><strong>Side Note</strong><br />
+This assumes that you don&rsquo;t have images &gt; 999GB.<br />
 If you do &ndash; I pity you.</p>
 </blockquote>
+
 <p><strong>Old and busted</strong> (<code>docker image ls</code> sample output):</p>
+
 <pre><code>python                                                                    alpine3.10          992aef1d798f        4 months ago        98.7MB
 tomcat-fun                                                                alpine              2b7c7bec86f6        5 months ago        140MB
 tomcat-fun                                                                latest              04af324bcf10        6 months ago        463MB
@@ -271,7 +280,10 @@ tomcat                                                                    9-jre1
 python                                                                    v1                  76031d3d6d90        14 months ago       74.2MB
 python                                                                    3.6-alpine          a78e257617d1        14 months ago       74.2MB
 busybox                                                                   latest              59788edf1f3e        14 months ago       1.15MB
-</code></pre><p><strong>New hotness</strong> (sort script sample output):</p>
+</code></pre>
+
+<p><strong>New hotness</strong> (sort script sample output):</p>
+
 <pre><code>1MB - busybox:latest
 74MB - python:3.6-alpine
 74MB - python:v1
@@ -283,28 +295,51 @@ busybox                                                                   latest
 463MB - tomcat-fun:latest
 463MB - tomcat:latest
 927MB - python:latest
-</code></pre><h2 id="explanation">Explanation</h2>
+</code></pre>
+
+<h2 id="explanation">Explanation</h2>
+
 <p>This monster of Frankenstein needs a proper break down:</p>
+
 <h3 id="1-list-docker-images-with-filter">1. List docker images with filter</h3>
+
 <p>List all images but format the output to just show <code>imageName:tag size</code>.</p>
+
 <pre><code>docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot;
-</code></pre><h3 id="2-convert-all-image-sizes-to-mb">2. Convert all image sizes to MB</h3>
+</code></pre>
+
+<h3 id="2-convert-all-image-sizes-to-mb">2. Convert all image sizes to MB</h3>
+
 <p>Check if the size (second argument - <code>$2</code>) is listed in gigabytes (<code>$2~/GB/</code> checks if <code>GB</code> is in <code>$2</code>) and convert it to megabytes by stripping the size unit (<code>substr($2, 1, length($2)-2)</code>) and multiplying it by 1000. Then append <code>MB</code> and the image name (<code>$1</code>).</p>
+
 <pre><code>awk '{
     if ($2~/GB/) 
         print substr($2, 1, length($2)-2) * 1000 &quot;MB - &quot; $1 ; 
-</code></pre><p>If it's not in gigabytes, assume it's in megabytes and print out the size and image name.</p>
+</code></pre>
+
+<p>If it&rsquo;s not in gigabytes, assume it&rsquo;s in megabytes and print out the size and image name.</p>
+
 <pre><code>    else 
         print $2 &quot; - &quot; $1
 }'
-</code></pre><h3 id="3-delete-any-lines-with-sizes-of-0-optional">3. Delete any lines with sizes of 0 (optional)</h3>
-<p>I had some images that must have broken during creation so they're listed as 0. Feel free to omit this command.
+</code></pre>
+
+<h3 id="3-delete-any-lines-with-sizes-of-0-optional">3. Delete any lines with sizes of 0 (optional)</h3>
+
+<p>I had some images that must have broken during creation so they&rsquo;re listed as 0. Feel free to omit this command.
 Look for any line starting with <code>0</code> and delete it.</p>
+
 <pre><code>sed '/^0/d'
-</code></pre><h3 id="4-sort-from-smallest-to-largest">4. Sort from smallest to largest</h3>
+</code></pre>
+
+<h3 id="4-sort-from-smallest-to-largest">4. Sort from smallest to largest</h3>
+
 <p>The <code>-n</code> flag is the important piece as it sorts it numerically rather than lexicographically/alphabetically. If you prefer, you can also pass the <code>-r</code> flag to reverse sort (largest to smallest).</p>
+
 <pre><code>sort -n
-</code></pre><pre><code># Lexicographically sorted
+</code></pre>
+
+<pre><code># Lexicographically sorted
 109MB - nginx:&lt;none&gt;
 109MB - nginx:latest
 11.4MB - gcr.io/cloud-builders/metadata:latest
@@ -321,7 +356,9 @@ Look for any line starting with <code>0</code> and delete it.</p>
 117MB - ubuntu:16.04
 132MB - httpd:2.4
 1260MB - haskell:8.6
-</code></pre><p>Quick tip; long explanation.</p>
+</code></pre>
+
+<p>Quick tip; long explanation.</p>
 
 
         
@@ -484,7 +521,7 @@ Look for any line starting with <code>0</code> and delete it.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.61.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

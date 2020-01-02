@@ -18,8 +18,8 @@
       
       <guid>https://tunzor.github.io/posts/devops-tools-101-consul/</guid>
       <description>DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
-Today we&#39;ll be learning about Consul by Hashicorp.
-The Official Description From Hashicorp&#39;s site
+Today we&amp;rsquo;ll be learning about Consul by Hashicorp.
+The Official Description From Hashicorp&amp;rsquo;s site
  Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.
  The Breakdown service mesh solution - a solution that allows individual services to discover and communicate quickly/securely/reliably with each other</description>
     </item>
