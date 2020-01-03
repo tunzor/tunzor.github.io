@@ -6,10 +6,20 @@
     <description>Recent content in hugo on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Dec 2019 09:45:13 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tunzor.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Automating the publication of a Hugo generated site with Google Cloud Build</title>
+      <link>https://tunzor.github.io/posts/cloud-build-hugo-site/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tunzor.github.io/posts/cloud-build-hugo-site/</guid>
+      <description>Hugo is a really cool tool for getting a blog up and running quickly.
+In a previous post I outlined how to use it to generate a site and then host that site on Github Pages or Google Cloud Storage. Now I want to take it a step further and automate its publication on Github Pages. Why? Cause I&amp;rsquo;m lazy, automation is cool, and doing so will make us look better in the optical sensors of our eventual robot overlords.</description>
+    </item>
     
     <item>
       <title>Running a Hugo generated site on Github Pages and Google Cloud Storage</title>

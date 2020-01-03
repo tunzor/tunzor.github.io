@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Automating the publication of a Hugo generated site with Google Cloud Build - tunzor</title>
+  <meta name="description" content="Hugo is a really cool tool for getting a blog up and running quickly.
+In a previous post I outlined how to use it to generate a site and then host that site on Github Pages or Google Cloud Storage. Now I want to take it a step further and automate its publication on Github Pages. Why? Cause I&rsquo;m lazy, automation is cool, and doing so will make us look better in the optical sensors of our eventual robot overlords.">
+  <meta name="author" content="Anthony"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "tunzor",
+    
+    "url": "https:\/\/tunzor.github.io"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/tunzor.github.io"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/tunzor.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/tunzor.github.io\/posts\/cloud-build-hugo-site\/",
+          "name": "Automating the publication of a hugo generated site with google cloud build"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Anthony"
+  },
+  "headline": "Automating the publication of a Hugo generated site with Google Cloud Build",
+  "description" : "Hugo is a really cool tool for getting a blog up and running quickly.\nIn a previous post I outlined how to use it to generate a site and then host that site on Github Pages or Google Cloud Storage. Now I want to take it a step further and automate its publication on Github Pages. Why? Cause I\x26rsquo;m lazy, automation is cool, and doing so will make us look better in the optical sensors of our eventual robot overlords.",
+  "inLanguage" : "en",
+  "wordCount":  2455 ,
+  "datePublished" : "2020-01-03T00:00:00",
+  "dateModified" : "2020-01-03T00:00:00",
+  "image" : "https:\/\/tunzor.github.io\/img\/me.jpg",
+  "keywords" : [ "hugo, google-cloud-build, automation" ],
+  "mainEntityOfPage" : "https:\/\/tunzor.github.io\/posts\/cloud-build-hugo-site\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/tunzor.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/tunzor.github.io\/img\/me.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Automating the publication of a Hugo generated site with Google Cloud Build" />
+<meta property="og:description" content="Hugo is a really cool tool for getting a blog up and running quickly.
+In a previous post I outlined how to use it to generate a site and then host that site on Github Pages or Google Cloud Storage. Now I want to take it a step further and automate its publication on Github Pages. Why? Cause I&rsquo;m lazy, automation is cool, and doing so will make us look better in the optical sensors of our eventual robot overlords.">
+<meta property="og:image" content="https://tunzor.github.io/img/me.jpg" />
+<meta property="og:url" content="https://tunzor.github.io/posts/cloud-build-hugo-site/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="tunzor" />
+
+  <meta name="twitter:title" content="Automating the publication of a Hugo generated site with Google Cloud …" />
+  <meta name="twitter:description" content="Hugo is a really cool tool for getting a blog up and running quickly.
+In a previous post I outlined how to use it to generate a site and then host that site on Github Pages or Google Cloud Storage. …">
+  <meta name="twitter:image" content="https://tunzor.github.io/img/me.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://tunzor.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.59.1" />
+  <link rel="alternate" href="https://tunzor.github.io/index.xml" type="application/rss+xml" title="tunzor"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://tunzor.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://tunzor.github.io/css/syntax.css" /><link rel="stylesheet" href="https://tunzor.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://tunzor.github.io">tunzor</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="about" href="/about">about</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="tunzor" href="https://tunzor.github.io">
+            <img class="avatar-img" src="https://tunzor.github.io/img/me.jpg" alt="tunzor" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Automating the publication of a Hugo generated site with Google Cloud Build</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Hugo is a really cool tool for getting a blog up and running quickly.</p>
+
+<p>In a <a href="/posts/hugo-on-gh-and-gcs/">previous post</a> I outlined how to use it to generate a site and then host that site on Github Pages or Google Cloud Storage. Now I want to take it a step further and automate its publication on Github Pages. Why? Cause I&rsquo;m lazy, automation is cool, and doing so will make us look better in the optical sensors of our eventual robot overlords.</p>
+
+<h2 id="all-work-and-no-automation-makes-jack-a-a-href-https-en-wikipedia-org-wiki-don-27t-repeat-yourself-target-blank-wet-a-programmer">All work and no automation makes Jack a <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target=_blank>wet</a> programmer</h2>
+
+<p>I currently have two repositories for this site that you&rsquo;re reading: one to hold the markdown files (the <code>content</code> repo) and another for the generated site pages served by Github Pages (the <code>publication</code> repo). The workflow that I follow is:<br />
+1. Edit the markdown files
+2. Push them to the content repo
+3. Run hugo
+4. Copy the contents of the generated <code>public</code> directory to a separate local git workspace tracked by the publication repo
+5. Push those contents to the publication repo</p>
+
+<p>Not a particularly difficult or lengthy workflow but one that can be easily automated so my human oversights leading to inevitable errors can be taken out of the mix. Definitely never pushed the <em>entire</em> content repo to the publication repo instead of just the <code>public</code> directory.
+<img src="https://i.kym-cdn.com/entries/icons/original/000/030/710/dd0.png" alt="Side eye puppet" title="Nope" style="width: 50%"/></p>
+
+<h2 id="building-with-clouds">Building with clouds</h2>
+
+<p><a href="https://cloud.google.com/cloud-build/" target=_blank>Cloud Build</a> is a hosted CI tool from Google that lets you run build steps as docker containers that share a volume (<code>/workspace</code>) on the ephemeral node they run on; this allows each step to use output from previous steps.</p>
+
+<p>The <a href="https://cloud.google.com/cloud-build/pricing" target=_blank>free tier includes 120 build minutes <strong>per day</strong> for free</a>, way more than what we&rsquo;ll probably use as Hugo takes seconds to generate a site. They have <a href="https://cloud.google.com/cloud-build/docs/cloud-builders" target=_blank>many official builder images</a> available, in addition to a <a href="https://github.com/GoogleCloudPlatform/cloud-builders-community" target=_blank>sizeable list of community-made ones</a> and wouldn&rsquo;t you know it, someone made one for <a href="https://github.com/GoogleCloudPlatform/cloud-builders-community/tree/master/hugo" target=_blank>Hugo</a>!</p>
+
+<p>Before we jump into it, let&rsquo;s quickly recap the workflow we&rsquo;ll be modeling in Cloud Build:<br />
+1. Set up SSH keys to allow automated access to the repos
+2. Pull down the content and publication repos
+3. Build our content repo with Hugo
+4. Copy the <code>public</code> directory to the publication repo&rsquo;s folder
+5. Push the publication repo with the generated files</p>
+
+<h3 id="ya-gotta-be-this-tall-to-ride">Ya gotta be this tall to ride</h3>
+
+<p>A few Google Cloud prerequisites that we need to have completed before we begin.
+1. A <a href="https://cloud.google.com/free/" target=_blank>Google Cloud Platform account</a> (duh)
+2. <a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects" target=_blank>A GCP project</a>
+3. <a href="https://cloud.google.com/kms/docs/reference/rest/" target=_blank>Cloud KMS</a> and <a href="https://cloud.google.com/cloud-build/docs/api/reference/rest/" target=_blank>Cloud Build</a> services <a href="https://cloud.google.com/service-usage/docs/enable-disable" target=_blank>enabled on the project</a>
+4. <a href="https://cloud.google.com/deployment-manager/docs/step-by-step-guide/installation-and-setup" target=_blank><code>gcloud</code> tool</a> installed and setup</p>
+
+<h3 id="the-keys-to-the-castle-in-the-sky">The keys to the castle in the sky</h3>
+
+<p>The first hurdle that we need to clamber over is a surely a <em>favourite</em> of everyone&rsquo;s: security. In order to pull from and push to the repos, we&rsquo;ll need to authenticate with them and we&rsquo;ll be using <a href="https://jumpcloud.com/blog/what-are-ssh-keys/#cookie-accept" target=_blank><code>ssh</code> keys</a> for that.</p>
+
+<p>Firstly, we generate a key pair (private and public):</p>
+
+<pre><code># -f is the output key name; change it to whatever you like or leave it empty to use the default
+ssh-keygen -t rsa -f my_key
+</code></pre>
+
+<p>Then we copy the public key portion (<code>my_key.pub</code>) and add it to our Github account on the <a href="https://github.com/settings/keys" target=_blank>SSH keys page</a> by clicking on <code>New SSH key</code> and pasting it in. That was the easy part, now we need to take care of the private key and we&rsquo;ll be using Google&rsquo;s <a href="https://cloud.google.com/kms/" target=_blank>Cloud KMS</a> and <a href="https://cloud.google.com/storage/" target=_blank>GCS</a> services for that.</p>
+
+<p>The plan is to store the private key in a GCS bucket and have Cloud Build pull it down each time it runs a build. But surely, storing a private key in plaintext is bad practice? It is, and <a href="https://youtu.be/ixljWVyPby0?t=66" target=_blank>don&rsquo;t call me Shirley</a>. That&rsquo;s why we&rsquo;re going to use KMS to encrypt the key <em>before</em> we put it in the bucket and have Cloud Build decrypt it as part of the build.</p>
+
+<p>KMS needs a couple of things setup before we can begin using it: a keyring (logical grouping of keys) and a key (used to encrypt and decrypt). We can issue the following commands to create them both:</p>
+
+<pre><code># Make sure you set your project ID first
+gcloud config set project YOUR_PROJECT_ID
+
+# Create the keyring
+gcloud kms keyrings create hugo-keyring \
+    --location=us-east1
+
+# Create the key; MUST be same location and keyring specified above
+gcloud kms keys create hugo-key \
+    --location=us-east1 \
+    --keyring=hugo-keyring \
+    --purpose=encryption
+</code></pre>
+
+<p>One last thing we need to do is grant the Cloud Build service account the appropriate KMS role to decrypt (the service account can be found on the <a href="https://console.cloud.google.com/iam-admin/iam" target=_blank>IAM page</a> of your GCP project; it&rsquo;s the one that ends in <code>cloudbuild.gserviceaccount.com</code>):</p>
+
+<pre><code>gcloud projects add-iam-policy-binding YOUR_PROJECT_ID \
+    --member serviceAccount:123456789012@cloudbuild.gserviceaccount.com \
+    --role roles/cloudkms.cryptoKeyDecrypter
+</code></pre>
+
+<p>Next we&rsquo;re going to encrypt the private key and push it to a GCS bucket. In the directory containing the private key that we generated in a previous step, we&rsquo;ll run the following:</p>
+
+<pre><code># Key, keyring, and location come from the previous steps
+gcloud kms encrypt \
+      --key=hugo-key \
+      --keyring=hugo-keyring \
+      --location=us-east1 \
+      --plaintext-file=my_key \
+      --ciphertext-file=my_key.enc
+
+# Create a bucket; bucket name MUST be unique
+gsutil mb -l us-east1 gs://toninos-hugo-bucket
+
+# Copy encrypted key to the bucket
+gsutil cp my_key.enc gs://toninos-hugo-bucket
+
+# Grant the Cloud Build service account permissions to read from the bucket
+gcloud projects add-iam-policy-binding YOUR_PROJECT_ID \
+    --member serviceAccount:123456789012@cloudbuild.gserviceaccount.com \
+    --role roles/storage.objectViewer
+</code></pre>
+
+<p>Security key setup: complete.</p>
+
+<h3 id="the-chicken-and-the-egg">The chicken and the egg</h3>
+
+<p>We need a few additional files in our bucket before we can move on: two dockerfiles and a shell script for some images we&rsquo;ll be building. They&rsquo;re text files though, so why don&rsquo;t we just put them in the <code>content</code> repo?</p>
+
+<p>The problem is they&rsquo;re needed to build the custom git container we&rsquo;ll be using to pull from Github and we <em>can&rsquo;t</em> pull the <code>content</code> repo <em>unless</em> we have a container with that SSH key. See the chicken and egg thing now?</p>
+
+<p>Fortunately, this is an easy fix; we&rsquo;re going to put the files in the same GCS bucket as the SSH key from above and grab them all at once in the <code>cloudbuild.yaml</code> outlined further down on this page. We can use the same <code>gsutil</code> command from before to push them (dockerfiles and shell script are <a href="https://github.com/tunzor/hugo-build-repo" target=_blank>here</a>):</p>
+
+<pre><code>gsutil cp git.dockerfile hugo.dockerfile entrypoint.sh gs://toninos-hugo-bucket
+</code></pre>
+
+<blockquote>
+<p><strong>Side Note</strong><br />
+We could put them in an entirely different repo and make it public but since we&rsquo;re already storing and retrieving the key from the bucket, it makes some sense to store everything in it and save ourselves an additional build step. You could argue that they&rsquo;re better off in source control if we want to make and track changes, so feel free to move them there and add another git step with the git cloud-builder <code>gcr.io/cloud-builder/git</code> if you like. Life is all about options.</p>
+</blockquote>
+
+<h3 id="config-ure-it-real-good"><code>Config</code>(ure) it real good</h3>
+
+<p>With security <del>finally out of the way</del> properly handled and our dependency files in place, we can now move on to the fun part: configuring Cloud Build to do our bidding. We do this with a build config file (written in <code>yaml</code>) aptly named <code>cloudbuild.yaml</code>.</p>
+
+<blockquote>
+<p><strong>Side Note</strong><br />
+All of the code referenced below is available in <a href="https://github.com/tunzor/hugo-build-repo" target=_blank>this repo</a>.</p>
+</blockquote>
+
+<p>Behold the wall of text that is the <code>cloudbuild.yaml</code>! <sup>It&rsquo;s really not that bad.</sup></p>
+
+<pre><code>steps:
+# Grab dockerfiles, entrypoint script,
+# and encrypted ssh key from GCS bucket
+- id: Pull build files from GCS bucket
+  name: gcr.io/cloud-builders/gsutil
+  args: [&quot;cp&quot;,&quot;-r&quot;,&quot;gs://toninos-hugo-bucket&quot;,&quot;.&quot;]
+
+- id: Decrypt ssh key
+  name: gcr.io/cloud-builders/gcloud
+  args:
+  - kms
+  - decrypt
+  - --ciphertext-file=${_BUCKET_DIR}/my_key.enc
+  - --plaintext-file=${_BUCKET_DIR}/my_key
+  - --location=us-east1
+  - --keyring=hugo-keyring
+  - --key=hugo-key
+
+- id: Build custom git container (contains key)
+  name: gcr.io/cloud-builders/docker
+  args: [&quot;build&quot;,&quot;-t&quot;,&quot;${_GIT_IMAGE}&quot;,&quot;-f&quot;,&quot;${_BUCKET_DIR}/git.dockerfile&quot;,&quot;${_BUCKET_DIR}&quot;]
+
+- id: Git clone content repo
+  name: ${_GIT_IMAGE}
+  args: [&quot;clone&quot;,&quot;git@github.com:tunzor/github-blog-hugo.git&quot;,&quot;${_CONTENT_DIR}&quot;]
+
+- id: Git clone publication repo
+  name: ${_GIT_IMAGE}
+  args: [&quot;clone&quot;,&quot;git@github.com:tunzor/tunzor.github.io.git&quot;,&quot;${_PUBLICATION_DIR}&quot;]
+
+# Can also be built separately and pushed to GCR
+- id: Build hugo cloud-builder
+  name: gcr.io/cloud-builders/docker
+  args: [&quot;build&quot;, &quot;-t&quot;,&quot;${_HUGO_IMAGE}&quot;,&quot;-f&quot;,&quot;${_BUCKET_DIR}/hugo.dockerfile&quot;,&quot;${_BUCKET_DIR}&quot;]
+
+# Run hugo to generate site; output to publish repo from above
+- id: Run hugo and output to publication repo
+  name: ${_HUGO_IMAGE}
+  dir: &quot;${_CONTENT_DIR}&quot;
+  args: [&quot;-d&quot;,&quot;${_WS}/${_PUBLICATION_DIR}&quot;]
+
+- id: Git status (publication repo)
+  name: gcr.io/cloud-builders/git
+  args: [&quot;-C&quot;,&quot;${_WS}/${_PUBLICATION_DIR}&quot;,&quot;status&quot;]
+
+- id: Git add . (publication repo)
+  name: ${_GIT_IMAGE}
+  args: [&quot;-C&quot;,&quot;${_WS}/${_PUBLICATION_DIR}&quot;,&quot;add&quot;, &quot;.&quot;]
+
+- id: Get content commit message and write to file
+  name: gcr.io/cloud-builders/gcloud
+  entrypoint: /bin/bash
+  args: [&quot;-c&quot;,&quot;echo Content commit: $(git -C ${_WS}/${_CONTENT_DIR} log --format=%B -n 1) &gt; ${_WS}/message&quot;]
+
+- id: Git commit
+  name: ${_GIT_IMAGE}
+  args: [&quot;-C&quot;,&quot;${_WS}/${_PUBLICATION_DIR}&quot;,&quot;commit&quot;, &quot;-F&quot;, &quot;${_WS}/message&quot;]
+
+- id: Git push
+  name: ${_GIT_IMAGE}
+  args: [&quot;-C&quot;,&quot;${_WS}/${_PUBLICATION_DIR}&quot;,&quot;push&quot;]
+
+substitutions:
+    _GIT_IMAGE: custom-git
+    _BUCKET_DIR: toninos-hugo-bucket
+    _HUGO_IMAGE: hugo-builder
+    _WS: /workspace
+    _CONTENT_DIR: content-repo
+    _PUBLICATION_DIR: publication-repo
+</code></pre>
+
+<p><img src="https://morbotron.com/video/S03E13/baxEh2KA-KQqMHAtJIZwClXryf4=.gif" style="width: 50%" title="Neat!" alt="Bender with his camera saying neat"/></p>
+
+<h4 id="the-breakdown">The Breakdown</h4>
+
+<p>Each of the items under <code>steps</code> is a docker container running from its image defined in the <code>name</code> attribute. Official <a href="https://hub.docker.com/" target=_blank>dockerhub</a> images can be used with just the image name (e.g. <code>ubuntu</code> or <code>busybox</code>) or a full path to a docker repo can be specified (e.g. <code>gcr.io/cloud-builders/gcloud</code>). Arguments can be provided to the container via the <code>args</code> attribute and the <code>id</code> attribute is used to both identify the container in the build details page and to facilitate <a href="https://cloud.google.com/cloud-build/docs/configuring-builds/configure-build-step-order" target=_blank>serial or concurrent execution of steps</a>.</p>
+
+<blockquote>
+<p><strong>Side Note</strong><br />
+The <code>gcr.io/cloud-builder</code> images are especially great since they&rsquo;re cached on the Cloud Build nodes, so usage of them is lightning quick.</p>
+</blockquote>
+
+<p>In this snippet of the first step, we&rsquo;re using the cloud-builder image that contains the <code>gsutil</code> tool to copy some files from a GCS bucket to the build node.</p>
+
+<pre><code>steps:
+- id: Pull build files from GCS bucket
+  name: gcr.io/cloud-builders/gsutil
+  args: [&quot;cp&quot;,&quot;-r&quot;,&quot;gs://toninos-hugo-bucket&quot;,&quot;.&quot;]
+</code></pre>
+
+<p>Next we decrypt the SSH key copied from the bucket in the previous step and write it to a file on the build node.</p>
+
+<pre><code>- id: Decrypt ssh key
+  name: gcr.io/cloud-builders/gcloud
+  args:
+  - kms
+  - decrypt
+  - --ciphertext-file=${_BUCKET_DIR}/my_key.enc
+  - --plaintext-file=${_BUCKET_DIR}/my_key
+  - --location=us-east1
+  - --keyring=hugo-keyring
+  - --key=hugo-key
+</code></pre>
+
+<p>Once we have the key, we build a new image on top of <code>alpine/git</code> that configures <code>ssh</code> to use it and configures <code>git</code> with a username and email (the two files it uses are <a href="https://github.com/tunzor/hugo-build-repo/blob/master/git.dockerfile" taget=_blank>this dockerfile</a> and <a href="https://github.com/tunzor/hugo-build-repo/blob/master/entrypoint.sh" target=_blank>this <code>entrypoint.sh</code></a>).</p>
+
+<pre><code>- id: Build custom git container (contains key)
+  name: gcr.io/cloud-builders/docker
+  args: [&quot;build&quot;,&quot;-t&quot;,&quot;${_GIT_IMAGE}&quot;,&quot;-f&quot;,&quot;${_BUCKET_DIR}/git.dockerfile&quot;,&quot;${_BUCKET_DIR}&quot;]
+</code></pre>
+
+<blockquote>
+<p><strong>Side Note</strong><br />
+You could instead pre-build this image, push it to a storage repo (dockerhub/GCR), and pull it down as a step. This would however, make the key available in another form and in <strong>plaintext</strong> (inside the image), which is no bueno. You could argue that doing so would make the build faster (that&rsquo;s true) but the trade-off of about 4 seconds doesn&rsquo;t seem worthwhile enough to me.</p>
+</blockquote>
+
+<p>Now that the custom git container is built and available locally on the node, we use it a couple of times to pull down the <code>content</code> and <code>publication</code> repos we mentioned in the beginning.</p>
+
+<pre><code>- id: Git clone content repo
+  name: ${_GIT_IMAGE}
+  args: [&quot;clone&quot;,&quot;git@github.com:tunzor/github-blog-hugo.git&quot;,&quot;${_CONTENT_DIR}&quot;]
+
+- id: Git clone publication repo
+  name: ${_GIT_IMAGE}
+  args: [&quot;clone&quot;,&quot;git@github.com:tunzor/tunzor.github.io.git&quot;,&quot;${_PUBLICATION_DIR}&quot;]
+</code></pre>
+
+<p>We face a similar scenario as the custom git container above with the <code>hugo</code> image we need to build. I decided to leave its docker build in for simplicity and portability; everything needed to complete the publication of the site is either in the <code>cloudbuild.yaml</code> or the GCS bucket. Just know that you could publish the <code>hugo</code> image separately if you choose. Life <em>is</em> all about options.</p>
+
+<pre><code>- id: Build hugo cloud-builder
+  name: gcr.io/cloud-builders/docker
+  args: [&quot;build&quot;, &quot;-t&quot;,&quot;${_HUGO_IMAGE}&quot;,&quot;-f&quot;,&quot;${_BUCKET_DIR}/hugo.dockerfile&quot;,&quot;${_BUCKET_DIR}&quot;]
+</code></pre>
+
+<p>We can now run <code>hugo</code> with the container we built to generate the site and output it to the directory that contains our <code>publication</code> repo.</p>
+
+<pre><code>- id: Run hugo and output to publication repo
+  name: ${_HUGO_IMAGE}
+  dir: &quot;${_CONTENT_DIR}&quot;
+  args: [&quot;-d&quot;,&quot;${_WS}/${_PUBLICATION_DIR}&quot;]
+</code></pre>
+
+<p>The final few steps are the normal flow of git commands when pushing to a repo: <code>status</code>, <code>add</code>, <code>commit</code>, and <code>push</code>. The interesting bit that I want to point out is the step below, which grabs the last commit message from the <code>content</code> repo and uses it for the <code>publication</code> repo. It reads the commit with <code>git log</code> and outputs it to a file.</p>
+
+<pre><code>- id: Get content commit message and write to file
+  name: gcr.io/cloud-builders/gcloud
+  entrypoint: /bin/bash
+  args: [&quot;-c&quot;,&quot;echo Content commit: $(git -C ${_WS}/${_CONTENT_DIR} log --format=%B -n 1) &gt; ${_WS}/message&quot;]
+</code></pre>
+
+<p>I went this route because I couldn&rsquo;t seem to get escaped quotations to work in the <code>cloudbuild.yaml</code> file; the <code>git commit -m</code> command expects them to surround the message string. This just wouldn&rsquo;t work:</p>
+
+<pre><code>- id: THIS WOULDN'T WORK...
+  name: ${_GIT_IMAGE}
+  args: [&quot;-C&quot;,&quot;${_WS}/${_PUBLICATION_DIR}&quot;,&quot;commit&quot;, &quot;-m&quot;, &quot;Messages with spaces don't work...&quot;]
+</code></pre>
+
+<blockquote>
+<p><strong>Side Note</strong><br />
+The only difference for the commit command when using a file is the <code>-F</code> flag instead of the normal <code>-m</code> flag.</p>
+</blockquote>
+
+<p>The final chunk is a set of defined substitution variables used in previous steps.</p>
+
+<pre><code>substitutions:
+    _GIT_IMAGE: custom-git
+    _BUCKET_DIR: toninos-hugo-bucket
+    _HUGO_IMAGE: hugo-builder
+    _WS: /workspace
+    _CONTENT_DIR: content-repo
+    _PUBLICATION_DIR: publication-repo
+</code></pre>
+
+<h3 id="pull-the-trigger-yeah">Pull the trigger, yeah</h3>
+
+<p>We could take this <code>cloudbuild.yaml</code> and initiate a build with the following command:</p>
+
+<pre><code>gcloud builds submit --config cloudbuild.yaml --no-source
+</code></pre>
+
+<p>It would appear on the <a href="https://console.cloud.google.com/cloud-build/builds" target=_blank>build history</a> page and do everything we want but that&rsquo;s not the full automation story then. In order to go whole hog, we&rsquo;re going to setup one last thing: a <a href="https://cloud.google.com/cloud-build/docs/running-builds/create-manage-triggers" target=_blank>cloud build trigger</a> that listens to the <code>content</code> repo for changes.</p>
+
+<p>This first part must be done through the GCP cloud console web page. We connect a repo by navigating to the <a href="https://console.cloud.google.com/cloud-build/triggers" target=_blank>triggers page</a> in the GCP cloud console and clicking the <strong>Connect repository</strong> button.
+<img src="trigger-connect-repo.jpg" alt="Cloud Build Triggers Page" />
+From there we follow the process to authorize the Cloud Build Github App to access our Github account.
+<img src="trigger-authorize.jpg" alt="Cloud Build Authorize Page" />
+Then choose the repo we want to connect.
+<img src="trigger-choose-repo.jpg" alt="Cloud Build Choose Repo Page" />
+On the final step (Create a push trigger), click the <strong>Skip for now</strong> button. We&rsquo;ll setup a push trigger with <code>gcloud</code> next.
+<img src="trigger-skip.jpg" alt="Cloud Build Create Trigger Page" /></p>
+
+<p>The push trigger on our <code>content</code> repo is created with the following command (the <code>github</code> part in the <code>create</code> command is <strong>not</strong> a configurable name):</p>
+
+<pre><code>gcloud beta builds triggers create github \
+    --repo-name=github-blog-hugo \
+    --repo-owner=tunzor \
+    --branch-pattern=&quot;.*&quot; \
+    --build-config=cloudbuild.yaml
+</code></pre>
+
+<p>This listens for changes on any branch (you can change the <code>--branch-pattern</code> above to a specific branch) and runs the <code>cloudbuild.yaml</code> found in the root of the <code>content</code> repo.</p>
+
+<h3 id="wrap-up-and-post-mortem">Wrap-up and post mortem</h3>
+
+<p>Success! We now have a fully automated pipeline that will deploy changes to a hugo generated site hosted on Github Pages in about 40 seconds. Not too shabby.
+<img src="completed-build.jpg" alt="Completed Cloud Build" /></p>
+
+<h4 id="build-limitations">Build Limitations</h4>
+
+<p>As it is, the pipeline doesn&rsquo;t do any checks to see if the <code>git status</code> comes back with no changes found. If it does, this will cause the build to fail as there is nothing to commit and push.</p>
+
+<p>The way around this is to add <code>[skip ci]</code> to your git message when committing to the <code>content</code> repo. This will still fire a trigger to cloud build but it won&rsquo;t actually run a build.</p>
+
+<h4 id="improvements">Improvements</h4>
+
+<ol>
+<li><p>As mentioned above, moving the dependency files (<code>git.dockerfile</code>, <code>hugo.dockerfile</code>, <code>entrypoint.sh</code>) to a separate repo and pulling that down would improve maintainability.</p></li>
+
+<li><p>Pre-building the <code>hugo</code> image and pulling it down from GCR would improve build time.</p></li>
+
+<li><p>Solving the <code>git commit -m</code> quotation issue would reduce the number of steps and improve simplicity.</p></li>
+</ol>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://tunzor.github.io/tags/hugo/">hugo</a>&nbsp;
+            
+              <a href="https://tunzor.github.io/tags/google-cloud-build/">google-cloud-build</a>&nbsp;
+            
+              <a href="https://tunzor.github.io/tags/automation/">automation</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2ftunzor.github.io%2fposts%2fcloud-build-hugo-site%2f&amp;text=Automating%20the%20publication%20of%20a%20Hugo%20generated%20site%20with%20Google%20Cloud%20Build&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftunzor.github.io%2fposts%2fcloud-build-hugo-site%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2ftunzor.github.io%2fposts%2fcloud-build-hugo-site%2f&amp;title=Automating%20the%20publication%20of%20a%20Hugo%20generated%20site%20with%20Google%20Cloud%20Build" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ftunzor.github.io%2fposts%2fcloud-build-hugo-site%2f&amp;title=Automating%20the%20publication%20of%20a%20Hugo%20generated%20site%20with%20Google%20Cloud%20Build" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2ftunzor.github.io%2fposts%2fcloud-build-hugo-site%2f&amp;title=Automating%20the%20publication%20of%20a%20Hugo%20generated%20site%20with%20Google%20Cloud%20Build" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2ftunzor.github.io%2fposts%2fcloud-build-hugo-site%2f&amp;description=Automating%20the%20publication%20of%20a%20Hugo%20generated%20site%20with%20Google%20Cloud%20Build" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://tunzor.github.io/posts/devops-tools-101-k8s/" data-toggle="tooltip" data-placement="top" title="DevOps Tools 101 - Kubernetes">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/tunzor" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://bitbucket.org/tunzor" title="Bitbucket">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://play.google.com/store/apps/developer?id=Tunzor" title="Google Play Apps">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-google-play fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/anthony-russo-toronto" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/toonie55" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Anthony
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://tunzor.github.io">tunzor</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://tunzor.github.io/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://tunzor.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
