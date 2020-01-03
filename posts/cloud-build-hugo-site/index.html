@@ -60,7 +60,7 @@ In a previous post I outlined how to use it to generate a site and then host tha
   "headline": "Automating the publication of a Hugo generated site with Google Cloud Build",
   "description" : "Hugo is a really cool tool for getting a blog up and running quickly.\nIn a previous post I outlined how to use it to generate a site and then host that site on Github Pages or Google Cloud Storage. Now I want to take it a step further and automate its publication on Github Pages. Why? Cause I\x26rsquo;m lazy, automation is cool, and doing so will make us look better in the optical sensors of our eventual robot overlords.",
   "inLanguage" : "en",
-  "wordCount":  2455 ,
+  "wordCount":  2441 ,
   "datePublished" : "2020-01-03T00:00:00",
   "dateModified" : "2020-01-03T00:00:00",
   "image" : "https:\/\/tunzor.github.io\/img\/me.jpg",
@@ -249,12 +249,15 @@ In a previous post I outlined how to use it to generate a site and then host tha
 
 <h2 id="all-work-and-no-automation-makes-jack-a-a-href-https-en-wikipedia-org-wiki-don-27t-repeat-yourself-target-blank-wet-a-programmer">All work and no automation makes Jack a <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target=_blank>wet</a> programmer</h2>
 
-<p>I currently have two repositories for this site that you&rsquo;re reading: one to hold the markdown files (the <code>content</code> repo) and another for the generated site pages served by Github Pages (the <code>publication</code> repo). The workflow that I follow is:<br />
-1. Edit the markdown files
-2. Push them to the content repo
-3. Run hugo
-4. Copy the contents of the generated <code>public</code> directory to a separate local git workspace tracked by the publication repo
-5. Push those contents to the publication repo</p>
+<p>I currently have two repositories for this site that you&rsquo;re reading: one to hold the markdown files (the <code>content</code> repo) and another for the generated site pages served by Github Pages (the <code>publication</code> repo). The workflow that I follow is:</p>
+
+<ol>
+<li>Edit the markdown files</li>
+<li>Push them to the content repo</li>
+<li>Run hugo</li>
+<li>Copy the contents of the generated <code>public</code> directory to a separate local git workspace tracked by the publication repo</li>
+<li>Push those contents to the publication repo</li>
+</ol>
 
 <p>Not a particularly difficult or lengthy workflow but one that can be easily automated so my human oversights leading to inevitable errors can be taken out of the mix. Definitely never pushed the <em>entire</em> content repo to the publication repo instead of just the <code>public</code> directory.
 <img src="https://i.kym-cdn.com/entries/icons/original/000/030/710/dd0.png" alt="Side eye puppet" title="Nope" style="width: 50%"/></p>
@@ -265,20 +268,26 @@ In a previous post I outlined how to use it to generate a site and then host tha
 
 <p>The <a href="https://cloud.google.com/cloud-build/pricing" target=_blank>free tier includes 120 build minutes <strong>per day</strong> for free</a>, way more than what we&rsquo;ll probably use as Hugo takes seconds to generate a site. They have <a href="https://cloud.google.com/cloud-build/docs/cloud-builders" target=_blank>many official builder images</a> available, in addition to a <a href="https://github.com/GoogleCloudPlatform/cloud-builders-community" target=_blank>sizeable list of community-made ones</a> and wouldn&rsquo;t you know it, someone made one for <a href="https://github.com/GoogleCloudPlatform/cloud-builders-community/tree/master/hugo" target=_blank>Hugo</a>!</p>
 
-<p>Before we jump into it, let&rsquo;s quickly recap the workflow we&rsquo;ll be modeling in Cloud Build:<br />
-1. Set up SSH keys to allow automated access to the repos
-2. Pull down the content and publication repos
-3. Build our content repo with Hugo
-4. Copy the <code>public</code> directory to the publication repo&rsquo;s folder
-5. Push the publication repo with the generated files</p>
+<p>Before we jump into it, let&rsquo;s quickly recap the workflow we&rsquo;ll be modeling in Cloud Build:</p>
+
+<ol>
+<li>Set up SSH keys to allow automated access to the repos</li>
+<li>Pull down the content and publication repos</li>
+<li>Build our content repo with Hugo</li>
+<li>Copy the <code>public</code> directory to the publication repo&rsquo;s folder</li>
+<li>Push the publication repo with the generated files</li>
+</ol>
 
 <h3 id="ya-gotta-be-this-tall-to-ride">Ya gotta be this tall to ride</h3>
 
-<p>A few Google Cloud prerequisites that we need to have completed before we begin.
-1. A <a href="https://cloud.google.com/free/" target=_blank>Google Cloud Platform account</a> (duh)
-2. <a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects" target=_blank>A GCP project</a>
-3. <a href="https://cloud.google.com/kms/docs/reference/rest/" target=_blank>Cloud KMS</a> and <a href="https://cloud.google.com/cloud-build/docs/api/reference/rest/" target=_blank>Cloud Build</a> services <a href="https://cloud.google.com/service-usage/docs/enable-disable" target=_blank>enabled on the project</a>
-4. <a href="https://cloud.google.com/deployment-manager/docs/step-by-step-guide/installation-and-setup" target=_blank><code>gcloud</code> tool</a> installed and setup</p>
+<p>A few Google Cloud prerequisites that we need to have completed before we begin.</p>
+
+<ol>
+<li>A <a href="https://cloud.google.com/free/" target=_blank>Google Cloud Platform account</a> (duh)</li>
+<li><a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects" target=_blank>A GCP project</a></li>
+<li><a href="https://cloud.google.com/kms/docs/reference/rest/" target=_blank>Cloud KMS</a> and <a href="https://cloud.google.com/cloud-build/docs/api/reference/rest/" target=_blank>Cloud Build</a> services <a href="https://cloud.google.com/service-usage/docs/enable-disable" target=_blank>enabled on the project</a></li>
+<li><a href="https://cloud.google.com/deployment-manager/docs/step-by-step-guide/installation-and-setup" target=_blank><code>gcloud</code> tool</a> installed and setup</li>
+</ol>
 
 <h3 id="the-keys-to-the-castle-in-the-sky">The keys to the castle in the sky</h3>
 
