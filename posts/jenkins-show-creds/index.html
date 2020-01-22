@@ -63,7 +63,7 @@ JASMINE and BORIS are looking at Jasmine&rsquo;s computer.">
   "headline": "Printing Jenkins credential values to the log",
   "description" : "The below is part of a screenplay I\x26rsquo;m working on for a sequel in the Speed franchise, tentatively called Speed 3: Push IT. It also nicely sets up a scenario for the later bit about viewing Jenkins credentials in plaintext.\nIf you\x26rsquo;d rather not read it, just scroll on down. I won\x26rsquo;t be too hurt.\nSpeed 3: Push IT FADE IN\nINT. SOME LARGE CORPORATION - NIGHT\nJASMINE and BORIS are looking at Jasmine\x26rsquo;s computer.",
   "inLanguage" : "en",
-  "wordCount":  819 ,
+  "wordCount":  817 ,
   "datePublished" : "2020-01-21T19:44:54",
   "dateModified" : "2020-01-21T19:44:54",
   "image" : "https:\/\/tunzor.github.io\/img\/me.jpg",
@@ -309,9 +309,12 @@ I can&rsquo;t, we&rsquo;ve deleted our local copies.</p>
 
 <p>There isn&rsquo;t much to the logic of what we&rsquo;re doing below. We&rsquo;re retrieving the credentials from the store as we normally would for use but instead of using it immediately in a block of code, we&rsquo;re writing it to a variable that we&rsquo;ve defined in the beginning of the pipeline. Then we&rsquo;re simply printing out this variable later on.</p>
 
-<p>The important bits are:
-1. writing it to a variable declared <em>outside</em> the stage that retrieves the credential with the function <code>withCredentials</code>
-2. printing it <em>outside</em> the <code>withCredentials</code> block above</p>
+<p>The important bits are:</p>
+
+<ol>
+<li>writing it to a variable declared <em>outside</em> the stage that retrieves the credential with the function <code>withCredentials</code></li>
+<li>printing it <em>outside</em> the <code>withCredentials</code> block above</li>
+</ol>
 
 <p>Normally we&rsquo;d use the credential in something like a <code>sh</code> block within the <code>withCredentials</code> block. Doing so would display a masked credential but saving it to a variable and printing it outside of <code>withCredentials</code> gives us the actual value.</p>
 
