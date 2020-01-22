@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tunzor.github.io/tags/jenkins/</loc>
+    <lastmod>2020-01-21T19:44:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tunzor.github.io/posts/</loc>
+    <lastmod>2020-01-21T19:44:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tunzor.github.io/posts/jenkins-show-creds/</loc>
+    <lastmod>2020-01-21T19:44:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tunzor.github.io/tags/</loc>
+    <lastmod>2020-01-21T19:44:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tunzor.github.io/</loc>
+    <lastmod>2020-01-21T19:44:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tunzor.github.io/tags/use-only-for-good/</loc>
+    <lastmod>2020-01-21T19:44:54-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tunzor.github.io/posts/cloud-build-hugo-site/</loc>
     <lastmod>2020-01-03T00:00:00+00:00</lastmod>
   </url>
@@ -19,21 +49,6 @@
   
   <url>
     <loc>https://tunzor.github.io/tags/hugo/</loc>
-    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tunzor.github.io/posts/</loc>
-    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tunzor.github.io/tags/</loc>
-    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tunzor.github.io/</loc>
     <lastmod>2020-01-03T00:00:00+00:00</lastmod>
   </url>
   

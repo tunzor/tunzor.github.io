@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Printing Jenkins credential values to the log - tunzor</title>
+  <meta name="description" content="The below is part of a screenplay I&rsquo;m working on for a sequel in the Speed franchise, tentatively called Speed 3: Push IT. It also nicely sets up a scenario for the later bit about viewing Jenkins credentials in plaintext.
+If you&rsquo;d rather not read it, just scroll on down. I won&rsquo;t be too hurt.
+Speed 3: Push IT FADE IN
+INT. SOME LARGE CORPORATION - NIGHT
+JASMINE and BORIS are looking at Jasmine&rsquo;s computer.">
+  <meta name="author" content="Anthony"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "tunzor",
+    
+    "url": "https:\/\/tunzor.github.io"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/tunzor.github.io"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/tunzor.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/tunzor.github.io\/posts\/jenkins-show-creds\/",
+          "name": "Printing jenkins credential values to the log"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Anthony"
+  },
+  "headline": "Printing Jenkins credential values to the log",
+  "description" : "The below is part of a screenplay I\x26rsquo;m working on for a sequel in the Speed franchise, tentatively called Speed 3: Push IT. It also nicely sets up a scenario for the later bit about viewing Jenkins credentials in plaintext.\nIf you\x26rsquo;d rather not read it, just scroll on down. I won\x26rsquo;t be too hurt.\nSpeed 3: Push IT FADE IN\nINT. SOME LARGE CORPORATION - NIGHT\nJASMINE and BORIS are looking at Jasmine\x26rsquo;s computer.",
+  "inLanguage" : "en",
+  "wordCount":  819 ,
+  "datePublished" : "2020-01-21T19:44:54",
+  "dateModified" : "2020-01-21T19:44:54",
+  "image" : "https:\/\/tunzor.github.io\/img\/me.jpg",
+  "keywords" : [ "jenkins, use-only-for-good" ],
+  "mainEntityOfPage" : "https:\/\/tunzor.github.io\/posts\/jenkins-show-creds\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/tunzor.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/tunzor.github.io\/img\/me.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Printing Jenkins credential values to the log" />
+<meta property="og:description" content="The below is part of a screenplay I&rsquo;m working on for a sequel in the Speed franchise, tentatively called Speed 3: Push IT. It also nicely sets up a scenario for the later bit about viewing Jenkins credentials in plaintext.
+If you&rsquo;d rather not read it, just scroll on down. I won&rsquo;t be too hurt.
+Speed 3: Push IT FADE IN
+INT. SOME LARGE CORPORATION - NIGHT
+JASMINE and BORIS are looking at Jasmine&rsquo;s computer.">
+<meta property="og:image" content="https://tunzor.github.io/img/me.jpg" />
+<meta property="og:url" content="https://tunzor.github.io/posts/jenkins-show-creds/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="tunzor" />
+
+  <meta name="twitter:title" content="Printing Jenkins credential values to the log" />
+  <meta name="twitter:description" content="The below is part of a screenplay I&rsquo;m working on for a sequel in the Speed franchise, tentatively called Speed 3: Push IT. It also nicely sets up a scenario for the later bit about viewing …">
+  <meta name="twitter:image" content="https://tunzor.github.io/img/me.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://tunzor.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.59.1" />
+  <link rel="alternate" href="https://tunzor.github.io/index.xml" type="application/rss+xml" title="tunzor"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://tunzor.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://tunzor.github.io/css/syntax.css" /><link rel="stylesheet" href="https://tunzor.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://tunzor.github.io">tunzor</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="about" href="/about">about</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="tunzor" href="https://tunzor.github.io">
+            <img class="avatar-img" src="https://tunzor.github.io/img/me.jpg" alt="tunzor" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Printing Jenkins credential values to the log</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>The below is part of a screenplay I&rsquo;m working on for a sequel in the <a href="https://en.wikipedia.org/wiki/Speed_(1994_film)" target=_blank>Speed</a> franchise, tentatively called <strong><em>Speed 3: Push IT</em></strong>. It also nicely sets up a scenario for the later bit about viewing Jenkins credentials in plaintext.</p>
+
+<p>If you&rsquo;d rather not read it, just scroll on down. I won&rsquo;t be too hurt.</p>
+
+<h2 id="speed-3-push-it">Speed 3: Push IT</h2>
+
+<p>FADE IN</p>
+
+<p><strong>INT. SOME LARGE CORPORATION - NIGHT</strong></p>
+
+<p><em>JASMINE and BORIS are looking at Jasmine&rsquo;s computer. Jasmine is in the process of accepting a secret file from Boris and saving it locally to her machine.</em></p>
+
+<p>JASMINE<br />
+There, it&rsquo;s done. I&rsquo;ve saved it in my temp directory. Gonna upload it to the Jenkins credential store now.</p>
+
+<p><em>Jasmine logs into the Jenkins UI, opens the credentials page, and uploads the secret.</em></p>
+
+<p>JASMINE<br />
+Okay, it&rsquo;s safely in Jenkins now. Deleting my local copy. Done.</p>
+
+<p>BORIS<br />
+Great. Gonna delete my copy now too.</p>
+
+<p><em>Both local copies have been deleted and the only remaining copy exists in Jenkins. They both go back to their desks and start getting their stuff ready to leave for the night.</em></p>
+
+<p><em>Jasmine&rsquo;s phone starts ringing. She picks it up.</em></p>
+
+<p><em>Screaming is heard through the phone.</em></p>
+
+<p>CALLER<br />
+Jasmine! We need that secret file for [insert really horrible yet plausible reason here]! Send us a copy now!</p>
+
+<p>JASMINE<br />
+I can&rsquo;t, we&rsquo;ve deleted our local copies.</p>
+
+<p>CALLER<br />
+<a href="https://www.youtube.com/watch?v=Ug2hLQv6WeY" target=_blank>Pop quiz, hotshot</a>. That was an encryption key used for our database. If we don&rsquo;t get it, ALL of our data is effectively gone and we&rsquo;re all out of a job. What do you do? WHAT DO YOU DO?</p>
+
+<p><img src="https://66.media.tumblr.com/d2b02e0482f1a5b520860ecf8ac4672f/tumblr_mkhk03fCDr1r4wvwvo8_r1_250.gifv" alt="" /></p>
+
+<p>This is just <em>one</em> scene in a potential movie&rsquo;s worth of them where being able to read a Jenkins stored credential in plaintext would be beneficial.</p>
+
+<h2 id="i-m-sorry-i-m-afraid-i-can-t-do-that">I&rsquo;m sorry, I&rsquo;m afraid I can&rsquo;t do that</h2>
+
+<p>Jenkins can store credentials. This is good.</p>
+
+<p>It can hide them if someone tries to output them in a build log. This is also good.</p>
+
+<p>It can stop any potentially ill-willed non-administrative user from lifting them and wreaking havoc. This is very good.</p>
+
+<p>Jenkins is protecting us from ourselves. And our users.</p>
+
+<h2 id="show-me-what-ya-got">Show me what ya got</h2>
+
+<p>Jenkins is not quite as altruistic as we&rsquo;ve made it seem and if we ask it in just the right manner, it will divulge those sweet sweet secrets.
+<img src="https://frinkiac.com/video/S06E09/YS-CCUMck_1qpfEESxHMZudqi30=.gif" alt="" /></p>
+
+<h3 id="the-explanation">The explanation</h3>
+
+<p>There isn&rsquo;t much to the logic of what we&rsquo;re doing below. We&rsquo;re retrieving the credentials from the store as we normally would for use but instead of using it immediately in a block of code, we&rsquo;re writing it to a variable that we&rsquo;ve defined in the beginning of the pipeline. Then we&rsquo;re simply printing out this variable later on.</p>
+
+<p>The important bits are:
+1. writing it to a variable declared <em>outside</em> the stage that retrieves the credential with the function <code>withCredentials</code>
+2. printing it <em>outside</em> the <code>withCredentials</code> block above</p>
+
+<p>Normally we&rsquo;d use the credential in something like a <code>sh</code> block within the <code>withCredentials</code> block. Doing so would display a masked credential but saving it to a variable and printing it outside of <code>withCredentials</code> gives us the actual value.</p>
+
+<h3 id="the-magic">The magic</h3>
+
+<pre><code>// Variables to hold the actual secret value and what type it is (user/pass, text, file)
+def secretValue
+def typeText
+
+// These store the runtime user input for cred type and cred ID
+def credId = params.credId
+def credType = params.credType
+
+node(&quot;node_label&quot;) {
+    stage ('Get Credentials') {
+        if(credType.equals(&quot;userPass&quot;)) {
+            withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: &quot;${credId}&quot;,
+              usernameVariable: 'theUser', passwordVariable: 'thePassword']]) {
+                  typeText = &quot;Password for ${credId}&quot;
+                  secretValue = &quot;${thePassword}&quot;
+            }
+        } else if(credType.equals(&quot;secretText&quot;)) {
+            withCredentials([string(credentialsId: &quot;${credId}&quot;, variable: 'secretText')]) {
+                typeText = &quot;Secret text for ${credId}&quot;
+                secretValue = &quot;${secretText}&quot;
+            }
+        } else if(credType.equals(&quot;secretFile&quot;)) {
+            withCredentials([file(credentialsId: &quot;${credId}&quot;, variable: 'secretFile')]) {
+                typeText = &quot;Secret file for ${credId}&quot;
+                secretValue = sh(returnStdout: true, script: &quot;cat ${secretFile}&quot;).trim()
+            }
+        }
+    }
+    stage('Print it out') {
+        println &quot;&lt;&lt; ${typeText} &gt;&gt;\n${secretValue}&quot;
+    }
+}
+</code></pre>
+
+<p>We&rsquo;re checking <code>credType</code> (chosen by the user at runtime via a dropdown) to see whether the credential is a user/pass combo, a secret text, or a secret file.</p>
+
+<p>The <code>credId</code> is also provided by the user at runtime and passed to the <code>withCredentials</code> block to retrieve and save the credential value to a variable.</p>
+
+<p>The <a href="https://jenkinsci.github.io/job-dsl-plugin/" target=_blank>job DSL</a> code below defines the two parameters <code>credId</code> and <code>credType</code> and creates the pipeline job that runs the script above.</p>
+
+<pre><code>pipelineJob(&quot;jenkins-print-creds&quot;) {
+    definition {
+        parameters {
+            choiceParam('credType', ['userPass', 'secretText', 'secretFile'], 'Type of credential')
+            stringParam('credId', '', 'Credential ID')
+        }
+        cpsScm {
+            scm {
+                git {
+                    branch('YOUR_GIT_BRANCH')
+                    remote {
+                        url(&quot;YOUR_GIT_REPO_THAT_HOLDS_THE_ABOVE_JENKINSFILE&quot;)
+                        credentials('YOUR_GIT_CREDENTIAL')
+                    }
+                }
+            }
+            scriptPath(&quot;Jenkinsfile&quot;)
+        }
+    }
+}
+</code></pre>
+
+<h2 id="caveat">Caveat</h2>
+
+<p>Another way of viewing credentials is through the <a href="https://wiki.jenkins.io/display/JENKINS/Jenkins+Script+Console" target=_blank>Jenkins Script Console</a>, a Groovy console for running arbitrary Groovy code on the master or agents. You can use the <code>hudson.util.Secret.decrypt</code> function to decrypt and then print the value. The process is fairly simple and outlined in <a href="https://stackoverflow.com/questions/37683143/extract-passphrase-from-jenkins-credentials-xml/37683492" target=_blank>this stackoverflow post</a>.</p>
+
+<p>However, this feature is usually and <em>correctly</em> limited to just administrators. This blog post assumes that the user doesn&rsquo;t have access to this console.</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://tunzor.github.io/tags/jenkins/">jenkins</a>&nbsp;
+            
+              <a href="https://tunzor.github.io/tags/use-only-for-good/">use-only-for-good</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2ftunzor.github.io%2fposts%2fjenkins-show-creds%2f&amp;text=Printing%20Jenkins%20credential%20values%20to%20the%20log&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftunzor.github.io%2fposts%2fjenkins-show-creds%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2ftunzor.github.io%2fposts%2fjenkins-show-creds%2f&amp;title=Printing%20Jenkins%20credential%20values%20to%20the%20log" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ftunzor.github.io%2fposts%2fjenkins-show-creds%2f&amp;title=Printing%20Jenkins%20credential%20values%20to%20the%20log" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2ftunzor.github.io%2fposts%2fjenkins-show-creds%2f&amp;title=Printing%20Jenkins%20credential%20values%20to%20the%20log" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2ftunzor.github.io%2fposts%2fjenkins-show-creds%2f&amp;description=Printing%20Jenkins%20credential%20values%20to%20the%20log" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://tunzor.github.io/posts/cloud-build-hugo-site/" data-toggle="tooltip" data-placement="top" title="Automating the publication of a Hugo generated site with Google Cloud Build">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/tunzor" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://bitbucket.org/tunzor" title="Bitbucket">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://play.google.com/store/apps/developer?id=Tunzor" title="Google Play Apps">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-google-play fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/anthony-russo-toronto" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/toonie55" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Anthony
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://tunzor.github.io">tunzor</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://tunzor.github.io/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://tunzor.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

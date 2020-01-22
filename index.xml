@@ -6,10 +6,23 @@
     <description>Recent content on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jan 2020 19:44:54 -0500</lastBuildDate>
     
 	<atom:link href="https://tunzor.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Printing Jenkins credential values to the log</title>
+      <link>https://tunzor.github.io/posts/jenkins-show-creds/</link>
+      <pubDate>Tue, 21 Jan 2020 19:44:54 -0500</pubDate>
+      
+      <guid>https://tunzor.github.io/posts/jenkins-show-creds/</guid>
+      <description>The below is part of a screenplay I&amp;rsquo;m working on for a sequel in the Speed franchise, tentatively called Speed 3: Push IT. It also nicely sets up a scenario for the later bit about viewing Jenkins credentials in plaintext.
+If you&amp;rsquo;d rather not read it, just scroll on down. I won&amp;rsquo;t be too hurt.
+Speed 3: Push IT FADE IN
+INT. SOME LARGE CORPORATION - NIGHT
+JASMINE and BORIS are looking at Jasmine&amp;rsquo;s computer.</description>
+    </item>
     
     <item>
       <title>Automating the publication of a Hugo generated site with Google Cloud Build</title>
