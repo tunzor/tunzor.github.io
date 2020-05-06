@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>game-dev on tunzor</title>
-    <link>https://tunzor.github.io/tags/game-dev/</link>
-    <description>Recent content in game-dev on tunzor</description>
+    <title>diner-drop on tunzor</title>
+    <link>https://tunzor.github.io/tags/diner-drop/</link>
+    <description>Recent content in diner-drop on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 06 May 2020 01:01:02 +0000</lastBuildDate>
     
-	<atom:link href="https://tunzor.github.io/tags/game-dev/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tunzor.github.io/tags/diner-drop/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -28,16 +28,6 @@
       <guid>https://tunzor.github.io/posts/godot-diner-drop-1/</guid>
       <description>As outlined in a previous post, I started developing a game with the Godot engine about catching falling food and serving it to demanding customers, aptly named Diner Drop.
 In this series of posts I intend on showcasing the progress made on the game&amp;rsquo;s development through the greatest of all Internet formats: the gif. A lot can be said with pictures (especially moving ones) but I may also include a few words too.</description>
-    </item>
-    
-    <item>
-      <title>My Hobby: Game Dev - A History</title>
-      <link>https://tunzor.github.io/posts/my-game-dev-history/</link>
-      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tunzor.github.io/posts/my-game-dev-history/</guid>
-      <description>Like a lot of other developers, and even regular folks, I enjoy video games. If you had a nickel for every time you heard or read that somewhere, you&amp;rsquo;d probably be too rich to be reading this blog; instead enjoying your private island complete with whatever else rich people buy.
-I&amp;rsquo;ll save you the rest of the cliched prose that usually follows that line and just say that I also enjoy learning about the process of, and actually, making games.</description>
     </item>
     
   </channel>

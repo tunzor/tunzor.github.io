@@ -6,10 +6,29 @@
     <description>Recent content on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2020 01:01:02 +0000</lastBuildDate>
     
 	<atom:link href="https://tunzor.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Godot in a gif(fy): Variety is the Spice of Life</title>
+      <link>https://tunzor.github.io/posts/godot-diner-drop-2/</link>
+      <pubDate>Wed, 06 May 2020 01:01:02 +0000</pubDate>
+      
+      <guid>https://tunzor.github.io/posts/godot-diner-drop-2/</guid>
+      <description> Catch Me If You Can What&amp;rsquo;s changed since last time?  Chef can now catch and hold the falling food; allowing orders to be made All three parts of the burger now spawn  Bottom: the bun and lettuce Middle: the patty and tomato Top: the onion and bun  The garbage can interaction now lets Chef throw away their currently held order  </description>
+    </item>
+    
+    <item>
+      <title>Godot in a gif(fy): A game dev blog told through gifs</title>
+      <link>https://tunzor.github.io/posts/godot-diner-drop-1/</link>
+      <pubDate>Wed, 06 May 2020 01:01:01 +0000</pubDate>
+      
+      <guid>https://tunzor.github.io/posts/godot-diner-drop-1/</guid>
+      <description>As outlined in a previous post, I started developing a game with the Godot engine about catching falling food and serving it to demanding customers, aptly named Diner Drop.
+In this series of posts I intend on showcasing the progress made on the game&amp;rsquo;s development through the greatest of all Internet formats: the gif. A lot can be said with pictures (especially moving ones) but I may also include a few words too.</description>
+    </item>
     
     <item>
       <title>My Hobby: Game Dev - A History</title>
