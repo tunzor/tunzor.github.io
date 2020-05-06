@@ -1,0 +1,316 @@
+<html>
+<head>
+	<title>Crawler</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+</head>
+<canvas id="gameCanv" width="250" height="250">
+</canvas>
+<script src="levels.js"></script>
+<script>
+var leftKey = 37;
+var rightKey = 39;
+var upKey = 38;
+var downKey = 40;
+var pauseKey = 81; //Q key
+var fps = 30;
+var blockSize = 50;
+
+var player;
+var enemies = [];
+
+var message = "";
+
+var score = 0;
+
+var isPaused = false;
+
+var distX,distY,touchStartX,touchStartY;
+
+var floor = b1;
+
+var onFloorTile = false;
+
+window.onload = function() {
+	canv = document.getElementById("gameCanv");
+	ctx = canv.getContext("2d");
+	document.addEventListener("keydown", keyPressed);
+	document.addEventListener("touchstart", touchStart);
+	document.addEventListener("touchend", touchEnd);
+	document.addEventListener("touchmove", function(e) {
+		e.preventDefault();
+	});
+		
+	player = {x:canv.width-blockSize,y:canv.height-blockSize,color:"green",size:blockSize};
+	//spawnEnemy();
+	
+	drawStuff();//have to draw one frame outside loop since game starts paused
+	
+	setInterval(function() {
+		if(!isPaused) {
+			updateStuff();
+			drawStuff();
+		} else {
+			pauseScreen();
+		}
+	}, 1000/fps);
+	
+	setInterval(function() {
+		if(!isPaused) {
+			moveEnemy();
+		}
+	},200);
+}
+
+function updateStuff() {
+	if(player.x == 0 && player.y == canv.width-blockSize) {
+		if(floor == b1 && !onFloorTile) {
+			showMessage("Going down...");
+			floor = b2;
+			onFloorTile = true;
+		} else if(floor == b2 && !onFloorTile) {
+			showMessage("Going up...");
+			floor = b1;
+			onFloorTile = true;
+		}
+	} else {
+		onFloorTile = false;
+	}
+}
+
+function drawStuff() {
+	//draw background
+	//ctx.fillStyle = "black";
+	//ctx.fillRect(0,0,canv.width,canv.height);
+	//draw floor
+	for(var i = 0; i < 5; i++) {
+		for(var j = 0; j < 5; j++) {
+			if(floor[i][j] == 1) {
+				ctx.fillStyle = "blue";
+				ctx.fillRect(j*blockSize,i*blockSize,blockSize,blockSize);
+			} else if(floor[i][j] == 0) {
+				ctx.fillStyle = "black";
+				ctx.fillRect(j*blockSize,i*blockSize,blockSize,blockSize);
+			} else if(floor[i][j] == 2) {
+				ctx.fillStyle = "brown";
+				ctx.fillRect(j*blockSize,i*blockSize,blockSize,blockSize);
+			} else if(floor[i][j] == 3) {
+				ctx.fillStyle = "red";
+				ctx.fillRect(j*blockSize,i*blockSize,blockSize,blockSize);
+			}
+		}
+	}
+	//draw player
+	ctx.fillStyle = player.color;
+	ctx.fillRect(player.x,player.y,player.size,player.size);
+	ctx.font = "12px Arial";
+	ctx.fillStyle = "black";
+	//draw enemies
+	for(var j = 0; j < enemies.length; j++) {
+		var enemy = enemies[j];
+		ctx.fillStyle = enemy.color;
+		ctx.fillRect(enemy.x,enemy.y,enemy.size,enemy.size);
+	}
+	//draw message
+	ctx.font = "20px Arial";
+	ctx.fillStyle = "white";
+	ctx.fillText(message, canv.width/2-blockSize, canv.height*0.90-blockSize);
+}
+
+function spawnEnemy() {
+	enemies.push({
+		x:0,
+		y:0,
+		color:"red",
+		size:blockSize,
+		height:60,
+		width:20,
+		xVel:10,
+		yVel:0,
+		onGround:false,
+		airFrame:0
+	});
+}
+function moveEnemy() {
+	for(var j = 0; j < enemies.length; j++) {
+		var enemy = enemies[j];
+		if(enemy.x <= 0) {
+			enemy.x = 0;
+		} else if(enemy.x >= canv.width) {
+			enemy.x = canv.width-enemy.width;
+		} else if(enemy.y < 0) {
+			enemy.y = 0;
+		} else if(enemy.y > canv.height) {
+			enemy.y = canv.height;
+		}
+		for(var i = 0; i < enemies.length; i++) {
+			var enemy = enemies[i];
+			if(enemy.x == 0 || enemy.x == canv.width-blockSize) {
+				enemy.x-=blockSize;
+			}
+			enemy.x+=blockSize;
+		}
+	}
+}
+
+function randomDirection() {
+	var directions = ["UP","RIGHT","DOWN","LEFT"];
+	var index = random(0,3);
+	var randDir = directions[index];
+	switch(randDir) {
+		case "UP":
+			if(enemy.y == 0) {
+				randomDirection();
+			} else {
+				enemy.y-=blockSize;
+			}
+			break;
+		case "RIGHT":
+			if(enemy.x == canv.width-blockSize) {
+				randomDirection();
+			} else {
+				enemy.x+=blockSize;
+			}
+			break;
+		case "DOWN":
+			if(enemy.y == canv.height-blockSize) {
+				randomDirection();
+			} else {
+				enemy.y+=blockSize;
+			}
+			break;
+		case "LEFT":
+			if(enemy.x == 0) {
+				randomDirection();
+			} else {
+				enemy.x-=blockSize;
+			}
+			break;
+	}
+}
+
+function random(low,high) {
+	return Math.floor((Math.random() * high+1) + low);
+}
+
+function enemyCollision() {
+	showMessage("OUCH!");
+	score = 0;
+	player.x = canv.width/2;
+	player.y = canv.height/2;
+	player.color = "white";
+	setTimeout(function() {
+		player.color = "blue";
+	},1000);
+}
+
+function showMessage(m) {
+	message = m;
+	setTimeout(function() {
+		message = "";
+	},800);
+}
+
+function pauseScreen() {
+	ctx.font = "50px Arial";
+	ctx.fillStyle = "white";
+	ctx.fillText("--PAUSED--", canv.width/2-blockSize*3, canv.height/2);
+	ctx.font = "20px Arial";
+	ctx.fillStyle = "white";
+	ctx.fillText("Press Q to toggle pause", canv.width/2-120, canv.height/2+blockSize);
+}
+
+function move(dir) {
+	if(!isPaused) {
+		switch(dir) {
+			case "left":
+				if(player.x > 0) {
+					player.x-=blockSize;
+				}
+				break;
+			case "up":
+				if(player.y > 0) {
+					player.y-=blockSize;
+				}
+				break;
+			case "right":
+				if(player.x < canv.width-blockSize) {
+					player.x+=blockSize;
+				}
+				break;
+			case "down":
+				if(player.y < canv.height-blockSize) {
+					player.y+=blockSize;
+				}
+				break;
+		}
+	}
+}
+
+function touchStart(evt) {
+	var touch = evt.changedTouches[0];
+	distX = 0;
+	distY = 0;
+	touchStartX = touch.pageX;
+	touchStartY = touch.pageY;
+	evt.preventDefault();
+}
+
+function touchEnd(evt) {
+	var touch = evt.changedTouches[0];
+	distX = touch.pageX - touchStartX;
+	distY = touch.pageY - touchStartY;
+	var threshold = 50;
+	
+	if(Math.abs(distX) > threshold) {
+		if(distX < 0) {
+			move("left");
+		} else if(distX > 0) {
+			move("right");
+		}
+	}
+	if(Math.abs(distY) > threshold && Math.abs(distX) < threshold) { //second check prevents diagonal movement
+		if(distY < 0) {
+			move("up");
+		} else if(distY > 0) {
+			move("down");
+		}
+	}
+	evt.preventDefault();
+}
+
+function keyPressed(evt) {	
+	//moveEnemy();
+	if(evt.keyCode == pauseKey) {
+		if(!isPaused) {
+			isPaused = true;
+		} else {
+			isPaused = false;
+		}
+	}
+	if(!isPaused) {
+		switch(evt.keyCode) {
+			case leftKey:
+				if(player.x > 0) {
+					player.x-=blockSize;
+				}
+				break;
+			case upKey:
+				if(player.y > 0) {
+					player.y-=blockSize;
+				}
+				break;
+			case rightKey:
+				if(player.x < canv.width-blockSize) {
+					player.x+=blockSize;
+				}
+				break;
+			case downKey:
+				if(player.y < canv.height-blockSize) {
+					player.y+=blockSize;
+				}
+				break;
+		}
+	}
+}
+</script>
+</html>

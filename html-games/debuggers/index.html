@@ -1,0 +1,264 @@
+<html>
+<head><title>Debuggers</title></head>
+<canvas id="gameCanv" width="800" height="400">
+</canvas>
+<script>
+var leftKey = 37;
+var rightKey = 39;
+var upKey = 38;
+var pauseKey = 81; //Q key
+var shootKey = 83; //S key | bug with space bar being pressed with left and up (32:space)
+var fps = 30;
+
+var grav = 20;
+
+var player;
+var playerXSpeed = 20;
+var jumpVel = -20;
+var noOfJumpFrames = 10;
+var bullets = [];
+
+var message = "";
+
+var score = 0;
+
+var isPaused = false; //true; game starts in a paused state
+
+var keysPressed = [];
+
+var enemies = [];
+
+var isShootHeld = false;
+
+window.onload = function() {
+	canv = document.getElementById("gameCanv");
+	ctx = canv.getContext("2d");
+	document.addEventListener("keydown", keyPressed);
+	document.addEventListener("keyup", keyReleased);
+	
+	player = {x:canv.width/2,y:canv.height/2,color:"blue",height:40,width:20,xVel:0,yVel:0,onGround:false,airFrame:0};
+	
+	spawnEnemy();
+	
+	drawStuff();//have to draw one frame outside loop since game starts paused
+	
+	setInterval(function() {
+		if(!isPaused) {
+			updateStuff();
+			drawStuff();
+		} else {
+			pauseScreen();
+		}
+	}, 1000/fps);
+	
+}
+
+function updateStuff() {
+	//console.log(keysPressed.length);
+	//console.log(keysPressed);
+	processInput();
+	movePlayer();
+	moveEnemy();
+	moveBullet();
+	checkCollisions();
+}
+
+function drawStuff() {
+	//draw background
+	ctx.fillStyle = "black";
+	ctx.fillRect(0,0,canv.width,canv.height);
+	//draw player
+	ctx.fillStyle = player.color;
+	ctx.fillRect(player.x,player.y,player.width,player.height);
+	//draw enemies
+	for(var j = 0; j < enemies.length; j++) {
+		var enemy = enemies[j];
+		ctx.fillStyle = enemy.color;
+		ctx.fillRect(enemy.x,enemy.y,enemy.width,enemy.height);
+	}
+	//draw bullets
+	for(var i = 0; i < bullets.length; i++) {
+		var bullet = bullets[i];
+		if(bullet.onScreen) {
+			ctx.fillStyle = bullet.color;
+			ctx.fillRect(bullet.x,bullet.y,bullet.size,bullet.size);
+		}
+	}
+	//draw message
+	ctx.font = "50px Arial";
+	ctx.fillStyle = "white";
+	ctx.fillText(message, canv.width/2, canv.height/2);
+}
+
+function movePlayer() {	
+	console.log(keysPressed);
+	//x movement
+	player.x += player.xVel;
+	if(player.x <= 0) {
+		player.x = 0;
+	}
+	if(player.x >= canv.width) {
+		player.x = canv.width-player.width;
+	}
+	
+	//y movement
+	player.y += player.yVel;
+	if(player.y > canv.height-player.height) {
+		player.y = canv.height-player.height;
+		player.onGround = true;
+		player.airFrame = 0;
+	}
+	if(player.airFrame > noOfJumpFrames) {
+		player.yVel = grav;
+	}
+	if(!player.onGround) {
+		if(player.yVel == 0) {
+			player.yVel = grav;
+		}
+	}
+	if(!player.onGround && player.yVel < 0) {
+		player.airFrame++;
+	}
+}
+
+function moveBullet() {
+	for(var i = 0; i < bullets.length; i++) {
+		var bullet = bullets[i];
+		if(bullet.x > canv.width) {
+			bullets.splice(i,1);//Remove bullet object from memory
+		}
+		if(bullet.onScreen) {
+			bullet.x+=bullet.vel;
+		}
+	}
+}
+
+function spawnEnemy() {
+	enemies.push({
+		x:canv.width-20,
+		y:canv.height-60,
+		color:"red",
+		height:60,
+		width:20,
+		xVel:10,
+		yVel:0,
+		onGround:false,
+		airFrame:0
+	});
+}
+function moveEnemy() {
+	for(var j = 0; j < enemies.length; j++) {
+		var enemy = enemies[j];
+		if(enemy.x <= 0) {
+			enemy.x = 0;
+		} else if(enemy.x >= canv.width) {
+			enemy.x = canv.width-enemy.width;
+		} else if(enemy.y < 0) {
+			enemy.y = 0;
+		} else if(enemy.y > canv.height) {
+			enemy.y = canv.height;
+		}
+		for(var i = 0; i < enemies.length; i++) {
+			var enemy = enemies[i];
+			if(enemy.x == 0 || enemy.x == canv.width-enemy.width) {
+				enemy.xVel=-(enemy.xVel);
+			}
+			enemy.x+=enemy.xVel;
+		}
+	}
+}
+
+function checkCollisions() {
+	for(var i = 0; i < bullets.length; i++) {
+		var bullet = bullets[i];
+		for(var j = 0; j < enemies.length; j++) {
+			var enemy = enemies[j];
+			if((bullet.x+bullet.size > enemy.x && bullet.x+bullet.size < enemy.x+enemy.width) &&
+				(bullet.y+bullet.size > enemy.y && bullet.y+bullet.size < enemy.y+enemy.height)) {
+				console.log("HIT!");
+				showMessage("BOOM!");
+				enemies.splice(j,1);//Remove object from memory
+				bullets.splice(i,1);
+				spawnEnemy();
+			}
+		}
+	}
+}
+
+function random(low,high) {
+	return Math.floor((Math.random() * high+1) + low);
+}
+
+function showMessage(m) {
+	message = m;
+	setTimeout(function() {
+		message = "";
+	},400);
+}
+
+function pauseScreen() {
+	ctx.font = "50px Arial";
+	ctx.fillStyle = "white";
+	ctx.fillText("--PAUSED--", canv.width/2, canv.height/2);
+}
+
+function keyPressed(evt) {	
+	if(keysPressed.indexOf(evt.keyCode) == -1) {
+		keysPressed.push(evt.keyCode);
+	}
+	
+	if(evt.keyCode == pauseKey) {
+		if(!isPaused) {
+			isPaused = true;
+		} else {
+			isPaused = false;
+		}
+	}
+}
+function keyReleased(evt) {
+	if(keysPressed.indexOf(evt.keyCode) > -1) {
+		var index = keysPressed.indexOf(evt.keyCode);
+		keysPressed.splice(index,1);
+	}
+	if(!isKeyPressed(rightKey)) {
+		player.xVel = 0;
+	}
+	if(!isKeyPressed(leftKey)) {
+		player.xVel = 0;
+	}
+	if(!isKeyPressed(shootKey)) {
+		isShootHeld = false;
+	}
+}
+function isKeyPressed(key) {
+	return keysPressed.indexOf(key) > -1;
+}
+function processInput() {
+	if(isKeyPressed(upKey)) {
+		if(player.onGround) {
+			player.yVel = jumpVel;
+			player.onGround = false;
+		}
+	}
+	if(isKeyPressed(leftKey)) {
+		player.xVel = -playerXSpeed;
+	}
+	if(isKeyPressed(rightKey)) {
+		player.xVel = playerXSpeed;
+	}
+	if(isKeyPressed(shootKey)) {
+		if(!isShootHeld) {
+			bullets.push({
+				x:player.x,
+				y:player.y+player.height/2,
+				onScreen:true,
+				vel:20,
+				size:5,
+				color:"yellow"
+			});
+			isShootHeld = true;
+		}
+	}
+}
+</script>
+</html>

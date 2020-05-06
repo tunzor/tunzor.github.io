@@ -1,0 +1,196 @@
+var canv;
+var ctx;
+var fps = 30;
+var ballDim = 10;
+var ballX,ballY;
+var xVel = 10;
+var yVel = 10;
+
+var leftKey = 37;
+var rightKey = 39;
+var aKey = 65;
+var dKey = 68;
+
+var paddle1x, paddle1y, paddle2x, paddle2y;
+var paddleHeight = 20;
+var paddleWidth = 150;
+var paddleMovement = 50;
+
+var paddle1Score = 0;
+var paddle2Score = 0;
+
+var timeInPlay = 0;
+
+window.onload = function() {
+	canv = document.getElementById("gameCanv");
+	ctx = canv.getContext("2d");
+	document.addEventListener("keydown", keyPressed);
+	ballX = (canv.width/2)-(ballDim/2);
+	ballY = (canv.height/2)-(ballDim/2);
+	paddle1x = canv.width/2 - paddleWidth/2;
+	paddle1y = 10;
+	paddle2x = canv.width/2 - paddleWidth/2;
+	paddle2y = canv.height-30;
+	randomDirection();
+	setInterval(function() {
+		updateStuff();
+		drawStuff();
+	}, 1000/fps);
+}
+function updateStuff() {
+	//check if anyone has scored and increase speed after 10 seconds
+	var originalPaddleScore1 = paddle1Score;
+	var originalPaddleScore2 = paddle2Score;
+
+	//console.log("time in play: "+timeInPlay);
+	if(timeInPlay > 300) {
+		xVel = xVel * 1.001;
+		yVel = yVel * 1.001;
+	}
+
+	//check ball collision with paddles
+	//paddle1
+	if(ballY < paddle1y + paddleHeight+ballDim/2 && (ballX > paddle1x && ballX < paddle1x+paddleWidth)) { 
+		yVel = -yVel;
+	}
+	if(ballX > paddle1x+paddleWidth && (ballY < paddle1y + paddleHeight)) {
+		ballX = (canv.width/2)-(ballDim/2);
+		ballY = (canv.height/2)-(ballDim/2);
+		scorePointAndReset(2);
+	}
+	if(ballX < paddle1x && (ballY < paddle1y + paddleHeight)) {
+		ballX = (canv.width/2)-(ballDim/2);
+		ballY = (canv.height/2)-(ballDim/2);
+		scorePointAndReset(2);
+	}
+	//paddle2
+	if(ballY > paddle2y - paddleHeight+ballDim/2 && (ballX > paddle2x && ballX < paddle2x+paddleWidth)) { 
+		yVel = -yVel;
+	}
+	if(ballX > paddle2x+paddleWidth && (ballY > paddle2y + paddleHeight)) {
+		ballX = (canv.width/2)-(ballDim/2);
+		ballY = (canv.height/2)-(ballDim/2);
+		scorePointAndReset(1);
+	}
+	if(ballX + ballDim < paddle2x && ballY >= paddle2y ) {
+	console.log("side hit");
+		xVel = -xVel;
+		//ballX = (canv.width/2)-(ballDim/2);
+		//ballY = (canv.height/2)-(ballDim/2);
+		//scorePointAndReset(1);
+	}
+	
+	//check ball collision with game edges
+	if(ballX+ballDim >= canv.width) {
+		xVel = -xVel;
+	} 
+	if(ballX+ballDim <= 0) {
+		xVel = -xVel;
+	}
+	if(ballY+ballDim >= canv.height) {
+		ballX = (canv.width/2)-(ballDim/2);
+		ballY = (canv.height/2)-(ballDim/2);
+		scorePointAndReset(1);
+	}	
+	if(ballY+ballDim <= 0) {
+		ballX = (canv.width/2)-(ballDim/2);
+		ballY = (canv.height/2)-(ballDim/2);
+		scorePointAndReset(2);
+	}
+	
+	if(paddle1Score == originalPaddleScore1 && paddle2Score == originalPaddleScore2) {
+		timeInPlay++;		
+	}
+		
+	ballX+=xVel;
+	ballY+=yVel;
+}
+function drawStuff() {
+	//draw background
+	ctx.fillStyle = "black";
+	ctx.fillRect(0,0,canv.width,canv.height);
+	
+	//draw score and instructions
+	ctx.font = "20px Arial";
+	ctx.fillStyle = "white";
+	ctx.fillText("BLUE: "+paddle1Score, 50, 100);
+	ctx.font = "15px Arial";
+	ctx.fillText("Move with A and D", 50, 120);
+	ctx.font = "20px Arial";
+	ctx.fillText("GREEN: "+paddle2Score, 50, 500);
+	ctx.font = "15px Arial";
+	ctx.fillText("Move with left and right", 50, 520);
+	
+	//draw top paddle
+	ctx.fillStyle = "blue";
+	ctx.fillRect(paddle1x,paddle1y,paddleWidth,paddleHeight);
+	
+	//draw bottom paddle
+	ctx.fillStyle = "green";
+	ctx.fillRect(paddle2x,paddle2y,paddleWidth,paddleHeight);
+	
+	//draw ball
+	ctx.fillStyle = "red";
+	ctx.fillRect(ballX,ballY,ballDim,ballDim);
+}
+
+function keyPressed(evt) {
+	switch(evt.keyCode) {
+		case leftKey:
+			if(paddle2x >= 0) {
+				paddle2x-= paddleMovement
+			}
+			break;
+		case rightKey:
+			if(paddle2x + paddleWidth <= canv.width) {
+				paddle2x+= paddleMovement
+			}
+			break;
+		case aKey:
+			if(paddle1x >= 0) {
+				paddle1x-= paddleMovement
+			}
+			break;
+		case dKey:
+			if(paddle1x + paddleWidth <= canv.width) {
+				paddle1x+= paddleMovement
+			}
+			break;
+	}
+}
+
+function randomDirection() {
+	var directions = ["NW","NE","SW","SE"];
+	var index = Math.floor((Math.random() * 4) + 1);
+	var randDir = directions[index];
+	switch(randDir) {
+		case "NW":
+			xVel = -xVel;
+			yVel = -yVel;
+			break;
+		case "NE":
+			xVel = xVel;
+			yVel = -yVel;
+			break;
+		case "SW":
+			xVel = -xVel;
+			yVel = yVel;
+			break;
+		case "SE":
+			xVel = xVel;
+			yVel = yVel;
+			break;
+	}
+}
+
+function scorePointAndReset(paddle) {
+	if(paddle == 1) {
+		paddle1Score++;
+	} else if(paddle == 2) {
+		paddle2Score++;
+	}
+	timeInPlay = 0;
+	xVel = 10;
+	yVel = 10;
+	randomDirection();
+}

@@ -1,0 +1,198 @@
+<html>
+<canvas id="gameCanv" width="800" height="600">
+</canvas>
+<script>
+var playerX, playerY;
+var playerWidth = 10;
+var playerXVel = 0;
+var playerYVel = 0;
+var leftKey = 37;
+var rightKey = 39;
+var upKey = 38;
+var spaceKey = 32;
+var fps = 30;
+var jumpVel = 15;
+var grav = -10;
+var inAir = false;
+var inAirCount = 0;
+var jumpDuration = 10;
+var waterY;
+
+var platformsX = [100,200,300,400,500,600];
+var platformsY = [400,310,290,200,130,70];
+var platformWidth = 70;
+var platformHeight = 5;
+var travel = 100;
+var platSpeed = 0.1;
+var platformsVel = [platSpeed*(0+1),platSpeed*(1+1),platSpeed*(2+1),platSpeed*(3+1),platSpeed*(4+1)];
+
+var platformsXOrig = [platformsX[0]+travel,platformsX[1]+travel,platformsX[2]+travel,platformsX[3]+travel,platformsX[4]+travel,platformsX[5]+travel,platformsX[6]+travel];
+
+//TODO Bug: player can't jump off platform if x or y values of two platforms are the same
+
+var coinSize = 20;
+var coinX, coinY;
+var score = 0;
+
+var nextPlat;
+
+window.onload = function() {
+	canv = document.getElementById("gameCanv");
+	ctx = canv.getContext("2d");
+	document.addEventListener("keydown", keyPressed);
+	document.addEventListener("keyup", keyReleased);
+	playerX = 120;
+	waterY = canv.height*0.75;
+	playerY = waterY;
+	coinX = platformsX[platformsX.length-1]+platformWidth/2-coinSize/2;
+	coinY = platformsY[platformsY.length-1]-coinSize*2;
+	
+	setInterval(function() {
+		updateStuff();
+		drawStuff();
+	}, 1000/fps);
+	
+	for(var i = 0; i < platformsX.length-1; i++) {
+		if(platformsVel[i] < 0) {
+			platformsVel[i]-=platSpeed;
+		} else {
+			platformsVel[i]+=platSpeed;
+		}			
+	}
+}
+
+function updateStuff() {
+	playerX += playerXVel;
+	if(playerX+playerWidth >= coinX && playerY == coinY) {
+		score++;
+		playerX = 120;
+		inAir = false;
+		inAirCount = 0;
+		playerXVel = 0;
+		playerYVel = 0;
+		playerY = waterY;
+		platSpeed+=0.1; //SPEED INCREASE
+		for(var i = 0; i < platformsX.length-1; i++) {
+			if(platformsVel[i] < 0) {
+				platformsVel[i]-=platSpeed;
+			} else {
+				platformsVel[i]+=platSpeed;
+			}
+		}
+	}	
+	if(playerX <= 0) { //stops player from leaving left side
+		playerX = 0;
+	}
+	if(playerX >= canv.width-playerWidth) { //stops player from leaving right side
+		playerX = canv.width - playerWidth;
+	}
+	if(playerY == waterY) { //stops player from dropping through water/floor
+		playerY = waterY;
+	}
+	if(inAir) { 
+		inAirCount++;
+	}
+	if(inAir && inAirCount > 0 && inAirCount <= jumpDuration) { //
+		playerYVel = jumpVel;
+		playerY -= playerYVel;
+	} else if(inAir && inAirCount > jumpDuration) {
+		playerYVel = grav;
+		playerY -= playerYVel;
+	}
+	if(playerY == waterY) {
+		inAir = false;
+		inAirCount = 0;
+	}
+	movePlatforms();
+	checkPlatformCollisions();
+}
+
+function drawStuff() {
+	//draw background
+	ctx.fillStyle = "black";
+	ctx.fillRect(0,0,canv.width,canv.height);
+	//floor
+	ctx.fillStyle = "blue";
+	ctx.fillRect(0,waterY+playerWidth,canv.width,canv.height);
+	//platforms
+	ctx.fillStyle = "green";
+	for(var i = 0; i < platformsX.length; i++) {
+		ctx.fillRect(platformsX[i],platformsY[i],platformWidth,platformHeight);
+	}
+	//coin
+	ctx.fillStyle="yellow";
+	ctx.fillRect(platformsX[platformsX.length-1]+platformWidth/2-coinSize/2,
+		platformsY[platformsY.length-1]-coinSize*2,coinSize,coinSize);
+	//score
+	ctx.font = "20px Arial";
+	ctx.fillStyle = "white";
+	ctx.fillText("Score: "+score, 270, waterY/2+canv.height/2-30);
+	ctx.font = "16px Arial";
+	ctx.fillText("Jump and touch the yellow box.", 270, waterY/2+canv.height/2);
+	ctx.fillText("Move with left and right and jump with space or up.", 270, waterY/2+canv.height/2+30);
+	//player
+	ctx.fillStyle = "red";
+	ctx.fillRect(playerX,playerY,playerWidth,playerWidth);
+}
+
+function movePlatforms() {
+	for(var i = 0; i < platformsX.length-1; i++) {
+		if(platformsX[i] > platformsXOrig[i]) {
+			platformsVel[i] = -platSpeed*(i+1);
+		} else if(platformsX[i] < platformsXOrig[i]-travel) {
+			platformsVel[i] = platSpeed*(i+1);
+		}
+		platformsX[i]+=platformsVel[i];
+	}
+}
+function checkPlatformCollisions() {
+	for(var i = 0; i < platformsX.length; i++) {
+		if(inAir && playerY == platformsY[i] && (playerX > platformsX[i] && playerX < platformsX[i]+platformWidth)) { //if player lands on a platform
+			playerY = platformsY[i]-playerWidth;
+			playerYVel = 0;
+			inAir = false;
+			inAirCount = 0;
+		} else if(!inAir && playerY == platformsY[i]-playerWidth && (playerX < platformsX[i] || playerX > platformsX[i]+platformWidth)) { //if player falls off a platform
+			inAirCount = jumpDuration;
+			playerYVel = grav;
+			inAir = true;
+		}
+	}
+}
+
+function randomX() {
+	return Math.floor((Math.random() * (canv.width - playerWidth)) + 0);
+}
+
+function keyPressed(evt) {
+	switch(evt.keyCode) {
+		case leftKey:
+			playerXVel = -10;
+			break;
+		case rightKey:
+			playerXVel = 10;
+			break;
+		case upKey:
+			if(!inAir) {
+				inAir = true;
+			}
+			break;
+		case spaceKey:
+			if(!inAir) {
+				inAir = true;
+			}
+			break;
+	}
+}
+function keyReleased(evt) {
+	switch(evt.keyCode) {
+		case leftKey:
+			playerXVel = 0;
+			break;
+		case rightKey:
+			playerXVel = 0;
+			break;
+	}
+}
+</script>
+</html>
