@@ -196,6 +196,59 @@
           
           
             <article class="post-preview">
+    <a href="https://tunzor.github.io/posts/docker-list-images-by-size/">
+        <h2 class="post-title">Quick Tip: List docker images sorted by size</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 16, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;499&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Anthony
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.
+Huh? What&rsquo;s that, docker? You can&rsquo;t do that.
+If you want something done right&hellip;
+It ain&rsquo;t pretty but it works.
+docker image ls --format &quot;{{.Repository}}:{{.Tag}} {{.Size}}&quot; | \ awk '{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &quot;MB - &quot; $1 ; else print $2 &quot; - &quot; $1 }' | \ sed '/^0/d' | \ sort -n   Side Note
+        <a href="https://tunzor.github.io/posts/docker-list-images-by-size/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://tunzor.github.io/tags/quick-tip/">quick-tip</a>&nbsp;
+        
+        <a href="https://tunzor.github.io/tags/docker/">docker</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://tunzor.github.io/posts/devops-tools-101-consul/">
         <h2 class="post-title">DevOps Tools 101 - Consul</h2>
         

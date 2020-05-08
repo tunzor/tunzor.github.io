@@ -6,10 +6,19 @@
     <description>Recent content in godot-in-a-giffy on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 May 2020 01:01:03 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2020 01:01:03 +0000</lastBuildDate>
     
 	<atom:link href="https://tunzor.github.io/tags/godot-in-a-giffy/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Godot in a gif(fy): IPO Time</title>
+      <link>https://tunzor.github.io/posts/godot-diner-drop-6/</link>
+      <pubDate>Fri, 08 May 2020 01:01:03 +0000</pubDate>
+      
+      <guid>https://tunzor.github.io/posts/godot-diner-drop-6/</guid>
+      <description> Mobile-ize What&amp;rsquo;s changed since last time?  Diner Drop can now be played in your browser!  Works on both desktop and mobile All future builds will be published at that link so check back for updates  Multiple input methods available  On desktop you can choose to play with mouse or keyboard controls  Mouse: Move Chef by moving the mouse and click anywhere in the bottom area (where the stools are) to interact with whatever is highlighted in front of Chef Keyboard: Move Chef left with a or left arrow, right with d or right arrow, and interact with things with s or down arrow You can toggle them on and off with either m for mouse controls or k for keyboard controls (shown by either an M or K in the top left of the screen)  On mobile, Chef will follow your finger much like the mouse movement above  Tap and drag to move Chef and tap anywhere in the bottom area (where the stools are) to interact with whatever is highlighted in front of Chef   Game over screen now shows a message about why the player lost  Game over now shows if you have too many held food items  Bug fixes  Fixed food items spawning off screen Only the top item of the food stack being held has collision detection (gif above demonstrates how the sides have no collision) Fixed issue where tapping and dragging to move on mobile would cause Chef to serve to a customer unintentionally   </description>
+    </item>
     
     <item>
       <title>Godot in a gif(fy): It&#39;s a big one! Game Over, Man!</title>
