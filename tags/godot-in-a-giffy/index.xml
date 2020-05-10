@@ -6,10 +6,19 @@
     <description>Recent content in godot-in-a-giffy on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 May 2020 01:01:03 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2020 01:01:03 +0000</lastBuildDate>
     
 	<atom:link href="https://tunzor.github.io/tags/godot-in-a-giffy/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Godot in a gif(fy): Time to Start Me Up</title>
+      <link>https://tunzor.github.io/posts/godot-diner-drop-7/</link>
+      <pubDate>Sat, 09 May 2020 01:01:03 +0000</pubDate>
+      
+      <guid>https://tunzor.github.io/posts/godot-diner-drop-7/</guid>
+      <description> Disco Fever What&amp;rsquo;s changed since last time?  Fancy new start screen!  Colourful title now shows you what you&amp;rsquo;re playing Instructions on how to play in a scrollable text area  Added a round timer of 60 seconds  Serving correct orders increases time available by 3 seconds Serving incorrect orders decreases time available by 2 seconds   </description>
+    </item>
     
     <item>
       <title>Godot in a gif(fy): IPO Time</title>
