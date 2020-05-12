@@ -6,10 +6,19 @@
     <description>Recent content in diner-drop on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 May 2020 01:01:03 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2020 01:01:03 +0000</lastBuildDate>
     
 	<atom:link href="https://tunzor.github.io/tags/diner-drop/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Godot in a gif(fy): I Like to Move It, Move It</title>
+      <link>https://tunzor.github.io/posts/godot-diner-drop-8/</link>
+      <pubDate>Tue, 12 May 2020 01:01:03 +0000</pubDate>
+      
+      <guid>https://tunzor.github.io/posts/godot-diner-drop-8/</guid>
+      <description> Just One for Me, Please What&amp;rsquo;s changed since last time? v0.10.0  Retooled input and movement  Added a &amp;ldquo;Slide to Move&amp;rdquo; area: tap and slide in it to move Chef Tap on brown area (with customers and stools) to interact Mouse input  Emulates touch input now (must move mouse in the &amp;ldquo;Slide to Move&amp;rdquo; area and hold down left button to move) Click on the brown area to interact OR right click anywhere   Added timer to customer to stop spamming of incorrect orders (protects against multiple accidental interaction inputs) Made the area above the garbage can a &amp;ldquo;safe area&amp;rdquo;: food won&amp;rsquo;t spawn over it Removed desktop input toggle options (keyboard and mouse inputs are still usable) Updated start screen instructions Bug fixes  Fixed bug that served multiple times when interact input pressed once Fixed bug that didn&amp;rsquo;t allow scrolling of instructions on touch screens Fixed bug that crashed game when pressing a key while holding mouse button   </description>
+    </item>
     
     <item>
       <title>Godot in a gif(fy): Time to Start Me Up</title>
