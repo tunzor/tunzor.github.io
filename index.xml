@@ -6,10 +6,19 @@
     <description>Recent content on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 May 2020 01:01:03 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2020 01:01:01 +0000</lastBuildDate>
     
 	<atom:link href="https://tunzor.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Godot in a gif(fy): I&#39;ll Tell You What I Want</title>
+      <link>https://tunzor.github.io/posts/godot-diner-drop-9/</link>
+      <pubDate>Wed, 13 May 2020 01:01:01 +0000</pubDate>
+      
+      <guid>https://tunzor.github.io/posts/godot-diner-drop-9/</guid>
+      <description> Variety is the Spice of Life What&amp;rsquo;s changed since last time? v0.11.0  Customers now show their order above their heads!  Moving in front to interact will tint the order based on what Chef is currently holding: red if incorrect, green if correct (provides a quick way of seeing if held order is correct)  Two new orders!  New orders: pizza and ice cream sundae Food items (parts of orders) will only spawn if they&amp;rsquo;re in at least one customer&amp;rsquo;s order All current orders and their parts are pictured below:   Added final score to game over screen Removed garbage can interaction popup Bug fixes  Reduced number of items needed to trigger a game over (was too high after adding &amp;ldquo;Slide to Move&amp;rdquo; area)   </description>
+    </item>
     
     <item>
       <title>Godot in a gif(fy): I Like to Move It, Move It</title>
