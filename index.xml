@@ -30,7 +30,8 @@ And yet it still took me hours to implement what I thought would be a trivial co
       <description>Running a Hugo generated site on Github Pages and Google Cloud Storage
 Automating the publication of a Hugo generated site with Google Cloud Build
 Deploying a dockerized two-tier app on Kubernetes
-My Hobby: Game Dev - A History</description>
+My Hobby: Game Dev - A History
+Quick Tip: List docker images sorted by size</description>
     </item>
     
     <item>
