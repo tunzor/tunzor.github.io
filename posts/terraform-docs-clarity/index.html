@@ -100,6 +100,17 @@ And yet it still took me hours to implement what I thought would be a trivial co
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
 
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-66230295-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 
   </head>
   <body>
@@ -119,8 +130,15 @@ And yet it still took me hours to implement what I thought would be a trivial co
       <ul class="nav navbar-nav navbar-right">
         
           
-            <li>
-              <a title="Play Diner Drop" href="/diner-drop">Play Diner Drop</a>
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Play my games</a>
+              <div class="navlinks-children">
+                
+                  <a href="/diner-drop">Diner Drop</a>
+                
+                  <a href="/jenns-adventure">Jenn&#39;s Adventure</a>
+                
+              </div>
             </li>
           
         
@@ -443,6 +461,10 @@ network_interface {
               <a href="https://tunzor.github.io/posts/godot-diner-drop-11/" data-toggle="tooltip" data-placement="top" title="Godot in a gif(fy): I don&#39;t have ALL day">&larr; Previous Post</a>
             </li>
           
+          
+            <li class="next">
+              <a href="https://tunzor.github.io/posts/making-a-game-in-one-day/" data-toggle="tooltip" data-placement="top" title="Making a Game in One Day">Next Post &rarr;</a>
+            </li>
           
         </ul>
       

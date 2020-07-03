@@ -101,6 +101,17 @@ In a previous post I outlined how to use it to generate a site and then host tha
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
 
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-66230295-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 
   </head>
   <body>
@@ -120,8 +131,15 @@ In a previous post I outlined how to use it to generate a site and then host tha
       <ul class="nav navbar-nav navbar-right">
         
           
-            <li>
-              <a title="Play Diner Drop" href="/diner-drop">Play Diner Drop</a>
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Play my games</a>
+              <div class="navlinks-children">
+                
+                  <a href="/diner-drop">Diner Drop</a>
+                
+                  <a href="/jenns-adventure">Jenn&#39;s Adventure</a>
+                
+              </div>
             </li>
           
         

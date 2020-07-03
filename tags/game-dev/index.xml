@@ -6,10 +6,21 @@
     <description>Recent content in game-dev on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 May 2020 01:01:01 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tunzor.github.io/tags/game-dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Making a Game in One Day</title>
+      <link>https://tunzor.github.io/posts/making-a-game-in-one-day/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tunzor.github.io/posts/making-a-game-in-one-day/</guid>
+      <description>Making a game is tough. We&amp;rsquo;ve read it in countless books and articles, heard it on podcasts, and seen it in the first hand video accounts of developers.
+Making a game in a limited amount of time is tougher. Looming deadlines are always in the back of your head and crunch time seems to be an industry standard practice that doesn&amp;rsquo;t appear to be going away.
+Making a game in the limited time span of one or two days should be the toughest then.</description>
+    </item>
     
     <item>
       <title>Godot in a gif(fy): I don&#39;t have ALL day</title>

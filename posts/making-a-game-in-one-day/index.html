@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Making a Game in One Day - tunzor</title>
+  <meta name="description" content="Or how I unintentionally held a one participant game jam">
+  <meta name="author" content="Anthony"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "tunzor",
+    
+    "url": "https:\/\/tunzor.github.io"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/tunzor.github.io"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/tunzor.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/tunzor.github.io\/posts\/making-a-game-in-one-day\/",
+          "name": "Making a game in one day"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Anthony"
+  },
+  "headline": "Making a Game in One Day",
+  "description" : "Making a game is tough. We\x26rsquo;ve read it in countless books and articles, heard it on podcasts, and seen it in the first hand video accounts of developers.\nMaking a game in a limited amount of time is tougher. Looming deadlines are always in the back of your head and crunch time seems to be an industry standard practice that doesn\x26rsquo;t appear to be going away.\nMaking a game in the limited time span of one or two days should be the toughest then.",
+  "inLanguage" : "en",
+  "wordCount":  4236 ,
+  "datePublished" : "2020-07-01T00:00:00",
+  "dateModified" : "2020-07-01T00:00:00",
+  "image" : "https:\/\/tunzor.github.io\/img\/me.jpg",
+  "keywords" : [ "godot, game-dev" ],
+  "mainEntityOfPage" : "https:\/\/tunzor.github.io\/posts\/making-a-game-in-one-day\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/tunzor.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/tunzor.github.io\/img\/me.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Making a Game in One Day" />
+<meta property="og:description" content="Or how I unintentionally held a one participant game jam">
+<meta property="og:image" content="https://tunzor.github.io/img/me.jpg" />
+<meta property="og:url" content="https://tunzor.github.io/posts/making-a-game-in-one-day/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="tunzor" />
+
+  <meta name="twitter:title" content="Making a Game in One Day" />
+  <meta name="twitter:description" content="Or how I unintentionally held a one participant game jam">
+  <meta name="twitter:image" content="https://tunzor.github.io/img/me.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://tunzor.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.59.1" />
+  <link rel="alternate" href="https://tunzor.github.io/index.xml" type="application/rss+xml" title="tunzor"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://tunzor.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://tunzor.github.io/css/syntax.css" /><link rel="stylesheet" href="https://tunzor.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-66230295-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://tunzor.github.io">tunzor</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Play my games</a>
+              <div class="navlinks-children">
+                
+                  <a href="/diner-drop">Diner Drop</a>
+                
+                  <a href="/jenns-adventure">Jenn&#39;s Adventure</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Top Posts" href="/top-posts">Top Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="about" href="/about">about</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="tunzor" href="https://tunzor.github.io">
+            <img class="avatar-img" src="https://tunzor.github.io/img/me.jpg" alt="tunzor" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Making a Game in One Day</h1>
+              
+              
+              
+                
+                  <h2 class="post-subheading">Or how I unintentionally held a one participant game jam</h2>
+                
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 1, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;20&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;4236&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Anthony
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p><strong>Making a game is tough</strong>. We&rsquo;ve read it in countless books and articles, heard it on podcasts, and seen it in the first hand video accounts of developers.</p>
+
+<p><strong>Making a game in a limited amount of time is tougher</strong>. Looming deadlines are always in the back of your head and <a href="https://en.wikipedia.org/wiki/Video_game_developer#%22Crunch_time%22" target=_blank>crunch time</a> seems to be an <a href="https://kotaku.com/tag/crunch" target=_blank>industry standard practice</a> that doesn&rsquo;t appear to be going away.</p>
+
+<p><strong>Making a game in the limited time span of one or two days <em>should</em> be the toughest then</strong>. Yet this is the stuff <a href="https://en.wikipedia.org/wiki/Game_jam" target=_blank>game jams</a> are made of and people <em>voluntarily</em> participate in them. Lots of people.</p>
+
+<blockquote>
+<p>2020: (31 Jan - 2 Feb): 934 sites, 118 countries, <strong>48,753 registered participants</strong>, 9601 games
+&ndash; <a href="https://globalgamejam.org/history" target=_blank>Global Game Jam</a></p>
+</blockquote>
+
+<p>Game jams are fun though. You&rsquo;re working hard on a tight deadline but you&rsquo;re doing it because you want to. You enjoy the process of game development, sharing what you&rsquo;ve made with other like-minded people, and seeing what they were able to create in the same limited amount of time.</p>
+
+<p>The strict deadline, and other rules around a required theme or which assets you can use, force you to think creatively and weigh out whether certain time-intensive features are truly worthwhile. In return, I think you get a sense of accomplishment that&rsquo;s not attainable under normal circumstances.</p>
+
+<p>If you&rsquo;ve read my <a href="/tags/diner-drop/">previous posts</a> about the game I&rsquo;m developing called Diner Drop or when I helped a friend <a href="/posts/my-game-dev-history#space-hack">create a game called Space Hack</a>, you&rsquo;re well aware of my relationship with Godot. It&rsquo;s a pretty good one; we understand each other, get along well, and I feel I&rsquo;ve learned a lot about it. I&rsquo;m comfortable with the engine.</p>
+
+<p>So when I came up with an idea to create a game as a birthday gift for a friend of mine, naturally I was pretty confident that I could do it with Godot. I think the end product came out looking, sounding, and playing pretty good.</p>
+
+<p>Especially considering that it was made under the same conditions as a game jam: only one developer, a development time limited to just a day or two, and the ability to use certain assets that you&rsquo;ve already created. It was <strong>completed it in just 22 hours of total development time</strong> (asset creation, programming, general problem solving, and everything else).</p>
+
+<p>This post is fairly long and involved so feel free to skip ahead to a certain section if you like:</p>
+
+<ul>
+<li><a href="#the-game">The Game</a></li>
+<li><a href="#the-idea">The Idea</a></li>
+<li><a href="#the-deadline">The Deadline</a></li>
+<li><a href="#the-execution">The Execution</a>
+
+<ul>
+<li><a href="#day-one-saturday">Day One</a></li>
+<li><a href="#day-two-sunday">Day Two</a></li>
+<li><a href="#day-one-monday">Day Three</a></li>
+<li><a href="#day-one-tuesday">Day Four</a></li>
+<li><a href="#completion">Completion</a></li>
+<li><a href="#development-stats">Development Stats</a></li>
+</ul></li>
+<li><a href="#the-lessons">The Lessons</a></li>
+<li><a href="#the-unintentionally-good-game">The Unintentionally Good Game</a></li>
+<li><a href="#final-thoughts">Final Thoughts</a></li>
+</ul>
+
+<h2 id="the-game">The Game</h2>
+
+<p><strong>Jenn&rsquo;s Adventure</strong> (playable <a href="/jenns-adventure">here</a>) is a 2D platformer that features all original assets: graphics, music track, and sound effects (created from audio recordings of the titular Jenn). It has multiple paths, a secret or two, and a character with tight controls that can double jump and dash. I think it&rsquo;s a pretty solid platforming game overall.</p>
+
+<h2 id="the-idea">The Idea</h2>
+
+<p>Given the <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target=_blank>pandemic</a> and everyone&rsquo;s understandable desire to social distance, I was unsure how to make this milestone birthday special for her. Sending a card or gift through the mail is great but it doesn&rsquo;t have the same <em>oomph</em> as taking someone out for a luxurious dinner at place they really like but never get a chance to go to on their own.</p>
+
+<p>After thinking about it for a couple of days, I came up with the perfect idea and like most great ideas, it <a href="https://lifehacker.com/science-explains-why-our-best-ideas-come-in-the-shower-5987858" target=_blank>came to me in the shower</a>: I could make a game centered around her as the main character that ultimtely shows a birthday message when completed.</p>
+
+<p>I flushed out the idea while putting in my contact lenses and brushing my teeth:</p>
+
+<ul>
+<li>it&rsquo;ll be a platformer (they&rsquo;re approachable with small learning curves) where you play as Jenn herself (complete with voice lines and phrases)</li>
+<li>you&rsquo;ll need to meet up with her friends who have a surprise waiting for her</li>
+<li>along the way you&rsquo;ll be able to pick up items that are meaningful to Jenn (again, complete with a voice line)</li>
+<li>the items will act as checkpoints since falling from too high will cause you to respawn (just like real life&hellip;)</li>
+<li>a double jump ability will make it easier to play and a dash ability will add some variety</li>
+</ul>
+
+<p>By the time I finished in the bathroom and got dressed, the idea was concrete enough to start developing.</p>
+
+<h2 id="the-deadline">The Deadline</h2>
+
+<p>As much fun as I had developing against such a tight deadline, I would not <em>normally</em> impose such a thing on myself as I&rsquo;m not a masochist, but for someone as great as Jenn, the challenge was welcome.</p>
+
+<p>The deadline was obvious as since this was to be a <em>birthday</em> gift, it&rsquo;d have to be completed by her birthday; four days from my bathroom epiphany. But just because I had four days, didn&rsquo;t mean that I <em>had</em> four days. Other important obligations like work and life would need to be tended to as well.</p>
+
+<p>Thankfully it was a Saturday when I finished my watery rumination which meant that I had the rest of the weekend to get as much done as I could.</p>
+
+<h2 id="the-execution">The Execution</h2>
+
+<p>I started by writing down what I flushed out earlier in the day and further developed that with a list of features to implement and assets that would need to be created. I wanted the game to at least include (the requirements):</p>
+
+<ul>
+<li>a level that can be easily created and modified</li>
+<li>an easy to control character with a double jump</li>
+<li>some kind of hazard that would cause the player to respawn</li>
+<li>items that the player could pick up and have act as checkpoints for respawning</li>
+<li>a round timer that counts up to show how long the player has taken to complete the level</li>
+<li>a looping music track in the background</li>
+<li>sound effects and voice lines from Jenn</li>
+<li>an ending scene with a birthday party</li>
+</ul>
+
+<p>If I had time I would work on including some other features too (the nice-to-haves):</p>
+
+<ul>
+<li>a dash ability (with a cooldown so the player has to wait before they can use it again)</li>
+<li>an inventory UI element to show what items were in the level and which of them the player acquired</li>
+<li>a quote that appeared on the UI whenever an item was picked up (specific to each item) or the player respawned (a random quote from a selection)</li>
+<li>an animation for the ending scene with a few looping frame of people cheering and dancing</li>
+</ul>
+
+<p>With the plan set, I began working on Jenn&rsquo;s Adventure.</p>
+
+<h3 id="warning">Warning</h3>
+
+<p>The next section is exhaustive; it itemizes every minute of development time. If this sounds like too much for you, skip ahead to the <a href="#development-stats">development stats</a> or <a href="#the-lessons">lessons</a> sections.</p>
+
+<h3 id="day-one-saturday">Day One: Saturday</h3>
+
+<h4 id="project-creation-and-tilemaps-1-hour">Project Creation and Tilemaps (1 hour)</h4>
+
+<p>Development started with the project creation in Godot and included setting up the input button mappings and the window size with its associated configurations.</p>
+
+<p>With a platformer I knew that I needed an easy way to lay out and adjust the platforms in the level so naturally, I used a <a href="https://docs.godotengine.org/en/stable/tutorials/2d/using_tilemaps.html" target=_blank>tilemap</a>. After creating my tiles with <a href="https://www.getpaint.net/" target=_blank>paint.NET</a>, I researched a little on how to create one in Godot and about an hour later I had a way to layout my level and made a simple area to test on.</p>
+
+<h4 id="the-player-movement-and-camera-1-hour-50-minutes">The Player: Movement and Camera (1 hour, 50 minutes)</h4>
+
+<p>Next came the player, arguably the most important piece in the game. I went back to my image editor and created a player character sprite modelled after Jenn with pink hair and a purple scarf (the resemblance was uncanny).</p>
+
+<p>I brought the sprite into Godot and setup a player controlled character with Godot&rsquo;s <a href="https://docs.godotengine.org/en/stable/classes/class_kinematicbody2d.html" target=_blank>KinematicBody2D</a> object (it takes care of interacting with the game engine for physics and handles collisions with the level elements like the ground tiles).</p>
+
+<p>I now had to put together my player movement script to listen for button presses and move the player in-game while applying a gravity force. I had a rudimentary script working but it felt slow and unresponsive so I started looking online for some tips. I found <a href="https://www.reddit.com/r/godot/comments/bhj83x/official_2d_platformer_movement_tutorial_on_godot/" target=_blank>this thread</a> from the Godot subreddit and modified my script to include some code from it.</p>
+
+<p>Now I just needed to to get the camera to follow the player in the level which turned out to be very easy in Godot. It involved adding a <a href="https://docs.godotengine.org/en/stable/classes/class_camera2d.html" target=_blank>Camera2D</a> object as a child of your player object and setting one property.</p>
+
+<p>With the player movement and camera setup, I fiddled around with the level layout some more to create a better area to test them in.</p>
+
+<h4 id="roadblock-the-first-1-hour">Roadblock the First (1 hour)</h4>
+
+<p>Programming of any kind is bound to have issues that arise. The first major one came when I wanted to make the water tiles cause the player to respawn. My thought was to check what kind of tile the player collided with and respawn them if the tile was a water tile. I browsed the internet for an hour, only to find that I wasn&rsquo;t able to do it that way. I gave up on that solution and starting thinking of another way.</p>
+
+<h4 id="roadblock-the-first-the-way-around-45-minutes">Roadblock the First: The Way Around (45 minutes)</h4>
+
+<p>Instead of causing a respawn based on when the player touches the water tile, I decided to do it based on when they fell too fast.</p>
+
+<h4 id="textual-feedback-and-the-first-item-30-minutes">Textual Feedback and the First Item (30 minutes)</h4>
+
+<p>The nice-to-have feature that shows a quote when the player respawns was implemented along with the first item sprite and its associated object within the game.</p>
+
+<h3 id="day-one-recap">Day One Recap</h3>
+
+<h4 id="total-cumulative-development-time-5-hours-and-5-minutes">Total Cumulative Development Time: 5 hours and 5 minutes</h4>
+
+<p>Features completed on day one:</p>
+
+<p><strong>Required</strong></p>
+
+<ul>
+<li>a level that can be easily created and modified</li>
+<li>an easy to control character with a double jump</li>
+<li>some kind of hazard that would cause the player to respawn</li>
+</ul>
+
+<p><strong>Nice-to-haves</strong></p>
+
+<ul>
+<li>a quote that appeared on the UI whenever an item was picked up (specific to each item) or the player respawned (a random quote from a selection)</li>
+</ul>
+
+<h3 id="day-two-sunday">Day Two: Sunday</h3>
+
+<h4 id="more-items-55-minutes">More Items (55 minutes)</h4>
+
+<p>Day two started out with the creation of more graphics for the items. Fun and fairly simple but time consuming.</p>
+
+<h4 id="the-first-completely-playable-build-2-hours-15-minutes">The First Completely Playable Build (2 hours, 15 minutes)</h4>
+
+<p>Before digging into the code again, I took some time to layout the entire level on paper (disregard all the other notes in the image below), outlining the path that I wanted the player to take in a normal run and then mapped it out with the tilemap editor.
+<img src="level-design.jpg" alt="Level Design on Paper" /></p>
+
+<p>Once I had a full level created, I moved onto the checkpoint functionality which involved keeping track of a respawn point and updating that to be the point where an item was picked up.</p>
+
+<p>The dash mechanic came next despite it being a nice-to-have because it was easy enough to implement.</p>
+
+<p>The final component added was the cake; it would be the last item acquired by the player and would trigger the ending scene.</p>
+
+<p>That was it. The first completely playable build (including the win condition trigger) was completed in <strong>8 hours and 15 minutes</strong>.</p>
+
+<h4 id="music-and-sounds-1-hour-30-minutes">Music and Sounds (1 hour, 30 minutes)</h4>
+
+<p>Every single sound you hear except for the music track is Jenn&rsquo;s voice. This includes the jump (a pitched up version of her &ldquo;<em>uhh</em>&rdquo;) and dash (a modified version of mouth smacking) sounds. It was a fairly involved block of time as I now faced the challenge of combing through recordings and finding appropriate lines (in addition to ones that I could modify to provide more&hellip;noise type sounds).</p>
+
+<h4 id="more-art-45-minutes">More Art (45 minutes)</h4>
+
+<p>More art asset creation.</p>
+
+<h4 id="ui-and-the-run-time-clock-35-minutes">UI and the Run Time Clock (35 minutes)</h4>
+
+<p>The quote and time clock both had to be visible at all times but because I was using a camera that follows the player, I discovered early on that the quotes I was showing after respawn or when an item was acquired were being left behind in the world when the player moved.</p>
+
+<p>I attached both to the player object instead of the world and I now had a UI that followed the player. Perfect. This was also when I added Jenn&rsquo;s face beside the quote. Double perfect.</p>
+
+<h4 id="fonts-and-clock-formatting-20-minutes">Fonts and Clock Formatting (20 minutes)</h4>
+
+<p>I found a nice free font on <a href="https://www.dafont.com/" target=_blank>dafont</a> and updated all of the textual elements. Lastely I updated the run time clock to show minutes and seconds and made sure it incremented correctly.</p>
+
+<h3 id="day-two-recap">Day Two Recap</h3>
+
+<h4 id="total-cumulative-development-time-11-hours-and-25-minutes">Total Cumulative Development Time: 11 hours and 25 minutes</h4>
+
+<p>Features completed on day two:</p>
+
+<p><strong>Required</strong></p>
+
+<ul>
+<li>items that the player could pick up and have act as checkpoints for respawning</li>
+<li>a round timer to show how long the player has taken to complete the level</li>
+<li>a looping background music track</li>
+<li>sound effects and voice lines from Jenn</li>
+</ul>
+
+<p><strong>Nice-to-haves</strong></p>
+
+<ul>
+<li>a dash ability (with a cooldown so the player has to wait before they use it again)</li>
+</ul>
+
+<h3 id="day-three-monday">Day Three: Monday</h3>
+
+<p>No more weekend meant no more spending the whole day developing but rather doing it late into the night.</p>
+
+<h4 id="filling-in-the-world-1-hour-15-minutes">Filling in the World (1 hour, 15 minutes)</h4>
+
+<p>When I initially set up the level, I had the bare minimum amount of tiles placed. This meant some platforms had no corners and others had no finished matching bottom. This time was spent placing the tiles that filled out the level and made it look complete.
+<img src="unfilled-tiles.png" alt="Unfilled tiles" /></p>
+
+<h4 id="pause-screen-15-minutes">Pause Screen (15 minutes)</h4>
+
+<p>If there&rsquo;s a running clock in a game, there better be a pause function. The pause screen stops the run timer, the input from being processed, and the player from moving. Simple but important.</p>
+
+<h4 id="restart-30-minutes">Restart (30 minutes)</h4>
+
+<p>One feature that I enjoy in platformers aimed at gamers who <a href="https://en.wikipedia.org/wiki/Speedrun" target=_blank>speedrun</a> games is a function to quickly restart. I don&rsquo;t want to wait around for a death animation to play, I just want to try again. And again. And again.</p>
+
+<p>The restart functionality had to do a few key things: the player position must reset to the <em>original</em> spawn location, the run timer must reset to 0, and the item positions and states must reset to their original values. I had the first two working well but the last one was causing a problem.</p>
+
+<h4 id="roadblock-the-second-45-minutes">Roadblock the Second (45 minutes)</h4>
+
+<p>If the player hits the restart button while on the item&rsquo;s spawn location, they&rsquo;ll pick it up even though the they&rsquo;ll spawn at the original location. I tried moving the player spawn point way off screen, disabling collision detection on the item, and whatever else I could think of but in the end, the bug persisted for the time being.
+<img src="item-respawn-bug.gif" alt="Item Respawn Bug" /></p>
+
+<h4 id="ending-quote-10-minutes">Ending Quote (10 minutes)</h4>
+
+<p>Picking up the cake and triggering the end scene shows a quote based on how long it took the player to complete the level.</p>
+
+<h4 id="instructions-and-the-start-screen-overlay-45-minutes">Instructions and the Start Screen Overlay (45 minutes)</h4>
+
+<p>If people don&rsquo;t know how to play or why they&rsquo;re playing, then what&rsquo;s the point? Made sure that the instructions could be seen entirely when the game initially started. Since they&rsquo;re attached to the player object they sometimes get cut off depending on when the pause button is pressed.</p>
+
+<h4 id="no-pause-after-winning-5-minutes">No Pause After Winning (5 minutes)</h4>
+
+<p>Pause can&rsquo;t be pressed after the level has been completed. No pause, only <del>zuul</del> restart.</p>
+
+<h4 id="roadblock-the-second-the-way-around-1-hour-25-minutes">Roadblock the Second: The Way Around (1 hour, 25 minutes)</h4>
+
+<p>The one thing I forgot to try was to disable the collision of the <em>player</em> when resetting. Of course, this did the trick and worked exactly as I wanted. Now on a restart, the player&rsquo;s collision box is disabled, the items are reset, the code execution waits for 100ms, and it then re-enables the collision box of the player.</p>
+
+<h4 id="inventory-ui-25-minutes">Inventory UI (25 minutes)</h4>
+
+<p>Added the inventory UI area and the item sprites so they start out transparent (to let the player know what can be found) and become fully saturated when acquired.</p>
+
+<h4 id="miscellaneous-tasks-1-hour">Miscellaneous Tasks (1 hour)</h4>
+
+<p>By this point it was pretty late in the evening so I didn&rsquo;t have much brain power left for bigger tasks. I added a toggle button for showing and hiding the inventory, updated the instructions, created and added a few additional world tiles, and made a small but important change: making the player character face the direction they&rsquo;re moving in.
+<img src="face-left-and-right.gif" alt="Player now faces proper direction" /></p>
+
+<h3 id="day-three-recap">Day Three Recap</h3>
+
+<h4 id="total-cumulative-development-time-18-hours">Total Cumulative Development Time: 18 hours</h4>
+
+<p>Features completed on day three:</p>
+
+<p><strong>Nice-to-haves</strong></p>
+
+<ul>
+<li>an inventory UI element to show what items were in the level and which of them the player acquired</li>
+</ul>
+
+<p>Day three of development included a lot of features that helped make the game more complete but weren&rsquo;t strictly gameplay focused:</p>
+
+<ul>
+<li>filling in the level with tiles to make it look better</li>
+<li>the pause and restart functionalities</li>
+<li>instructions on how to play</li>
+</ul>
+
+<h3 id="day-four-tuesday">Day Four: Tuesday</h3>
+
+<p>Going into the final day, I still hadn&rsquo;t created the most important asset: the birthday party scene. Naturally I left that until the final few hours.</p>
+
+<h4 id="music-and-more-instructions-50-minutes">Music and More Instructions (50 minutes)</h4>
+
+<p>I initially used a placeholder track for the background music and realized it didn&rsquo;t have the jaunty upbeat feel I was going for. My girlfriend (also the official playtester) suggested that I use a melodica recording of <a href="https://en.wikipedia.org/wiki/The_Entertainer_(rag)" target=_blank>the Entertainer</a> I&rsquo;d made for a YouTube video as the background music and I agreed that it would fit perfectly.</p>
+
+<p>After swapping in the file and setting it to loop, I added a toggle button for the sounds and configured the music track to stop when it was pressed, then start again from the pause point when pressed again.</p>
+
+<p>This time was also spent rewording, laying out, and highlighting the instructions to make them more legible and eye catching.</p>
+
+<h4 id="more-item-assets-and-laying-out-checkpoints-1-hour-10-minutes">More Item Assets and Laying Out Checkpoints (1 hour, 10 minutes)</h4>
+
+<p>While playing through the level, I realized that the item checkpoints were too far apart and this caused an issue in the flow of the game when a player respawned too far back from where they fell. I decided to add a couple more items and repositioned them all to not punish the player as severely for making a bad jump.</p>
+
+<h4 id="the-final-scene-1-hour">The Final Scene (1 hour)</h4>
+
+<p>Having finished all of the game design and technical tasks, I got down to creating the assets for the birthday party scene which was quite soothing. Knowing that I was almost done really allowed me to enjoy this last creative task.
+<img src="final-scene-background.png" alt="Background of the final scene" /></p>
+
+<h4 id="playtesting-and-final-adjustments-1-hour">Playtesting and Final Adjustments (1 hour)</h4>
+
+<p>I playtested the game as I went but in doing so, I was overtly aware of where all the platforms and items were located. I needed someone who hadn&rsquo;t seen or played the game yet to offer unbiased feedback so I enlisted my girlfriend&rsquo;s help. She offered some valuable comments on the instructions wording, platform placement, and even a simple thing like adding a message to let the player know after they beat the level that they can restart the game by pressing the <code>R</code> key. It was extremely helpful.</p>
+
+<p>I also learned while watching her that some of the parts that seemed easy to me may be more difficult for others, especially those who don&rsquo;t play games all that much so I added an easy mode that activates if the player falls 10 times. It adds 3 additional jumps for a total of 5 before the player needs to touch the ground again.
+<img src="easy-mode.gif" alt="Easy mode gives the player 3 additional jumps" /></p>
+
+<h3 id="day-four-recap">Day Four Recap</h3>
+
+<h4 id="total-cumulative-development-time-22-hours">Total Cumulative Development Time: 22 hours</h4>
+
+<p>Features completed on day four:</p>
+
+<p><strong>Required</strong></p>
+
+<ul>
+<li>an ending scene with a birthday party</li>
+</ul>
+
+<h3 id="completion">Completion</h3>
+
+<p>With development officially done there was one nice-to-have feature that I didn&rsquo;t end up getting in: a looping animation for the ending scene with people cheering and dancing. It was partially because I didn&rsquo;t have any time left (development wrapped up at around 9pm the day before Jenn&rsquo;s birthday) and partially because it would be a very involved process that I didn&rsquo;t feel would add all that much more to the game.</p>
+
+<p>So I made the final commits to the source repository, built a web version of the game, uploaded it to the website, and drafted the message I&rsquo;d send to Jenn the next morning.</p>
+
+<h3 id="development-stats">Development Stats</h3>
+
+<table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Time</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Total Development Time</td>
+<td><strong>22 hours</strong></td>
+</tr>
+
+<tr>
+<td>Total Days Developed Over</td>
+<td>4 days</td>
+</tr>
+
+<tr>
+<td>Development Time: Day 1</td>
+<td>5 hours, 5 minutes</td>
+</tr>
+
+<tr>
+<td>Development Time: Day 2</td>
+<td>6 hours, 20 minutes</td>
+</tr>
+
+<tr>
+<td>Development Time: Day 3</td>
+<td>6 hours, 35 minutes</td>
+</tr>
+
+<tr>
+<td>Development Time: Day 4</td>
+<td>4 hours</td>
+</tr>
+
+<tr>
+<td>First Completely Playable Build</td>
+<td>8 hours, 15 minutes</td>
+</tr>
+
+<tr>
+<td>Total Time Spent Creating Assets (graphics and sound)</td>
+<td>~5 hours</td>
+</tr>
+
+<tr>
+<td>Total Time Spent Debugging</td>
+<td>~4 hours</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="the-lessons">The Lessons</h2>
+
+<h3 id="don-t-let-perfect-become-the-enemy-of-good">Don&rsquo;t let perfect become the enemy of good</h3>
+
+<p>The agile and devops paradigms both preach developing in iterations so you can fail fast, learn from your mistakes, and quickly have something to show for your efforts. Practitioners are after something <em>good enough</em> rather than perfect.</p>
+
+<p>In my plan I had both required and nice-to-have features because I knew that if it came down to it, I could focus my time on the required ones and forget about the nice-to-haves (this didn&rsquo;t exactly end up happening as I quickly implemented some of the nice-to-have ones in the heat of development; oh well, the dash just <em>became</em> a required feature).</p>
+
+<h3 id="know-when-to-move-on">Know when to move on</h3>
+
+<p>A couple of times (see the roadblocks above) I got stuck on a problems that I just couldn&rsquo;t solve in a timely manner but in both cases I eventually found alternative solutions after revisiting the problem later.</p>
+
+<p>In the second roadblock though, I didn&rsquo;t come up with an alternative solution right away so I decided to let the bug live on for the time being, eventually coming back about an hour later to squash in. Since it wasn&rsquo;t a game-breaking bug, I knew that I could leave it and move on with other tasks that needed to get done.</p>
+
+<p>The <a href="https://www.behavioraleconomics.com/resources/mini-encyclopedia-of-be/sunk-cost-fallacy/" target=_blank>sunk cost fallacy</a> affects a lot of people and knowing when to cut your losses (in my case, time) and move on is important (doubly so in my case given the very limited amount of time).</p>
+
+<h3 id="don-t-underestimate-your-own-bias">Don&rsquo;t underestimate your own bias</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Playtest" target=_blank>Playtesting</a> is an important and valuable part of the game development process: it helps uncover bugs but it also shows what people who&rsquo;ve never seen or interacted with the game think and do while playing it.</p>
+
+<p>As the designer and developer, I know where every item and platform are in the game. I know which jumps are easy, tricky, and impossible. I know the different paths and secrets in the game. I&rsquo;m all knowing and that affects how <em>I</em> play it.</p>
+
+<p>By the same token, no one else will know as much about the game as I do and that will affect how <em>they</em> play it. Watching and listening to other players interact with your game can give you new insights and help you improve it in ways you may not have thought to.</p>
+
+<h3 id="godot-specific-learning-points">Godot-specific Learning Points</h3>
+
+<p>I mentioned in the beginning of the post that I felt pretty comfortable with Godot and while that&rsquo;s true, it doesn&rsquo;t mean that I didn&rsquo;t learn anything new in this process. This is not an exhaustive list but just the components that I&rsquo;d never used before.</p>
+
+<ul>
+<li><a href="https://docs.godotengine.org/en/stable/tutorials/2d/using_tilemaps.html" target=_blank>Tilemaps</a>: I knew <em>about</em> them but not how to create and use them (very easy to do with Godot)</li>
+<li><a href="https://docs.godotengine.org/en/stable/tutorials/audio/audio_streams.html" target=_blank>Audio</a>: unbelievably easy to do in Godot (create an <code>AudioStreamPlayer</code> object, give it a supported sound file, and write <code>$&quot;/MyAudioObject&quot;.play()</code>)</li>
+<li><a href="https://docs.godotengine.org/en/stable/classes/class_camera2d.html" target=_blank>Camera2D</a>: equally easy to setup a camera that follows the player (add it as a child of your player object, that&rsquo;s it)</li>
+</ul>
+
+<h2 id="the-unintentionally-good-game">The Unintentionally Good Game</h2>
+
+<p>This game had to first and foremost be a gift to celebrate someone. By making Jenn the main character, adding items she&rsquo;d connect with, and making the entire game about celebrating her birthday, I think that it achieved that goal.</p>
+
+<p>Ancillary to this was to make a good platforming game. One that felt good to control, had good replayability, and was just fun overall. These are the features that I think allowed it to do both.</p>
+
+<ul>
+<li>Level design has multiple paths with both easy and tricky jumps (replayability)</li>
+<li>Quick learning curve (approachable for beginners)</li>
+<li>Collecting items is optional (difficulty level vs speed; get a better time by not collecting items but risk starting from the beginning if you fall)</li>
+<li>Different &ldquo;endings&rdquo; (the final quote changes based on time spent and number of items collected)</li>
+<li>Speedrun friendly (multiple paths, dash ability, quick restart)</li>
+<li>The game rewards exploration and experimentation (see secrets section below)</li>
+</ul>
+
+<h3 id="secrets">Secrets</h3>
+
+<h4 id="the-waterfall">The Waterfall</h4>
+
+<p>Respawns occur when you fall too fast and <em>not</em> when you hit a specific tile. This means you can use your jumps to not only go up but stop yourself from going down too fast.</p>
+
+<p>Additionally water tiles have no collision box; you can pass through them.</p>
+
+<p>If you couple these two intentional design choices, you can use them to skip the first third of the level.</p>
+
+<p><img src="waterfall-secret.gif" alt="Hidden path through the waterfall" /></p>
+
+<h4 id="the-name">The Name</h4>
+
+<p>If you pay attention to the platforms in the bottom third of the level, you might notice that they spell something out. A little easter egg for the keen eyed.</p>
+
+<p><img src="level.png" alt="The Entire Level" /></p>
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p>Game design and development have interested me for a long time but I always thought they were too difficult to get into and that I wasn&rsquo;t smart enough. With free tools like Godot and the ability to learn at your own pace from free videos on YouTube and forum posts, I learned that I had everything I needed to become a game developer.</p>
+
+<p>This project really helped me solidify in my mind that I can be a game developer.</p>
+
+<p>Scratch that. I am a game developer.</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://tunzor.github.io/tags/godot/">godot</a>&nbsp;
+            
+              <a href="https://tunzor.github.io/tags/game-dev/">game-dev</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2ftunzor.github.io%2fposts%2fmaking-a-game-in-one-day%2f&amp;text=Making%20a%20Game%20in%20One%20Day&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftunzor.github.io%2fposts%2fmaking-a-game-in-one-day%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2ftunzor.github.io%2fposts%2fmaking-a-game-in-one-day%2f&amp;title=Making%20a%20Game%20in%20One%20Day" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ftunzor.github.io%2fposts%2fmaking-a-game-in-one-day%2f&amp;title=Making%20a%20Game%20in%20One%20Day" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2ftunzor.github.io%2fposts%2fmaking-a-game-in-one-day%2f&amp;title=Making%20a%20Game%20in%20One%20Day" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2ftunzor.github.io%2fposts%2fmaking-a-game-in-one-day%2f&amp;description=Making%20a%20Game%20in%20One%20Day" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://tunzor.github.io/posts/terraform-docs-clarity/" data-toggle="tooltip" data-placement="top" title="Documentation and the Art of Reading">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/tunzor" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://bitbucket.org/tunzor" title="Bitbucket">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://play.google.com/store/apps/developer?id=Tunzor" title="Google Play Apps">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-google-play fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/anthony-russo-toronto" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/toonie55" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Anthony
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://tunzor.github.io">tunzor</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://tunzor.github.io/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://tunzor.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
