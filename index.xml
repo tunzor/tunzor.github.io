@@ -264,6 +264,18 @@ Instead, please enjoy this bulleted list:
     </item>
     
     <item>
+      <title>Welcome!</title>
+      <link>https://tunzor.github.io/redirect/</link>
+      <pubDate>Wed, 11 Dec 2019 11:58:02 -0500</pubDate>
+      
+      <guid>https://tunzor.github.io/redirect/</guid>
+      <description>Don&amp;rsquo;t be afraid; you typed that domain name correctly.
+Both arusso.ca and tunzor.ca redirect here (they&amp;rsquo;re just a little bit easier to remember).
+Feel free to browse around; the about and top posts pages are two good places to start. To see the most recent posts, check out the main page.
+Thanks for stopping by!</description>
+    </item>
+    
+    <item>
       <title>Running a Hugo generated site on Github Pages and Google Cloud Storage</title>
       <link>https://tunzor.github.io/posts/hugo-on-gh-and-gcs/</link>
       <pubDate>Tue, 10 Dec 2019 09:45:13 -0500</pubDate>
