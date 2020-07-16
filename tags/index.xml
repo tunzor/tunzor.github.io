@@ -6,7 +6,7 @@
     <description>Recent content in Tags on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tunzor.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,16 +14,25 @@
     <item>
       <title>game-dev</title>
       <link>https://tunzor.github.io/tags/game-dev/</link>
-      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tunzor.github.io/tags/game-dev/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>game-jam</title>
+      <link>https://tunzor.github.io/tags/game-jam/</link>
+      <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tunzor.github.io/tags/game-jam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>godot</title>
       <link>https://tunzor.github.io/tags/godot/</link>
-      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tunzor.github.io/tags/godot/</guid>
       <description></description>
