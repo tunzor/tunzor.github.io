@@ -6,10 +6,21 @@
     <description>Recent content in diner-drop on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Aug 2020 01:01:01 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2020 01:01:02 +0000</lastBuildDate>
     
 	<atom:link href="https://tunzor.github.io/tags/diner-drop/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Diner Drop has finally dropped</title>
+      <link>https://tunzor.github.io/posts/diner-drop-release/</link>
+      <pubDate>Fri, 07 Aug 2020 01:01:02 +0000</pubDate>
+      
+      <guid>https://tunzor.github.io/posts/diner-drop-release/</guid>
+      <description>Diner Drop is live! The development log for Diner Drop started back in early May of this year and even in that first one you could see the basic elements: falling lettuce buns, a magical garbage can that gets rid of everything, and our main hero(ine) Chef moving back and forth.
+Now we&amp;rsquo;re here.
+Sure, there&amp;rsquo;s more than just falling lettuce buns (12 other unique falling food items to be exact, thank you very much) and the garbage can isn&amp;rsquo;t quite as magical but Chef is still here and still moving back and forth.</description>
+    </item>
     
     <item>
       <title>Godot in a gif(fy): The Final Countdown</title>
