@@ -6,10 +6,20 @@
     <description>Recent content on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2020 01:01:01 +0000</lastBuildDate>
     
 	<atom:link href="https://tunzor.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Godot in a gif(fy): The Final Countdown</title>
+      <link>https://tunzor.github.io/posts/godot-diner-drop-12/</link>
+      <pubDate>Fri, 07 Aug 2020 01:01:01 +0000</pubDate>
+      
+      <guid>https://tunzor.github.io/posts/godot-diner-drop-12/</guid>
+      <description>Click here to play the most up-to-date version
+ALL the changes What&amp;rsquo;s changed since last time? v0.14.0  Move on up! New (hopefully) easier to use control scheme.  Mobile: move by tapping and holding on the left and right buttons at the bottom or any point directly above them (all the way to the top of the screen) Desktop: keyboard input only now (A and D or left and right arrow keys to move and S or down arrow to interact)  Moved the informational UI elements (level, score, and timer) to the top of the screen to stop it from blocking what Chef is holding Made it easier to interact with customers by increasing the serve area to the left and right of their centre point High score!</description>
+    </item>
     
     <item>
       <title>Making a Game in 48 hours</title>
@@ -283,8 +293,7 @@ Instead, please enjoy this bulleted list:
       
       <guid>https://tunzor.github.io/games/</guid>
       <description>This page lists all of the games I&amp;rsquo;ve developed that are available to download and play or play online in your browser.
-CMD and CTRL: Shortcut Heroes Play on Windows (desktop download) Play in your web browser (desktop only; requires keyboard) Released: July 2020 A puzzle-platforming game that was an entry into the GMTK Game Jam 2020 where the theme was Out of Control.
-You play as CMD and CTRL, swapping between the two to enable platforms for the other to use.</description>
+Diner Drop Play on mobile (Android download) Play in your web browser (desktop and mobile) Released: August 2020 An casual game where you play as Chef who has to balance collecting the parts of an order (in order!) and serving those orders to the hungry customers before they get too impatient and leave.</description>
     </item>
     
     <item>
