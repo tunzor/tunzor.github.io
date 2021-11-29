@@ -6,10 +6,23 @@
     <description>Recent content on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Aug 2020 01:01:02 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tunzor.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Music</title>
+      <link>https://tunzor.github.io/music/</link>
+      <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tunzor.github.io/music/</guid>
+      <description>I like to play and record music (see my YouTube channel for evidence).
+The tracks below are some of my original ideas and recordings.
+Song names are not my forte.
+Loops These are made with an analog looper pedal and some combination of a MIDI keyboard with built-in sounds, a guitar and multi-effects pedal, an electric bass, and and electronic drum kit.
+Jam 1   Jam 2   Jam 3   Jam 4   Jam 5   Jam 6   Jam 7   Jam 8   Jam 9   Jam 10   Jam 11   Non-Loops These are recorded and mixed with GarageBand and its built-in virtual sounds.</description>
+    </item>
     
     <item>
       <title>Diner Drop has finally dropped</title>
