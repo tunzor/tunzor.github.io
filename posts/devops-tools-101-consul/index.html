@@ -11,8 +11,8 @@
   <meta name="description" content="DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
 Today we&rsquo;ll be learning about Consul by Hashicorp.
 The Official Description From Hashicorp&rsquo;s site
- Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.
- The Breakdown service mesh solution - a solution that allows individual services to discover and communicate quickly/securely/reliably with each other">
+Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.
+The Breakdown service mesh solution - a solution that allows individual services to discover and communicate quickly/securely/reliably with each other">
   <meta name="author" content="Anthony"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,7 +61,7 @@ The Official Description From Hashicorp&rsquo;s site
     "name" : "Anthony"
   },
   "headline": "DevOps Tools 101 - Consul",
-  "description" : "DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.\nToday we\x26rsquo;ll be learning about Consul by Hashicorp.\nThe Official Description From Hashicorp\x26rsquo;s site\n Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.\n The Breakdown service mesh solution - a solution that allows individual services to discover and communicate quickly\/securely\/reliably with each other",
+  "description" : "DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.\nToday we\u0026rsquo;ll be learning about Consul by Hashicorp.\nThe Official Description From Hashicorp\u0026rsquo;s site\nConsul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.\nThe Breakdown service mesh solution - a solution that allows individual services to discover and communicate quickly\/securely\/reliably with each other",
   "inLanguage" : "en",
   "wordCount":  625 ,
   "datePublished" : "2019-12-13T09:54:14",
@@ -86,8 +86,8 @@ The Official Description From Hashicorp&rsquo;s site
 <meta property="og:description" content="DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
 Today we&rsquo;ll be learning about Consul by Hashicorp.
 The Official Description From Hashicorp&rsquo;s site
- Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.
- The Breakdown service mesh solution - a solution that allows individual services to discover and communicate quickly/securely/reliably with each other">
+Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.
+The Breakdown service mesh solution - a solution that allows individual services to discover and communicate quickly/securely/reliably with each other">
 <meta property="og:image" content="https://tunzor.github.io/img/me.jpg" />
 <meta property="og:url" content="https://tunzor.github.io/posts/devops-tools-101-consul/" />
 <meta property="og:type" content="website" />
@@ -100,7 +100,7 @@ The Official …">
   <meta name="twitter:image" content="https://tunzor.github.io/img/me.jpg" />
   <meta name="twitter:card" content="summary" />
   <link href='https://tunzor.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.106.0">
   <link rel="alternate" href="https://tunzor.github.io/index.xml" type="application/rss+xml" title="tunzor"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://tunzor.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -139,7 +139,7 @@ if (!doNotTrack) {
         
           
             <li class="navlinks-container">
-              <a class="navlinks-parent">Play my games</a>
+              <a class="navlinks-parent">Games</a>
               <div class="navlinks-children">
                 
                   <a href="/diner-drop">Diner Drop (desktop/mobile)</a>
@@ -161,14 +161,15 @@ if (!doNotTrack) {
           
         
           
-            <li>
-              <a title="Top Posts" href="/top-posts">Top Posts</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="Tags" href="/tags">Tags</a>
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Work</a>
+              <div class="navlinks-children">
+                
+                  <a href="/writing">Writing</a>
+                
+                  <a href="/presentations">Presentations</a>
+                
+              </div>
             </li>
           
         
@@ -276,7 +277,7 @@ if (!doNotTrack) {
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 13, 2019
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
@@ -307,83 +308,48 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
-
-<p><em>DevOps Tools 101</em> is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.</p>
-
+        <p><em>DevOps Tools 101</em> is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.</p>
 <p>Today we&rsquo;ll be learning about <strong>Consul</strong> by Hashicorp.</p>
-
 <h2 id="the-official-description">The Official Description</h2>
-
 <p>From <a href="https://www.consul.io/intro/index.html#what-is-consul-" target=_blank>Hashicorp&rsquo;s site</a></p>
-
 <blockquote>
 <p>Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.</p>
 </blockquote>
-
 <h2 id="the-breakdown">The Breakdown</h2>
-
 <p><code>service mesh solution</code> - a solution that allows individual services to discover and communicate quickly/securely/reliably with each other</p>
-
 <p><code>full featured control plane</code> - central control mechanism that can do a lot of stuff</p>
-
 <p><code>service discovery</code> - services like an API can be discovered and made available to other services in the mesh</p>
-
 <p><code>[service] configuration</code> - services can be configured from a centralized configuration store</p>
-
 <p><code>[service] segmentation functionality</code> - services can be separated from each other and have communication rules applied to the traffic between them</p>
-
 <h2 id="the-explanation">The Explanation</h2>
-
 <p>Hashicorp&rsquo;s co-founder Armon Dadgar has a <a href="https://www.youtube.com/watch?v=mxeMdl0KvBI" target=_blank>really good video that explains Consul</a> but is also 15 minutes long (well worth a watch though). We&rsquo;re going to try and summarize and explain it a little quicker.</p>
-
 <p>As we now know, Consul is a service mesh solution that offers a few key functionalities: service discovery, configuration, and segmentation.</p>
-
 <p>In order for it to accomplish this, Consul runs an agent on each of the nodes/servers in a datacenter (on-prem or cloud-based). This agent is responsible for communicating with the services available and enabling the functionalities we looked at above.</p>
-
 <h3 id="service-discovery">Service Discovery</h3>
-
 <p>When an instance of a service starts, the agent registers it with the Consul registry and makes it available for traffic. If <code>service A</code> wants to communicate with <code>service B</code>, it queries the registry, which returns one instance of the service, and communicates directly with that instance.</p>
-
 <p>The agent also maintains health checks for services and nodes so if that instance of <code>service B</code> should go down or fail a health check, the agent will report it to the registry and it will no longer be returned when a query is made for <code>service B</code>.</p>
-
 <h3 id="service-configuration">Service Configuration</h3>
-
 <p>Each service has some configurations that might be different from other services in the mesh but there might be some that are shared between them (something like a database port or whether the database is in maintenance mode).</p>
-
 <p>Consul can make this available in a centralized key/value store and push it out to each of the services&rsquo; configurations. This saves us from having to make the same config change to each service and push it out manually ourselves.</p>
-
 <h3 id="service-segmentation">Service Segmentation</h3>
-
 <p>We have all of these services running and assuming that they have network connectivity, they can communicate without issue. However, just because they <em>can</em> talk to each other, doesn&rsquo;t mean that they <em>should</em> be able to talk to each other. Consul uses a component called <a href="https://www.consul.io/docs/connect/index.html" target=_blank>Connect</a> to address this problem.</p>
-
 <p>Each of our services will have a proxy that runs alongside it (known as a <strong>sidecar</strong>) and it will handle all communication to and from that service. This proxy verifies TLS certificates for encrypted communication and enforces the policy for service communication maintained by Connect (these policies are called <a href="https://www.consul.io/docs/connect/intentions.html" target=_blank>intentions</a>).</p>
-
 <p>If <code>service A</code> wants to communicate with <code>service B</code>, the proxy of <code>service B</code> will verify the certificate of <code>service A</code> and then check if there is an intention from Connect that allows this traffic.</p>
-
 <h2 id="the-alternatives">The Alternatives</h2>
-
 <p>Many people are working to solve the same problems which means that each problem will more than likely have a multitude of available solutions. Here are a few competing products to Consul.</p>
-
 <p>Hashicorp also has a set of <a href="https://www.consul.io/intro/vs/index.html" target=_blank>comparison pages</a> that discuss the alternatives to and pros/cons of using Consul versus the other tools.</p>
-
-<h3 id="a-href-https-technologyconversations-com-2015-09-08-service-discovery-zookeeper-vs-etcd-vs-consul-target-blank-service-discovery-tools-a"><a href="https://technologyconversations.com/2015/09/08/service-discovery-zookeeper-vs-etcd-vs-consul/" target=_blank>Service Discovery tools</a></h3>
-
+<h3 id="a-hrefhttpstechnologyconversationscom20150908service-discovery-zookeeper-vs-etcd-vs-consul-target_blankservice-discovery-toolsa"><a href="https://technologyconversations.com/2015/09/08/service-discovery-zookeeper-vs-etcd-vs-consul/" target=_blank>Service Discovery tools</a></h3>
 <ul>
 <li><a href="https://zookeeper.apache.org/" target=_blank>Zookeeper</a></li>
 <li><a href="https://etcd.io/" target=_blank>etcd</a></li>
 </ul>
-
 <h3 id="service-configuration-1">Service Configuration</h3>
-
 <ul>
 <li><a href="https://www.chef.io/" target=_blank>Chef</a></li>
 <li><a href="https://puppet.com/" target=_blank>Puppet</a></li>
 <li><a href="https://www.ansible.com/" target=_blank>Ansible</a></li>
 </ul>
-
 <h3 id="service-segmentation-1">Service Segmentation</h3>
-
 <ul>
 <li><a href="https://istio.io/" target=_blank>Istio</a></li>
 </ul>
@@ -539,17 +505,17 @@ if (!doNotTrack) {
 
           &nbsp;&bull;&nbsp;&copy;
           
-            2021
+            2019 - 2023
           
-
           
-            &nbsp;&bull;&nbsp;
-            <a href="https://tunzor.github.io">tunzor</a>
-          
+          &nbsp;&bull;&nbsp;
+          <a href="/top-posts">Top Posts</a>
+          &nbsp;&bull;&nbsp;
+          <a href="/tags">Tags</a>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.106.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

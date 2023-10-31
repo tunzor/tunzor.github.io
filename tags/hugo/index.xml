@@ -6,11 +6,7 @@
     <description>Recent content in hugo on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tunzor.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tunzor.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automating the publication of a Hugo generated site with Google Cloud Build</title>
       <link>https://tunzor.github.io/posts/cloud-build-hugo-site/</link>

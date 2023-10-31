@@ -57,7 +57,7 @@
     "name" : "Anthony"
   },
   "headline": "Making a Game in 48 hours",
-  "description" : "Following up the post I wrote about making a game in one day with this one may seem like a step back, going from 22 to 48 hours.\nThe difference is there\x26rsquo;s no qualification of development time vs actual time passed; this time I didn\x26rsquo;t have the luxury of spreading my development over 4 days.\n2 days. 48 hours.\nThat\x26rsquo;s all the time I had to think, plan, and develop.",
+  "description" : "Following up the post I wrote about making a game in one day with this one may seem like a step back, going from 22 to 48 hours.\nThe difference is there\u0026rsquo;s no qualification of development time vs actual time passed; this time I didn\u0026rsquo;t have the luxury of spreading my development over 4 days.\n2 days. 48 hours.\nThat\u0026rsquo;s all the time I had to think, plan, and develop. Not to mention also eat, sleep, and tend to other normal bodily functions.",
   "inLanguage" : "en",
   "wordCount":  2733 ,
   "datePublished" : "2020-07-16T00:00:00",
@@ -90,7 +90,7 @@
   <meta name="twitter:image" content="https://tunzor.github.io/img/me.jpg" />
   <meta name="twitter:card" content="summary" />
   <link href='https://tunzor.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.106.0">
   <link rel="alternate" href="https://tunzor.github.io/index.xml" type="application/rss+xml" title="tunzor"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://tunzor.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -129,7 +129,7 @@ if (!doNotTrack) {
         
           
             <li class="navlinks-container">
-              <a class="navlinks-parent">Play my games</a>
+              <a class="navlinks-parent">Games</a>
               <div class="navlinks-children">
                 
                   <a href="/diner-drop">Diner Drop (desktop/mobile)</a>
@@ -151,14 +151,15 @@ if (!doNotTrack) {
           
         
           
-            <li>
-              <a title="Top Posts" href="/top-posts">Top Posts</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="Tags" href="/tags">Tags</a>
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Work</a>
+              <div class="navlinks-children">
+                
+                  <a href="/writing">Writing</a>
+                
+                  <a href="/presentations">Presentations</a>
+                
+              </div>
             </li>
           
         
@@ -270,7 +271,7 @@ if (!doNotTrack) {
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 16, 2020
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;13&nbsp;minutes
@@ -301,264 +302,155 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
-
-<p>Following up the post I wrote about <a href="/posts/making-a-game-in-one-day/" target=_blank>making a game in one day</a> with this one may seem like a step back, going from 22 to 48 hours.</p>
-
+        <p>Following up the post I wrote about <a href="/posts/making-a-game-in-one-day/" target=_blank>making a game in one day</a> with this one may seem like a step back, going from 22 to 48 hours.</p>
 <p>The difference is there&rsquo;s no qualification of development time vs actual time passed; this time I didn&rsquo;t have the luxury of spreading my development over 4 days.</p>
-
 <p>2 days. 48 hours.</p>
-
 <p>That&rsquo;s all the time I had to think, plan, and develop. Not to mention also eat, sleep, and tend to other normal bodily functions.</p>
-
 <p>It was definitely way more stressful. Especially when Sunday morning rolled around and I still had so many tasks to complete just to release a <em>playable</em> game; let alone a <em>good</em> one.</p>
-
 <p>It was rewarding though; I learned how important it is to spend time coming up with a good idea (I flip-flopped between 3 or 4 ideas in the first few hours), a few more things in Godot and how to use them, and solidified the importance of having someone else playtest.</p>
-
 <p>Would I do it again? Yup.</p>
-
 <p>Would it be just as stressful? Yup.</p>
-
 <p>Would it be worthwhile? Yup.</p>
-
 <p>Might I be turning into a masochist? Possibly. But only about this.</p>
-
 <h2 id="the-game-jam">The Game Jam</h2>
-
 <p>The GMTK Game Jam is an annual 48 hour long event organized by Mark from <a href="https://www.youtube.com/channel/UCqJ-Xo29CKyLTjn6z2XwYAw" target=_blank>Game Maker&rsquo;s Toolkit</a>, a YouTube channel with videos exploring game design and related topics. The <a href="https://itch.io/jam/gmtk-2020" target=_blank>theme for this year&rsquo;s jam</a> was <strong>Out of Control</strong> which was fitting as that&rsquo;s how I felt for the majority of it (having never participated in a real game jam before).</p>
-
 <p>Just before the jam started, there were about 17,000 other people signed up to participate. By the end of it, almost 5,500 entries had been submitted to be played, rated, and overall just admired.</p>
-
 <p>Playing some of the entries, I realized that they were truly stellar and marveled at what knowledgable people could accomplish in such a short time. Was mine good enough to hang with them? It didn&rsquo;t really matter. I was happy with what I&rsquo;d made and that I was even <em>able</em> to do it in the same 48 hours.</p>
-
 <p>I was more relieved to know that I wouldn&rsquo;t be having to do something like it for a long while though.</p>
-
 <h2 id="the-out-of-control-game">The (Out of Control) Game</h2>
-
 <p><a href="/cmd-and-ctrl" target=_blank>CMD and CTRL: Shortcut Heroes</a> is the game I <a href="https://itch.io/jam/gmtk-2020/rate/698290" target=_blank>submitted</a>; a puzzle platforming game where you play as two characters (CMD and CTRL) who must collect the keyboard keys (<code>A</code>, <code>B</code>, <code>C</code>, and <code>O</code>) scattered in each level so that they can become true shortcut heroes.</p>
-
 <p>The main mechanic in the game (and the implementation of the jam&rsquo;s theme) is the ability to switch between the two characters at any time with either the <code>ctrl</code> or <code>command</code> keys (not to be confused with the playable characters). Doing so will cause you to go <em>out of control</em> (CTRL) and <em>in command</em> (CMD) or <em>out of command</em> (CMD) and <em>in control</em> (CTRL).</p>
-
 <p>They each have a laptop that they can use to enable/disable platforms that only the other can interact with and stand on. Only by using both together will the player be able to finish the level and progress.</p>
-
-<p><img src="/images/games/cmd-and-ctrl-gameplay.gif" alt="CMD and CTRL Gameplay" /></p>
-
+<p><img src="/images/games/cmd-and-ctrl-gameplay.gif" alt="CMD and CTRL Gameplay"></p>
 <h2 id="the-process-of-going-out-of-control">The Process (of going Out of Control)</h2>
-
 <p>Thankfully I didn&rsquo;t keep a <a href="/posts/making-a-game-in-one-day#warning" target=_blank>detailed minute-by-minute development log like the last time</a> so we&rsquo;ll just cover the important events that occurred (courtesy of the source code repository&rsquo;s commit history).</p>
-
 <h3 id="dawn-of-the-first-day-friday">Dawn of the First Day (Friday)</h3>
-
 <p>The jam officially started at 8pm UK time which meant I began at 3pm. I planned to first work on the idea from 3-5pm; figuring a couple hours would be enough to come up with a few ideas, decide on the best one, and flush it out enough to begin development.</p>
-
 <p><strong>Spoiler</strong>: this turned out to <em>not</em> be enough time.</p>
-
 <p>I had come up with a few game mechanics and ideas but nothing that I felt really fit the theme very well. A few of the mehanics I came up with that centered around the theme included:</p>
-
 <ul>
 <li>removing or modifying the player&rsquo;s controls (<em>a lot</em> of games went this route)</li>
 <li>fighting to keep control of your character (either against an AI or another player)</li>
 <li>removing the ability to use the <code>ctrl</code> key</li>
 <li>something involving keyboard shortcuts (e.g. <code>ctrl</code> + <code>a</code>) and then taking that ability away</li>
 </ul>
-
 <p>As for game ideas:</p>
-
 <ul>
 <li>fire getting out of control (fire fighting game)</li>
 <li>weather control (playing as mother nature)</li>
 <li>stock trading/market game (was thinking of things that could get out of control)</li>
 <li>out of body/mind control</li>
 </ul>
-
 <p>Ultimately I focused on the following two ideas before deciding to go with the second.</p>
-
 <h4 id="idea-1-an-adventure-game-based-around-keyboard-shortcuts">Idea 1: An adventure game based around keyboard shortcuts</h4>
-
 <p>I knew that there were a lot of keyboard shortcuts and thought about how I could make use of all or most of them and settled on making each of them a different ability for characters in a D&amp;D-like adventure game. The player would be able to use them at any type by using the associated shortcut.</p>
-
 <ul>
 <li>the priest would have the ability to <code>SAVE</code> (<code>CTRL+S</code>) other downed adventurers and <code>REFRESH</code> (<code>CTRL+R</code>) the party to cure them of damage/poison</li>
 <li>the rogue would be able to <code>FIND</code> (<code>CTRL+F</code>) things by searching rooms and <code>OPEN</code> (<code>CTRL+O</code>) locked doors</li>
 <li>the paladin would be able to use their sword to <code>CUT</code> (<code>CTRL+X</code>) objects blocking paths and become <code>BOLD</code> (<code>CTRL+B</code>) to sweet talk or influence NPCs</li>
 </ul>
-
 <p>The party would share a collection of <code>ctrl</code>s that would decrease by one each time an ability was used. When they run out, the party would black out and start again from the original spawn point but any progress made (new characters recruited or events that happened) would persist. Each time a new character is recruited, the <code>ctrl</code> collections would increase, allowing the party to do more each time before they black out.</p>
-
 <p>I really liked this idea but ultimately didn&rsquo;t pursue it because I thought it&rsquo;d take too long to develop different scenarios and multiple paths through them (e.g. defeat the dragon by learning something in a book or by talking to it in Draconic - these would be abilities for different characters).</p>
-
 <h4 id="idea-2-a-different-version-of-cmd-and-ctrl">Idea 2: A different version of CMD and CTRL</h4>
-
 <p>The initial idea for CMD and CTRL was still a platformer but with a different mechanic: instead of switching between two characters, the player would be able to create many different versions of <code>CTRL</code> (with <code>CTRL+C</code> and <code>CTRL+V</code>) and control them for a limited amount of time. Similar to the final iteration, the player would still need to use the other versions to hold down switches or stack them to reach higher platforms.</p>
-
 <p>Brainstorming and developing these ideas took until dinnertime (~6:30pm) at which point I took a break to eat while fretting about whether I had a good idea or not and whether this whole thing was even worth it.</p>
-
 <p>I felt a bit defeated.</p>
-
 <p>With some food in my belly, I got down to prototyping out the CMD and CTRL idea as it currently stood and by the end of the evening, I had <em>something</em> working. I was able to implement the copy and paste creation mechanic (up to a set limit of copies) as well as the mechanic to allow switching between those copies.</p>
-
 <p>I felt a little less defeated.</p>
-
 <h3 id="dawn-of-the-second-day-saturday">Dawn of the Second Day (Saturday)</h3>
-
 <p>Got up and started working again around <strong>7:45 AM</strong>. I reviewed the progress I&rsquo;d made the night before and realized managing all of those extra copies might get complicated quickly so I scrapped it.</p>
-
 <p>I liked the swap mechanic though so I thought about doing it between just two characters. This is when the idea of CMD and CTRL as it was released was cemented: a puzzle platforming game where you swap between two characters to enable platforms that only the other can use.</p>
-
-<h4 id="1-56-pm">1:56 PM</h4>
-
+<h4 id="156-pm">1:56 PM</h4>
 <p>I had the groundwork systems in place:</p>
-
 <ul>
 <li>character swapping</li>
 <li>platforms that were only usable by one character</li>
 <li>platforms that were usable by both</li>
 <li>level transitions</li>
 </ul>
-
-<p><img src="cac-iteration1.gif" alt="The first iteration of CMD and CTRL" /></p>
-
+<p><img src="cac-iteration1.gif" alt="The first iteration of CMD and CTRL"></p>
 <p>I felt much less defeated; the game was taking shape and I was liking it.</p>
-
-<h4 id="5-33-pm">5:33 PM</h4>
-
+<h4 id="533-pm">5:33 PM</h4>
 <p>I implemented the switches that enabled and disabled the character-specific platforms (while dealing with the bugs they brought) and updated the platform tiles to look much less ugly and out of place.
-<img src="cac-iteration2.gif" alt="The second iteration of CMD and CTRL" /></p>
-
-<h4 id="9-44-pm">9:44 PM</h4>
-
+<img src="cac-iteration2.gif" alt="The second iteration of CMD and CTRL"></p>
+<h4 id="944-pm">9:44 PM</h4>
 <p>Accomplished a lot in the four hours following the last milestone:</p>
-
 <ul>
 <li>created and added all of the keyboard key sprites that the player would need to collect to transition the level (ended up not using them all)</li>
 <li>laid out levels 2 and 3 in their entirety</li>
 <li>added a time counter to show how long the player had been playing the current game and made it only display under the active character</li>
 <li>added functionality to restart the level (time kept counting) and reset the entire game (time started at 0 again)</li>
 </ul>
-
-<p><img src="cac-iteration3.gif" alt="The third iteration of CMD and CTRL" /></p>
-
-<h4 id="11-31-pm">11:31 PM</h4>
-
+<p><img src="cac-iteration3.gif" alt="The third iteration of CMD and CTRL"></p>
+<h4 id="1131-pm">11:31 PM</h4>
 <p>By this point I had a pretty bad headache from programming and staring at my computer but I managed to end day two in a very good position:</p>
-
 <ul>
 <li>updated the platform tiles to actually look <em>good</em></li>
 <li>added a start screen with instructions that also looked <em>good</em></li>
 <li>implemented the keyboard item that would stop the game (final item the player has to collect)</li>
 <li>updated the game&rsquo;s background colour to be something other than the default grey</li>
 </ul>
-
-<p><img src="cac-iteration4.gif" alt="The fourth iteration of CMD and CTRL" /></p>
-
+<p><img src="cac-iteration4.gif" alt="The fourth iteration of CMD and CTRL"></p>
 <p>After almost 16 hours of development, I finished day two no longer feeling defeated but actually accomplished and ready for the final day. I had wanted to create 10 levels but after seeing how long 3 took me to complete, I scaled that down to 5 going into Sunday.</p>
-
 <h3 id="dawn-of-the-final-day-sunday">Dawn of the Final Day (Sunday)</h3>
-
 <p>I started out even earlier on Sunday (<strong>7:00 AM</strong>) knowing that I only had until 3pm to get everything finished to some degree of completion and submitted to itch.io.</p>
-
-<h4 id="7-16-am">7:16 AM</h4>
-
+<h4 id="716-am">7:16 AM</h4>
 <p>To get my confidence up I fixed a few things that had been bothering me from the last few builds:</p>
-
 <ul>
 <li>the issue with platforms being drawn in front of everything (the time counter and messages above the keyboard keys)</li>
 <li>the issue with both characters displaying the time counter below them when the game started</li>
 <li>the wording of the instructions</li>
 <li>making the <code>command</code> key swap between characters in addition to <code>ctrl</code></li>
 </ul>
-
-<p><img src="cac-iteration5.gif" alt="The fifth iteration of CMD and CTRL" /></p>
-
-<h4 id="10-06-am">10:06 AM</h4>
-
+<p><img src="cac-iteration5.gif" alt="The fifth iteration of CMD and CTRL"></p>
+<h4 id="1006-am">10:06 AM</h4>
 <p>After finishing the fourth level and starting on the fifth, I realized that I wanted to include another layer of depth to the platforms so I decided to add blocks that either character could stand on and enable or disable with their respective laptop.</p>
-
 <p>The twist was that I made them work opposite the normal blocks: if the character stepped onto their laptop it would <em>enable</em> the other character&rsquo;s blocks but <em>disable</em> the blocks that both could stand on.</p>
-
-<p><img src="cac-iteration6.gif" alt="Toggling off the blocks both characters can use" /></p>
-
+<p><img src="cac-iteration6.gif" alt="Toggling off the blocks both characters can use"></p>
 <p>I fought with some bugs around this for 40 minutes while implementing it including if one character was on their laptop (hiding the blocks that could be used by both) and the other used theirs, the blocks would be enabled rather than stay disabled.</p>
-
-<h4 id="11-10-am">11:10 AM</h4>
-
+<h4 id="1110-am">11:10 AM</h4>
 <p>Went on <a href="https://freemusicarchive.org/" target=_blank>Free Music Archive</a> and <a href="https://freesound.org/" target=_blank>freesound.org</a> to find some royalty-free music and sounds, trimmed them down a bit, and chuckled at how easy it was to add them into the game with Godot.</p>
-
-<h4 id="1-21-pm">1:21 PM</h4>
-
+<h4 id="121-pm">1:21 PM</h4>
 <p>Having just finished laying out the final design of level 5, I started up the game to playtest the most recent changes and realized that a large section of the second half leading to the final item could be skipped entirely.</p>
-
-<p><img src="cac-iteration7.gif" alt="Skipping a large part of level 5" /></p>
-
+<p><img src="cac-iteration7.gif" alt="Skipping a large part of level 5"></p>
 <p>I thought and stressed about the design for a good half hour while watching the time tick by and finally decided to just let it be. If the player wanted to skip it, there wasn&rsquo;t much I could do at this point; I just didn&rsquo;t have the time to invest into a re-design of the level.</p>
-
-<h4 id="1-57-pm">1:57 PM</h4>
-
+<h4 id="157-pm">1:57 PM</h4>
 <p>I asked my girlfriend to playtest for me again (<a href="/posts/making-a-game-in-one-day#playtesting-and-final-adjustments-1-hour" target=_blank>she did such a great job with the previous game</a>) despite not really having much time left before the deadline. I heaved a sigh of relief when she got stuck, thought her way through, and progressed through the levels. I updated the layouts based on what I&rsquo;d observed from her playthrough (adding some blocks to allow quicker attempts in some parts).</p>
-
 <p>She also discovered a platform that was impossible to reach and actually halted the player from progressing further; a truly game-breaking issue fixed because of playtesting!</p>
-
-<h4 id="2-20-pm">2:20 PM</h4>
-
+<h4 id="220-pm">2:20 PM</h4>
 <p>Made some final updates to the instructions and fixed a bug around the reset function not working.</p>
-
 <p><em>Forty</em> minutes before the deadline I managed to create a Windows build and upload it to itch.io.
-<img src="deadline-submission.png" alt="Submitting 40 minutes before the deadline" /></p>
-
+<img src="deadline-submission.png" alt="Submitting 40 minutes before the deadline"></p>
 <h4 id="fin">FIN</h4>
-
 <p>I had done it. I created a game in 48 hours. Technically 47 hours, 20 minutes, and 15 seconds but who&rsquo;s really keeping track.</p>
-
 <p>I pushed some final commits to the git repository, made and uploaded a web version for my website, and put the link on the game&rsquo;s itch.io page in case the Windows version didn&rsquo;t work for some reason.</p>
-
 <p>I got up from my desk, did some well needed stretches (they didn&rsquo;t end up helping the headache I had), and tucked in to some leftover chinese food.</p>
-
 <p>It was done.</p>
-
 <h2 id="lessons-learned">Lessons Learned</h2>
-
 <p>A lot of the lessons learned this time were actually more lessons <em>reinforced</em> from <a href="/posts/making-a-game-in-one-day#the-lessons" target=_blank>my first go around</a>.</p>
-
 <h3 id="spend-time-on-the-idea">Spend Time on the Idea</h3>
-
 <p>When we have a goal to complete in a limited time, we&rsquo;re inclined to spend as much time as possible doing things that actually bring us closer to that goal.</p>
-
 <p>Brainstorming ideas and flushing them out doesn&rsquo;t really fit since they don&rsquo;t directly contribute to the end goal of a finished game (of course, the idea you actually decide to pursue does). We might then think to only dedicate the most minimal amount of time to it. However, that could actually end up costing us more time down the line when that rushed idea doesn&rsquo;t end up being good enough and a new one needs to be thought up, flushed out, and developed.</p>
-
 <p>Despite spending three and a half hours on ideas and flushing them out, I wasn&rsquo;t completely happy with the version of CMD and CTRL until Saturday morning, which meant that Friday evening from about 6:30pm until I went to bed was kind of &ldquo;wasted&rdquo; development time as it wasn&rsquo;t being applied towards the desired version of CMD and CTRL.</p>
-
 <p>In hindsight I probably could have spent more of Friday evening thinking and working on the idea instead of prototyping the entire time (although one of the prototypes did prove somewhat useful).</p>
-
 <h3 id="playtesting-is-super-important">Playtesting is Super Important</h3>
-
 <p><a href="/posts/making-a-game-in-one-day#don-t-underestimate-your-own-bias" target=_blank>I already discussed my affinity for playtesting</a> so I won&rsquo;t spend too many more words on it.</p>
-
 <p>The primary reason for playtesting CMD and CTRL was a bit different than the last time: it wasn&rsquo;t about revealing bugs but rather watching someone else think their way through the puzzles in each level. Seeing where they got stuck, what they tried to do, and how long it took them to solve it.</p>
-
 <p>The puzzles in the game are static; once you&rsquo;ve solved it, you don&rsquo;t get stuck on subsequent runs. Watching another person play really showed me whether I had met my goal of making something both fun and challenging.</p>
-
 <h3 id="godot-specific-learning-points">Godot-specific Learning Points</h3>
-
 <p>With practice comes proficiency. I definitely learned more about how to use Godot but this project was more about practicing than learning. A few standout learning points though are below.</p>
-
 <ul>
 <li><a href="https://docs.godotengine.org/en/stable/tutorials/physics/physics_introduction.html#collision-layers-and-masks" target=_blank>Collision masks</a>: I&rsquo;d seen them in the UI but wasn&rsquo;t sure how or why I&rsquo;d use them. They ended up being the basis of the entire mechanic for blocks that only one or both characters could stand on.</li>
 <li><a href="https://docs.godotengine.org/en/stable/classes/class_position2d.html" target=_blank>Position2D</a>: a plain node that can hold a vector position. Used them as the characters spawn points on each level and this allowed me to keep the spawning functionality generic and reusable.</li>
 <li><a href="https://docs.godotengine.org/en/stable/classes/class_area2d.html" target=_blank>Area2D</a>: a collision detection node that I ended up using instead of a <a href="https://docs.godotengine.org/en/stable/classes/class_rigidbody2d.html" target=_blank>RigidBody2D</a> (like I did in my previous game) as it allowed me to have the laptop switches be unaffected by the physics.</li>
 </ul>
-
 <h2 id="final-thoughts">Final Thoughts</h2>
-
 <p>Oof.</p>
-
 <p>It was a lot.</p>
-
 <p>The overly extended idea generation and elaboration time, the feelings of defeat, the headaches, the compromises, the impending deadline.</p>
-
 <p>But also the creativity, the pivots, the grit, the joy of observation, the sense of accomplishment.</p>
-
 <p>It was tough but I did it and the best part is that I have something to show for all my efforts.
-<img src="the-ending.gif" alt="The final item collection and win message" /></p>
+<img src="the-ending.gif" alt="The final item collection and win message"></p>
 
 
         
@@ -713,17 +605,17 @@ if (!doNotTrack) {
 
           &nbsp;&bull;&nbsp;&copy;
           
-            2021
+            2019 - 2023
           
-
           
-            &nbsp;&bull;&nbsp;
-            <a href="https://tunzor.github.io">tunzor</a>
-          
+          &nbsp;&bull;&nbsp;
+          <a href="/top-posts">Top Posts</a>
+          &nbsp;&bull;&nbsp;
+          <a href="/tags">Tags</a>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.106.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

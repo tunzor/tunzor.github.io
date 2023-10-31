@@ -1,284 +1,176 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://tunzor.github.io/music/</loc>
     <lastmod>2021-11-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tunzor.github.io/</loc>
-    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/diner-drop-release/</loc>
     <lastmod>2020-08-07T01:01:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/diner-drop/</loc>
     <lastmod>2020-08-07T01:01:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/game-dev/</loc>
     <lastmod>2020-08-07T01:01:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/godot/</loc>
     <lastmod>2020-08-07T01:01:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/godot-in-a-giffy/</loc>
     <lastmod>2020-08-07T01:01:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/</loc>
     <lastmod>2020-08-07T01:01:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/</loc>
     <lastmod>2020-08-07T01:01:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://tunzor.github.io/</loc>
+    <lastmod>2020-08-07T01:01:02+00:00</lastmod>
+  </url><url>
     <loc>https://tunzor.github.io/posts/godot-diner-drop-12/</loc>
     <lastmod>2020-08-07T01:01:01+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/game-jam/</loc>
     <lastmod>2020-07-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/gmtk-jam-2020-game/</loc>
     <lastmod>2020-07-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/making-a-game-in-one-day/</loc>
     <lastmod>2020-07-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/documentation/</loc>
     <lastmod>2020-06-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/terraform-docs-clarity/</loc>
     <lastmod>2020-06-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/inference/</loc>
     <lastmod>2020-06-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/terraform/</loc>
     <lastmod>2020-06-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/top-posts/</loc>
     <lastmod>2020-06-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/godot-diner-drop-11/</loc>
     <lastmod>2020-05-21T01:01:01+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/godot-diner-drop-10/</loc>
     <lastmod>2020-05-15T01:01:01+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/godot-diner-drop-9/</loc>
     <lastmod>2020-05-13T01:01:01+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/godot-diner-drop-8/</loc>
     <lastmod>2020-05-12T01:01:03+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/godot-diner-drop-7/</loc>
     <lastmod>2020-05-09T01:01:03+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/godot-diner-drop-6/</loc>
     <lastmod>2020-05-08T01:01:03+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/godot-diner-drop-5/</loc>
     <lastmod>2020-05-07T01:01:03+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/godot-diner-drop-4/</loc>
     <lastmod>2020-05-07T01:01:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/godot-diner-drop-3/</loc>
     <lastmod>2020-05-07T01:01:01+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/godot-diner-drop-2/</loc>
     <lastmod>2020-05-06T01:01:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/godot-diner-drop-1/</loc>
     <lastmod>2020-05-06T01:01:01+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/my-game-dev-history/</loc>
     <lastmod>2020-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/groovy-baby/</loc>
     <lastmod>2020-01-21T19:44:54-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/jenkins/</loc>
     <lastmod>2020-01-21T19:44:54-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/jenkins-show-creds/</loc>
     <lastmod>2020-01-21T19:44:54-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/use-only-for-good/</loc>
     <lastmod>2020-01-21T19:44:54-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/cloud-build-hugo-site/</loc>
     <lastmod>2020-01-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/automation/</loc>
     <lastmod>2020-01-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/google-cloud-build/</loc>
     <lastmod>2020-01-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/hugo/</loc>
     <lastmod>2020-01-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/devops-tools-101-k8s/</loc>
     <lastmod>2019-12-23T10:54:32-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/devops-tools-101/</loc>
     <lastmod>2019-12-23T10:54:32-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/kubernetes/</loc>
     <lastmod>2019-12-23T10:54:32-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/docker/</loc>
     <lastmod>2019-12-16T10:31:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/docker-list-images-by-size/</loc>
     <lastmod>2019-12-16T10:31:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/quick-tip/</loc>
     <lastmod>2019-12-16T10:31:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/consul/</loc>
     <lastmod>2019-12-13T09:54:14-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/devops-tools-101-consul/</loc>
     <lastmod>2019-12-13T09:54:14-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/k8s-two-tier-deploy/</loc>
     <lastmod>2019-12-11T18:56:27-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/python/</loc>
     <lastmod>2019-12-11T18:56:27-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/linux/</loc>
     <lastmod>2019-12-11T18:41:10-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/mkdir-and-enter-one-liner/</loc>
     <lastmod>2019-12-11T18:41:10-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/about/</loc>
     <lastmod>2019-12-11T11:58:02-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/games/</loc>
     <lastmod>2019-12-11T11:58:02-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/redirect/</loc>
     <lastmod>2019-12-11T11:58:02-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/tags/gcs/</loc>
     <lastmod>2019-12-10T09:45:13-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/posts/hugo-on-gh-and-gcs/</loc>
     <lastmod>2019-12-10T09:45:13-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tunzor.github.io/categories/</loc>
+  </url><url>
+    <loc>https://tunzor.github.io/presentations/</loc>
+  </url><url>
+    <loc>https://tunzor.github.io/writing/</loc>
   </url>
-  
 </urlset>

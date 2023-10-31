@@ -39,7 +39,7 @@
   <meta name="twitter:image" content="https://tunzor.github.io/img/me.jpg" />
   <meta name="twitter:card" content="summary" />
   <link href='https://tunzor.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.106.0">
   <link rel="alternate" href="https://tunzor.github.io/index.xml" type="application/rss+xml" title="tunzor"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://tunzor.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -78,7 +78,7 @@ if (!doNotTrack) {
         
           
             <li class="navlinks-container">
-              <a class="navlinks-parent">Play my games</a>
+              <a class="navlinks-parent">Games</a>
               <div class="navlinks-children">
                 
                   <a href="/diner-drop">Diner Drop (desktop/mobile)</a>
@@ -100,14 +100,15 @@ if (!doNotTrack) {
           
         
           
-            <li>
-              <a title="Top Posts" href="/top-posts">Top Posts</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="Tags" href="/tags">Tags</a>
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Work</a>
+              <div class="navlinks-children">
+                
+                  <a href="/writing">Writing</a>
+                
+                  <a href="/presentations">Presentations</a>
+                
+              </div>
             </li>
           
         
@@ -251,7 +252,7 @@ if (!doNotTrack) {
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 8, 2020
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
@@ -271,53 +272,46 @@ if (!doNotTrack) {
     </p>
     <div class="post-entry">
         
-        
-
-<p><em><a href="/diner-drop" target=_blank>Click here to play the most up-to-date version</a></em></p>
-
+        <p><em><a href="/diner-drop" target=_blank>Click here to play the most up-to-date version</a></em></p>
 <h3 id="mobile-ize">Mobile-ize</h3>
-
-<p><img src="https://media.giphy.com/media/jpz3UlRtDTlox0ALp9/giphy.gif" alt="Mouse input" /></p>
-
-<p><img src="https://media.giphy.com/media/lP4Y2WtGQRCacY0m8v/giphy.gif" alt="Collision moved to top food item" /></p>
-
-<h4 id="what-s-changed-a-href-posts-godot-diner-drop-5-target-blank-since-last-time-a">What&rsquo;s changed <a href="/posts/godot-diner-drop-5" target=_blank>since last time</a>?</h4>
-
+<p><img src="https://media.giphy.com/media/jpz3UlRtDTlox0ALp9/giphy.gif" alt="Mouse input"></p>
+<p><img src="https://media.giphy.com/media/lP4Y2WtGQRCacY0m8v/giphy.gif" alt="Collision moved to top food item"></p>
+<h4 id="whats-changed-a-hrefpostsgodot-diner-drop-5-target_blanksince-last-timea">What&rsquo;s changed <a href="/posts/godot-diner-drop-5" target=_blank>since last time</a>?</h4>
 <ul>
 <li>Diner Drop can now be <a href="/diner-drop" target=_blank>played in your browser</a>!
-
 <ul>
 <li>Works on both desktop and mobile</li>
 <li>All future builds will be published at that link so check back for updates</li>
-</ul></li>
+</ul>
+</li>
 <li>Multiple input methods available
-
 <ul>
 <li>On desktop you can choose to play with mouse or keyboard controls
-
 <ul>
 <li>Mouse: Move Chef by moving the mouse and click anywhere in the bottom area (where the stools are) to interact with <strong>whatever is highlighted in front of</strong> Chef</li>
 <li>Keyboard: Move Chef left with <code>a</code> or <code>left arrow</code>, right with <code>d</code> or <code>right arrow</code>, and interact with things with <code>s</code> or <code>down arrow</code></li>
 <li>You can toggle them on and off with either <code>m</code> for mouse controls or <code>k</code> for keyboard controls (shown by either an <code>M</code> or <code>K</code> in the top left of the screen)</li>
-</ul></li>
+</ul>
+</li>
 <li>On mobile, Chef will follow your finger much like the mouse movement above
-
 <ul>
 <li>Tap and drag to move Chef and tap anywhere in the bottom area (where the stools are) to interact with <strong>whatever is highlighted in front of</strong> Chef</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Game over screen now shows a message about why the player lost
-
 <ul>
 <li>Game over now shows if you have too many held food items</li>
-</ul></li>
+</ul>
+</li>
 <li>Bug fixes
-
 <ul>
 <li>Fixed food items spawning off screen</li>
 <li>Only the top item of the food stack being held has collision detection (gif above demonstrates how the sides have no collision)</li>
 <li>Fixed issue where tapping and dragging to move on mobile would cause Chef to serve to a customer unintentionally</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
         
@@ -355,7 +349,7 @@ if (!doNotTrack) {
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 7, 2020
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
@@ -376,7 +370,7 @@ if (!doNotTrack) {
     <div class="post-entry">
         
         Click here to play the most up-to-date version
-I Want to Speak to the Manager! What&rsquo;s changed since last time? A LOT!  Customers aren&rsquo;t taking your crap anymore; game over!  Serving the same customer 3 incorrect orders (partial or complete) will push them over the edge and cause them to leave If all (currently 3) customers leave, it&rsquo;s game over Serving the correct order to a customer will despawn them, increase the score, and spawn a new one at a random available spot  Added game over screen with restart button  Endlessly drops food until restart pressed (super fun to watch) Stops collision detection on Chef and locks movement input  Generalized code around customer&rsquo;s order (no longer hard coding burger as the only order) New font added for customers&rsquo; feedback  Text will appear towards the centre of the screen depending on where the customer is (e.
+I Want to Speak to the Manager! What&rsquo;s changed since last time? A LOT! Customers aren&rsquo;t taking your crap anymore; game over! Serving the same customer 3 incorrect orders (partial or complete) will push them over the edge and cause them to leave If all (currently 3) customers leave, it&rsquo;s game over Serving the correct order to a customer will despawn them, increase the score, and spawn a new one at a random available spot Added game over screen with restart button Endlessly drops food until restart pressed (super fun to watch) Stops collision detection on Chef and locks movement input Generalized code around customer&rsquo;s order (no longer hard coding burger as the only order) New font added for customers&rsquo; feedback Text will appear towards the centre of the screen depending on where the customer is (e.
         <a href="https://tunzor.github.io/posts/godot-diner-drop-5/" class="post-read-more">[Read More]</a>
         
     </div>
@@ -413,7 +407,7 @@ I Want to Speak to the Manager! What&rsquo;s changed since last time? A LOT!  Cu
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 7, 2020
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
@@ -433,22 +427,16 @@ I Want to Speak to the Manager! What&rsquo;s changed since last time? A LOT!  Cu
     </p>
     <div class="post-entry">
         
-        
-
-<p><em><a href="/diner-drop" target=_blank>Click here to play the most up-to-date version</a></em></p>
-
+        <p><em><a href="/diner-drop" target=_blank>Click here to play the most up-to-date version</a></em></p>
 <h3 id="table-for-three">Table for Three</h3>
-
-<p><img src="https://media1.giphy.com/media/XBu2aMKQWkdYY6MPbD/giphy.gif" alt="Dimming customers" /></p>
-
-<h4 id="what-s-changed-a-href-posts-godot-diner-drop-3-target-blank-since-last-time-a">What&rsquo;s changed <a href="/posts/godot-diner-drop-3" target=_blank>since last time</a>?</h4>
-
+<p><img src="https://media1.giphy.com/media/XBu2aMKQWkdYY6MPbD/giphy.gif" alt="Dimming customers"></p>
+<h4 id="whats-changed-a-hrefpostsgodot-diner-drop-3-target_blanksince-last-timea">What&rsquo;s changed <a href="/posts/godot-diner-drop-3" target=_blank>since last time</a>?</h4>
 <ul>
 <li>More customers!
-
 <ul>
 <li>3 customers will now spawn (in random positions!) at the counter waiting for their order</li>
-</ul></li>
+</ul>
+</li>
 <li>UI update: interactive objects (customers and garbage can) now start out dimmed and become fully bright when Chef is in front of them and can interact</li>
 </ul>
 
@@ -487,7 +475,7 @@ I Want to Speak to the Manager! What&rsquo;s changed since last time? A LOT!  Cu
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 7, 2020
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
@@ -507,29 +495,23 @@ I Want to Speak to the Manager! What&rsquo;s changed since last time? A LOT!  Cu
     </p>
     <div class="post-entry">
         
-        
-
-<p><em><a href="/diner-drop" target=_blank>Click here to play the most up-to-date version</a></em></p>
-
-<h3 id="the-points-don-t-matter">The Points Don&rsquo;t Matter</h3>
-
-<p><img src="https://media3.giphy.com/media/U6RmEKwxOzUHhQckW0/giphy.gif" alt="Customer(s) now exist(s)" /></p>
-
-<h4 id="what-s-changed-a-href-posts-godot-diner-drop-2-target-blank-since-last-time-a">What&rsquo;s changed <a href="/posts/godot-diner-drop-2" target=_blank>since last time</a>?</h4>
-
+        <p><em><a href="/diner-drop" target=_blank>Click here to play the most up-to-date version</a></em></p>
+<h3 id="the-points-dont-matter">The Points Don&rsquo;t Matter</h3>
+<p><img src="https://media3.giphy.com/media/U6RmEKwxOzUHhQckW0/giphy.gif" alt="Customer(s) now exist(s)"></p>
+<h4 id="whats-changed-a-hrefpostsgodot-diner-drop-2-target_blanksince-last-timea">What&rsquo;s changed <a href="/posts/godot-diner-drop-2" target=_blank>since last time</a>?</h4>
 <ul>
 <li>A customer has finally arrived!
-
 <ul>
 <li>The player can now stand in front of them and press <code>down</code> to serve them the order that Chef is currently holding</li>
 <li>Customers will provide feedback text on whether the order is correct or not</li>
 <li>Serving an order (correct or not) will remove it from Chef</li>
-</ul></li>
+</ul>
+</li>
 <li>Player now has a score to increase (or decrease&hellip;)
-
 <ul>
 <li>Serving a correct order yields a point and an incorrect order deducts a point</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
         
@@ -567,7 +549,7 @@ I Want to Speak to the Manager! What&rsquo;s changed since last time? A LOT!  Cu
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 6, 2020
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
@@ -587,25 +569,19 @@ I Want to Speak to the Manager! What&rsquo;s changed since last time? A LOT!  Cu
     </p>
     <div class="post-entry">
         
-        
-
-<p><em><a href="/diner-drop" target=_blank>Click here to play the most up-to-date version</a></em></p>
-
+        <p><em><a href="/diner-drop" target=_blank>Click here to play the most up-to-date version</a></em></p>
 <h3 id="catch-me-if-you-can">Catch Me If You Can</h3>
-
-<p><img src="https://media3.giphy.com/media/daCj98rqhJvuhSAYuh/giphy.gif" alt="Falling burger bottoms" /></p>
-
-<h4 id="what-s-changed-a-href-posts-godot-diner-drop-1-target-blank-since-last-time-a">What&rsquo;s changed <a href="/posts/godot-diner-drop-1" target=_blank>since last time</a>?</h4>
-
+<p><img src="https://media3.giphy.com/media/daCj98rqhJvuhSAYuh/giphy.gif" alt="Falling burger bottoms"></p>
+<h4 id="whats-changed-a-hrefpostsgodot-diner-drop-1-target_blanksince-last-timea">What&rsquo;s changed <a href="/posts/godot-diner-drop-1" target=_blank>since last time</a>?</h4>
 <ul>
 <li>Chef can now <em>catch and hold</em> the falling food; allowing orders to be made</li>
 <li>All three parts of the burger now spawn
-
 <ul>
 <li>Bottom: the bun and lettuce</li>
 <li>Middle: the patty and tomato</li>
 <li>Top: the onion and bun</li>
-</ul></li>
+</ul>
+</li>
 <li>The garbage can interaction now lets Chef throw away their currently held order</li>
 </ul>
 
@@ -644,7 +620,7 @@ I Want to Speak to the Manager! What&rsquo;s changed since last time? A LOT!  Cu
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 6, 2020
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
@@ -699,13 +675,13 @@ In this series of posts I intend on showcasing the progress made on the game&rsq
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 6, 2020
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;10&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1938&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1940&nbsp;words
   
   
     
@@ -749,7 +725,7 @@ I&rsquo;ll save you the rest of the cliched prose that usually follows that line
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 21, 2020
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
@@ -804,7 +780,7 @@ JASMINE and BORIS are looking at Jasmine&rsquo;s computer.
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 3, 2020
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;12&nbsp;minutes
@@ -856,7 +832,7 @@ In a previous post I outlined how to use it to generate a site and then host tha
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 23, 2019
+  <i class="fas fa-calendar"></i>&nbsp;
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
@@ -879,8 +855,8 @@ In a previous post I outlined how to use it to generate a site and then host tha
         DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
 Today we&rsquo;ll be learning about Kubernetes (often abbreviated to k8s), which was originally developed and then open-sourced by Google.
 The Official Description From kubernetes.io
- Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
- The Breakdown open-source system - you can look at and modify the underlying code that makes up kubernetes
+Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
+The Breakdown open-source system - you can look at and modify the underlying code that makes up kubernetes
         <a href="https://tunzor.github.io/posts/devops-tools-101-k8s/" class="post-read-more">[Read More]</a>
         
     </div>
@@ -983,17 +959,17 @@ The Official Description From kubernetes.io
 
           &nbsp;&bull;&nbsp;&copy;
           
-            2021
+            2019 - 2023
           
-
           
-            &nbsp;&bull;&nbsp;
-            <a href="https://tunzor.github.io">tunzor</a>
-          
+          &nbsp;&bull;&nbsp;
+          <a href="/top-posts">Top Posts</a>
+          &nbsp;&bull;&nbsp;
+          <a href="/tags">Tags</a>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.106.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

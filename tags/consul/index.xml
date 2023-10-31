@@ -6,11 +6,7 @@
     <description>Recent content in consul on tunzor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Dec 2019 09:54:14 -0500</lastBuildDate>
-    
-	<atom:link href="https://tunzor.github.io/tags/consul/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 13 Dec 2019 09:54:14 -0500</lastBuildDate><atom:link href="https://tunzor.github.io/tags/consul/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DevOps Tools 101 - Consul</title>
       <link>https://tunzor.github.io/posts/devops-tools-101-consul/</link>
@@ -20,8 +16,8 @@
       <description>DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
 Today we&amp;rsquo;ll be learning about Consul by Hashicorp.
 The Official Description From Hashicorp&amp;rsquo;s site
- Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.
- The Breakdown service mesh solution - a solution that allows individual services to discover and communicate quickly/securely/reliably with each other</description>
+Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.
+The Breakdown service mesh solution - a solution that allows individual services to discover and communicate quickly/securely/reliably with each other</description>
     </item>
     
   </channel>
