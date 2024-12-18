@@ -1,37 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>devops-tools-101 on tunzor</title>
+    <title>Devops-Tools-101 on tunzor</title>
     <link>https://tunzor.github.io/tags/devops-tools-101/</link>
-    <description>Recent content in devops-tools-101 on tunzor</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Devops-Tools-101 on tunzor</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Dec 2019 10:54:32 -0500</lastBuildDate><atom:link href="https://tunzor.github.io/tags/devops-tools-101/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Dec 2019 10:54:32 -0500</lastBuildDate>
+    <atom:link href="https://tunzor.github.io/tags/devops-tools-101/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DevOps Tools 101 - Kubernetes</title>
       <link>https://tunzor.github.io/posts/devops-tools-101-k8s/</link>
       <pubDate>Mon, 23 Dec 2019 10:54:32 -0500</pubDate>
-      
       <guid>https://tunzor.github.io/posts/devops-tools-101-k8s/</guid>
-      <description>DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
-Today we&amp;rsquo;ll be learning about Kubernetes (often abbreviated to k8s), which was originally developed and then open-sourced by Google.
-The Official Description From kubernetes.io
-Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
-The Breakdown open-source system - you can look at and modify the underlying code that makes up kubernetes</description>
+      <description>DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.&#xA;Today we&amp;rsquo;ll be learning about Kubernetes (often abbreviated to k8s), which was originally developed and then open-sourced by Google.&#xA;The Official Description From kubernetes.io&#xA;Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.&#xA;The Breakdown open-source system - you can look at and modify the underlying code that makes up kubernetes</description>
     </item>
-    
     <item>
       <title>DevOps Tools 101 - Consul</title>
       <link>https://tunzor.github.io/posts/devops-tools-101-consul/</link>
       <pubDate>Fri, 13 Dec 2019 09:54:14 -0500</pubDate>
-      
       <guid>https://tunzor.github.io/posts/devops-tools-101-consul/</guid>
-      <description>DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
-Today we&amp;rsquo;ll be learning about Consul by Hashicorp.
-The Official Description From Hashicorp&amp;rsquo;s site
-Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.
-The Breakdown service mesh solution - a solution that allows individual services to discover and communicate quickly/securely/reliably with each other</description>
+      <description>DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.&#xA;Today we&amp;rsquo;ll be learning about Consul by Hashicorp.&#xA;The Official Description From Hashicorp&amp;rsquo;s site&#xA;Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality.&#xA;The Breakdown service mesh solution - a solution that allows individual services to discover and communicate quickly/securely/reliably with each other</description>
     </item>
-    
   </channel>
 </rss>

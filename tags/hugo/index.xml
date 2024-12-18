@@ -1,32 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hugo on tunzor</title>
+    <title>Hugo on tunzor</title>
     <link>https://tunzor.github.io/tags/hugo/</link>
-    <description>Recent content in hugo on tunzor</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Hugo on tunzor</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tunzor.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tunzor.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automating the publication of a Hugo generated site with Google Cloud Build</title>
       <link>https://tunzor.github.io/posts/cloud-build-hugo-site/</link>
       <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/cloud-build-hugo-site/</guid>
-      <description>Hugo is a really cool tool for getting a blog up and running quickly.
-In a previous post I outlined how to use it to generate a site and then host that site on Github Pages or Google Cloud Storage. Now I want to take it a step further and automate its publication on Github Pages. Why? Cause I&amp;rsquo;m lazy, automation is cool, and doing so will make us look better in the optical sensors of our eventual robot overlords.</description>
+      <description>Hugo is a really cool tool for getting a blog up and running quickly.&#xA;In a previous post I outlined how to use it to generate a site and then host that site on Github Pages or Google Cloud Storage. Now I want to take it a step further and automate its publication on Github Pages. Why? Cause I&amp;rsquo;m lazy, automation is cool, and doing so will make us look better in the optical sensors of our eventual robot overlords.</description>
     </item>
-    
     <item>
       <title>Running a Hugo generated site on Github Pages and Google Cloud Storage</title>
       <link>https://tunzor.github.io/posts/hugo-on-gh-and-gcs/</link>
       <pubDate>Tue, 10 Dec 2019 09:45:13 -0500</pubDate>
-      
       <guid>https://tunzor.github.io/posts/hugo-on-gh-and-gcs/</guid>
-      <description>Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.
-This in and of itself might not be very interesting but the potential hosting environments are what particularly interest me.
-Why go static? Since the pages are HTML, you don&amp;rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site.</description>
+      <description>Hugo, I just recently discovered, is one of many static site generators. You feed them content in the form of Markdown files and they spit out HTML pages which you can then provide to a web server for hosting.&#xA;This in and of itself might not be very interesting but the potential hosting environments are what particularly interest me.&#xA;Why go static? Since the pages are HTML, you don&amp;rsquo;t need to worry about having a server dynamically render a page when a user makes a request to your site.</description>
     </item>
-    
   </channel>
 </rss>

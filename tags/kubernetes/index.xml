@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>kubernetes on tunzor</title>
+    <title>Kubernetes on tunzor</title>
     <link>https://tunzor.github.io/tags/kubernetes/</link>
-    <description>Recent content in kubernetes on tunzor</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Kubernetes on tunzor</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Dec 2019 10:54:32 -0500</lastBuildDate><atom:link href="https://tunzor.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Dec 2019 10:54:32 -0500</lastBuildDate>
+    <atom:link href="https://tunzor.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DevOps Tools 101 - Kubernetes</title>
       <link>https://tunzor.github.io/posts/devops-tools-101-k8s/</link>
       <pubDate>Mon, 23 Dec 2019 10:54:32 -0500</pubDate>
-      
       <guid>https://tunzor.github.io/posts/devops-tools-101-k8s/</guid>
-      <description>DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.
-Today we&amp;rsquo;ll be learning about Kubernetes (often abbreviated to k8s), which was originally developed and then open-sourced by Google.
-The Official Description From kubernetes.io
-Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
-The Breakdown open-source system - you can look at and modify the underlying code that makes up kubernetes</description>
+      <description>DevOps Tools 101 is a series of posts outlining in easy to digest form, the tools available and in use by the DevOps community.&#xA;Today we&amp;rsquo;ll be learning about Kubernetes (often abbreviated to k8s), which was originally developed and then open-sourced by Google.&#xA;The Official Description From kubernetes.io&#xA;Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.&#xA;The Breakdown open-source system - you can look at and modify the underlying code that makes up kubernetes</description>
     </item>
-    
     <item>
       <title>Deploying a dockerized two-tier app on Kubernetes</title>
       <link>https://tunzor.github.io/posts/k8s-two-tier-deploy/</link>
       <pubDate>Wed, 11 Dec 2019 18:56:27 -0500</pubDate>
-      
       <guid>https://tunzor.github.io/posts/k8s-two-tier-deploy/</guid>
-      <description>For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I&amp;rsquo;d like to walk you through that deployment and explain everything along the way.
-Before we jump in, you&amp;rsquo;ll need to have:</description>
+      <description>For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I&amp;rsquo;d like to walk you through that deployment and explain everything along the way.&#xA;Before we jump in, you&amp;rsquo;ll need to have:</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,166 +1,117 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>godot on tunzor</title>
+    <title>Godot on tunzor</title>
     <link>https://tunzor.github.io/tags/godot/</link>
-    <description>Recent content in godot on tunzor</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Godot on tunzor</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Aug 2020 01:01:02 +0000</lastBuildDate><atom:link href="https://tunzor.github.io/tags/godot/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Aug 2020 01:01:02 +0000</lastBuildDate>
+    <atom:link href="https://tunzor.github.io/tags/godot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Diner Drop has finally dropped</title>
       <link>https://tunzor.github.io/posts/diner-drop-release/</link>
       <pubDate>Fri, 07 Aug 2020 01:01:02 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/diner-drop-release/</guid>
-      <description>Diner Drop is live! The development log for Diner Drop started back in early May of this year and even in that first one you could see the basic elements: falling lettuce buns, a magical garbage can that gets rid of everything, and our main hero(ine) Chef moving back and forth.
-Now we&amp;rsquo;re here.
-Sure, there&amp;rsquo;s more than just falling lettuce buns (12 other unique falling food items to be exact, thank you very much) and the garbage can isn&amp;rsquo;t quite as magical but Chef is still here and still moving back and forth.</description>
+      <description>Diner Drop is live! The development log for Diner Drop started back in early May of this year and even in that first one you could see the basic elements: falling lettuce buns, a magical garbage can that gets rid of everything, and our main hero(ine) Chef moving back and forth.&#xA;Now we&amp;rsquo;re here.&#xA;Sure, there&amp;rsquo;s more than just falling lettuce buns (12 other unique falling food items to be exact, thank you very much) and the garbage can isn&amp;rsquo;t quite as magical but Chef is still here and still moving back and forth.</description>
     </item>
-    
     <item>
       <title>Godot in a gif(fy): The Final Countdown</title>
       <link>https://tunzor.github.io/posts/godot-diner-drop-12/</link>
       <pubDate>Fri, 07 Aug 2020 01:01:01 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/godot-diner-drop-12/</guid>
-      <description>Click here to play the most up-to-date version
-ALL the changes What&amp;rsquo;s changed since last time? v0.14.0 Move on up! New (hopefully) easier to use control scheme. Mobile: move by tapping and holding on the left and right buttons at the bottom or any point directly above them (all the way to the top of the screen) Desktop: keyboard input only now (A and D or left and right arrow keys to move and S or down arrow to interact) Moved the informational UI elements (level, score, and timer) to the top of the screen to stop it from blocking what Chef is holding Made it easier to interact with customers by increasing the serve area to the left and right of their centre point High score!</description>
+      <description>Click here to play the most up-to-date version&#xA;ALL the changes What&amp;rsquo;s changed since last time? v0.14.0 Move on up! New (hopefully) easier to use control scheme. Mobile: move by tapping and holding on the left and right buttons at the bottom or any point directly above them (all the way to the top of the screen) Desktop: keyboard input only now (A and D or left and right arrow keys to move and S or down arrow to interact) Moved the informational UI elements (level, score, and timer) to the top of the screen to stop it from blocking what Chef is holding Made it easier to interact with customers by increasing the serve area to the left and right of their centre point High score!</description>
     </item>
-    
     <item>
       <title>Making a Game in 48 hours</title>
       <link>https://tunzor.github.io/posts/gmtk-jam-2020-game/</link>
       <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/gmtk-jam-2020-game/</guid>
-      <description>Following up the post I wrote about making a game in one day with this one may seem like a step back, going from 22 to 48 hours.
-The difference is there&amp;rsquo;s no qualification of development time vs actual time passed; this time I didn&amp;rsquo;t have the luxury of spreading my development over 4 days.
-2 days. 48 hours.
-That&amp;rsquo;s all the time I had to think, plan, and develop. Not to mention also eat, sleep, and tend to other normal bodily functions.</description>
+      <description>Following up the post I wrote about making a game in one day with this one may seem like a step back, going from 22 to 48 hours.&#xA;The difference is there&amp;rsquo;s no qualification of development time vs actual time passed; this time I didn&amp;rsquo;t have the luxury of spreading my development over 4 days.&#xA;2 days. 48 hours.&#xA;That&amp;rsquo;s all the time I had to think, plan, and develop. Not to mention also eat, sleep, and tend to other normal bodily functions.</description>
     </item>
-    
     <item>
       <title>Making a Game in One Day</title>
       <link>https://tunzor.github.io/posts/making-a-game-in-one-day/</link>
       <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/making-a-game-in-one-day/</guid>
-      <description>Making a game is tough. We&amp;rsquo;ve read it in countless books and articles, heard it on podcasts, and seen it in the first hand video accounts of developers.
-Making a game in a limited amount of time is tougher. Looming deadlines are always in the back of your head and crunch time seems to be an industry standard practice that doesn&amp;rsquo;t appear to be going away.
-Making a game in the limited time span of one or two days should be the toughest then.</description>
+      <description>Making a game is tough. We&amp;rsquo;ve read it in countless books and articles, heard it on podcasts, and seen it in the first hand video accounts of developers.&#xA;Making a game in a limited amount of time is tougher. Looming deadlines are always in the back of your head and crunch time seems to be an industry standard practice that doesn&amp;rsquo;t appear to be going away.&#xA;Making a game in the limited time span of one or two days should be the toughest then.</description>
     </item>
-    
     <item>
       <title>Godot in a gif(fy): I don&#39;t have ALL day</title>
       <link>https://tunzor.github.io/posts/godot-diner-drop-11/</link>
       <pubDate>Thu, 21 May 2020 01:01:01 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/godot-diner-drop-11/</guid>
-      <description>Click here to play the most up-to-date version
-Easy Peasy What&amp;rsquo;s changed since last time? v0.13.0 Impatient customers! Customers will no longer wait indefinitely for their order A countdown timer starts when the customer arrives and will change their shirt colour the closer it gets to 0 Shirt colour now starts out green and progresses to yellow and finally red Serving a customer will now grant points based on how long they&amp;rsquo;ve been waiting The time extension granted on correctly served orders is now related to how close the customer is to leaving More time is granted the closer they are to leaving Difficulty levels Starts out with just one customer and increases the number of customers for each level gained One additional customer will spawn with each new level starting at level 3 Level is increased after serving 3 customers correctly Level and customers served in it are displayed above the score as: CURRENT_LEVEL - CUSTOMERS_SERVED Bug fixes Customers no longer change state and leave after game over Customers no longer change state on start screen </description>
+      <description>Click here to play the most up-to-date version&#xA;Easy Peasy What&amp;rsquo;s changed since last time? v0.13.0 Impatient customers! Customers will no longer wait indefinitely for their order A countdown timer starts when the customer arrives and will change their shirt colour the closer it gets to 0 Shirt colour now starts out green and progresses to yellow and finally red Serving a customer will now grant points based on how long they&amp;rsquo;ve been waiting The time extension granted on correctly served orders is now related to how close the customer is to leaving More time is granted the closer they are to leaving Difficulty levels Starts out with just one customer and increases the number of customers for each level gained One additional customer will spawn with each new level starting at level 3 Level is increased after serving 3 customers correctly Level and customers served in it are displayed above the score as: CURRENT_LEVEL - CUSTOMERS_SERVED Bug fixes Customers no longer change state and leave after game over Customers no longer change state on start screen </description>
     </item>
-    
     <item>
       <title>Godot in a gif(fy): Sugar Rush</title>
       <link>https://tunzor.github.io/posts/godot-diner-drop-10/</link>
       <pubDate>Fri, 15 May 2020 01:01:01 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/godot-diner-drop-10/</guid>
-      <description>Click here to play the most up-to-date version
-RTFM What&amp;rsquo;s changed since last time? v0.12.0 Added instructions page Includes background &amp;ldquo;story&amp;rdquo;, how to play, and controls Sugar! Do do doo do do doo&amp;hellip; New orders: donut and pop (soda) with two item parts each Updated order matching code to work with varying sizes of orders instead of just 3 items All current orders and their parts are pictured below: Updated food spawning code to only spawn items that aren&amp;rsquo;t currently being held If all current order items are held, then ANY food item in the game can spawn (even if it&amp;rsquo;s not in a current customer&amp;rsquo;s order) Added a new font Unified all text to use the same font Bug fixes Game crashing bug occurred if game over was caused by all customers leaving </description>
+      <description>Click here to play the most up-to-date version&#xA;RTFM What&amp;rsquo;s changed since last time? v0.12.0 Added instructions page Includes background &amp;ldquo;story&amp;rdquo;, how to play, and controls Sugar! Do do doo do do doo&amp;hellip; New orders: donut and pop (soda) with two item parts each Updated order matching code to work with varying sizes of orders instead of just 3 items All current orders and their parts are pictured below: Updated food spawning code to only spawn items that aren&amp;rsquo;t currently being held If all current order items are held, then ANY food item in the game can spawn (even if it&amp;rsquo;s not in a current customer&amp;rsquo;s order) Added a new font Unified all text to use the same font Bug fixes Game crashing bug occurred if game over was caused by all customers leaving </description>
     </item>
-    
     <item>
       <title>Godot in a gif(fy): I&#39;ll Tell You What I Want</title>
       <link>https://tunzor.github.io/posts/godot-diner-drop-9/</link>
       <pubDate>Wed, 13 May 2020 01:01:01 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/godot-diner-drop-9/</guid>
-      <description>Click here to play the most up-to-date version
-Variety is the Spice of Life What&amp;rsquo;s changed since last time? v0.11.0 Customers now show their order above their heads! Moving in front to interact will tint the order based on what Chef is currently holding: red if incorrect, green if correct (provides a quick way of seeing if held order is correct) Two new orders! New orders: pizza and ice cream sundae Food items (parts of orders) will only spawn if they&amp;rsquo;re in at least one customer&amp;rsquo;s order All current orders and their parts are pictured below: Added final score to game over screen Removed garbage can interaction popup Bug fixes Reduced number of items needed to trigger a game over (was too high after adding &amp;ldquo;Slide to Move&amp;rdquo; area) </description>
+      <description>Click here to play the most up-to-date version&#xA;Variety is the Spice of Life What&amp;rsquo;s changed since last time? v0.11.0 Customers now show their order above their heads! Moving in front to interact will tint the order based on what Chef is currently holding: red if incorrect, green if correct (provides a quick way of seeing if held order is correct) Two new orders! New orders: pizza and ice cream sundae Food items (parts of orders) will only spawn if they&amp;rsquo;re in at least one customer&amp;rsquo;s order All current orders and their parts are pictured below: Added final score to game over screen Removed garbage can interaction popup Bug fixes Reduced number of items needed to trigger a game over (was too high after adding &amp;ldquo;Slide to Move&amp;rdquo; area) </description>
     </item>
-    
     <item>
       <title>Godot in a gif(fy): I Like to Move It, Move It</title>
       <link>https://tunzor.github.io/posts/godot-diner-drop-8/</link>
       <pubDate>Tue, 12 May 2020 01:01:03 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/godot-diner-drop-8/</guid>
-      <description>Click here to play the most up-to-date version
-Just One for Me, Please What&amp;rsquo;s changed since last time? v0.10.0 Retooled input and movement Added a &amp;ldquo;Slide to Move&amp;rdquo; area: tap and slide in it to move Chef Tap on brown area (with customers and stools) to interact Mouse input Emulates touch input now (must move mouse in the &amp;ldquo;Slide to Move&amp;rdquo; area and hold down left button to move) Click on the brown area to interact OR right click anywhere Added timer to customer to stop spamming of incorrect orders (protects against multiple accidental interaction inputs) Made the area above the garbage can a &amp;ldquo;safe area&amp;rdquo;: food won&amp;rsquo;t spawn over it Removed desktop input toggle options (keyboard and mouse inputs are still usable) Updated start screen instructions Bug fixes Fixed bug that served multiple times when interact input pressed once Fixed bug that didn&amp;rsquo;t allow scrolling of instructions on touch screens Fixed bug that crashed game when pressing a key while holding mouse button </description>
+      <description>Click here to play the most up-to-date version&#xA;Just One for Me, Please What&amp;rsquo;s changed since last time? v0.10.0 Retooled input and movement Added a &amp;ldquo;Slide to Move&amp;rdquo; area: tap and slide in it to move Chef Tap on brown area (with customers and stools) to interact Mouse input Emulates touch input now (must move mouse in the &amp;ldquo;Slide to Move&amp;rdquo; area and hold down left button to move) Click on the brown area to interact OR right click anywhere Added timer to customer to stop spamming of incorrect orders (protects against multiple accidental interaction inputs) Made the area above the garbage can a &amp;ldquo;safe area&amp;rdquo;: food won&amp;rsquo;t spawn over it Removed desktop input toggle options (keyboard and mouse inputs are still usable) Updated start screen instructions Bug fixes Fixed bug that served multiple times when interact input pressed once Fixed bug that didn&amp;rsquo;t allow scrolling of instructions on touch screens Fixed bug that crashed game when pressing a key while holding mouse button </description>
     </item>
-    
     <item>
       <title>Godot in a gif(fy): Time to Start Me Up</title>
       <link>https://tunzor.github.io/posts/godot-diner-drop-7/</link>
       <pubDate>Sat, 09 May 2020 01:01:03 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/godot-diner-drop-7/</guid>
-      <description>Click here to play the most up-to-date version
-Disco Fever What&amp;rsquo;s changed since last time? Fancy new start screen! Colourful title now shows you what you&amp;rsquo;re playing Instructions on how to play in a scrollable text area Added a round timer of 60 seconds Serving correct orders increases time available by 3 seconds Serving incorrect orders decreases time available by 2 seconds </description>
+      <description>Click here to play the most up-to-date version&#xA;Disco Fever What&amp;rsquo;s changed since last time? Fancy new start screen! Colourful title now shows you what you&amp;rsquo;re playing Instructions on how to play in a scrollable text area Added a round timer of 60 seconds Serving correct orders increases time available by 3 seconds Serving incorrect orders decreases time available by 2 seconds </description>
     </item>
-    
     <item>
       <title>Godot in a gif(fy): IPO Time</title>
       <link>https://tunzor.github.io/posts/godot-diner-drop-6/</link>
       <pubDate>Fri, 08 May 2020 01:01:03 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/godot-diner-drop-6/</guid>
-      <description>Click here to play the most up-to-date version
-Mobile-ize What&amp;rsquo;s changed since last time? Diner Drop can now be played in your browser! Works on both desktop and mobile All future builds will be published at that link so check back for updates Multiple input methods available On desktop you can choose to play with mouse or keyboard controls Mouse: Move Chef by moving the mouse and click anywhere in the bottom area (where the stools are) to interact with whatever is highlighted in front of Chef Keyboard: Move Chef left with a or left arrow, right with d or right arrow, and interact with things with s or down arrow You can toggle them on and off with either m for mouse controls or k for keyboard controls (shown by either an M or K in the top left of the screen) On mobile, Chef will follow your finger much like the mouse movement above Tap and drag to move Chef and tap anywhere in the bottom area (where the stools are) to interact with whatever is highlighted in front of Chef Game over screen now shows a message about why the player lost Game over now shows if you have too many held food items Bug fixes Fixed food items spawning off screen Only the top item of the food stack being held has collision detection (gif above demonstrates how the sides have no collision) Fixed issue where tapping and dragging to move on mobile would cause Chef to serve to a customer unintentionally </description>
+      <description>Click here to play the most up-to-date version&#xA;Mobile-ize What&amp;rsquo;s changed since last time? Diner Drop can now be played in your browser! Works on both desktop and mobile All future builds will be published at that link so check back for updates Multiple input methods available On desktop you can choose to play with mouse or keyboard controls Mouse: Move Chef by moving the mouse and click anywhere in the bottom area (where the stools are) to interact with whatever is highlighted in front of Chef Keyboard: Move Chef left with a or left arrow, right with d or right arrow, and interact with things with s or down arrow You can toggle them on and off with either m for mouse controls or k for keyboard controls (shown by either an M or K in the top left of the screen) On mobile, Chef will follow your finger much like the mouse movement above Tap and drag to move Chef and tap anywhere in the bottom area (where the stools are) to interact with whatever is highlighted in front of Chef Game over screen now shows a message about why the player lost Game over now shows if you have too many held food items Bug fixes Fixed food items spawning off screen Only the top item of the food stack being held has collision detection (gif above demonstrates how the sides have no collision) Fixed issue where tapping and dragging to move on mobile would cause Chef to serve to a customer unintentionally </description>
     </item>
-    
     <item>
       <title>Godot in a gif(fy): It&#39;s a big one! Game Over, Man!</title>
       <link>https://tunzor.github.io/posts/godot-diner-drop-5/</link>
       <pubDate>Thu, 07 May 2020 01:01:03 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/godot-diner-drop-5/</guid>
-      <description>Click here to play the most up-to-date version
-I Want to Speak to the Manager! What&amp;rsquo;s changed since last time? A LOT! Customers aren&amp;rsquo;t taking your crap anymore; game over! Serving the same customer 3 incorrect orders (partial or complete) will push them over the edge and cause them to leave If all (currently 3) customers leave, it&amp;rsquo;s game over Serving the correct order to a customer will despawn them, increase the score, and spawn a new one at a random available spot Added game over screen with restart button Endlessly drops food until restart pressed (super fun to watch) Stops collision detection on Chef and locks movement input Generalized code around customer&amp;rsquo;s order (no longer hard coding burger as the only order) New font added for customers&amp;rsquo; feedback Text will appear towards the centre of the screen depending on where the customer is (e.</description>
+      <description>Click here to play the most up-to-date version&#xA;I Want to Speak to the Manager! What&amp;rsquo;s changed since last time? A LOT! Customers aren&amp;rsquo;t taking your crap anymore; game over! Serving the same customer 3 incorrect orders (partial or complete) will push them over the edge and cause them to leave If all (currently 3) customers leave, it&amp;rsquo;s game over Serving the correct order to a customer will despawn them, increase the score, and spawn a new one at a random available spot Added game over screen with restart button Endlessly drops food until restart pressed (super fun to watch) Stops collision detection on Chef and locks movement input Generalized code around customer&amp;rsquo;s order (no longer hard coding burger as the only order) New font added for customers&amp;rsquo; feedback Text will appear towards the centre of the screen depending on where the customer is (e.</description>
     </item>
-    
     <item>
       <title>Godot in a gif(fy): Front and Centre</title>
       <link>https://tunzor.github.io/posts/godot-diner-drop-4/</link>
       <pubDate>Thu, 07 May 2020 01:01:02 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/godot-diner-drop-4/</guid>
-      <description>Click here to play the most up-to-date version
-Table for Three What&amp;rsquo;s changed since last time? More customers! 3 customers will now spawn (in random positions!) at the counter waiting for their order UI update: interactive objects (customers and garbage can) now start out dimmed and become fully bright when Chef is in front of them and can interact </description>
+      <description>Click here to play the most up-to-date version&#xA;Table for Three What&amp;rsquo;s changed since last time? More customers! 3 customers will now spawn (in random positions!) at the counter waiting for their order UI update: interactive objects (customers and garbage can) now start out dimmed and become fully bright when Chef is in front of them and can interact </description>
     </item>
-    
     <item>
       <title>Godot in a gif(fy): What&#39;ll ya have?</title>
       <link>https://tunzor.github.io/posts/godot-diner-drop-3/</link>
       <pubDate>Thu, 07 May 2020 01:01:01 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/godot-diner-drop-3/</guid>
-      <description>Click here to play the most up-to-date version
-The Points Don&amp;rsquo;t Matter What&amp;rsquo;s changed since last time? A customer has finally arrived! The player can now stand in front of them and press down to serve them the order that Chef is currently holding Customers will provide feedback text on whether the order is correct or not Serving an order (correct or not) will remove it from Chef Player now has a score to increase (or decrease&amp;hellip;) Serving a correct order yields a point and an incorrect order deducts a point </description>
+      <description>Click here to play the most up-to-date version&#xA;The Points Don&amp;rsquo;t Matter What&amp;rsquo;s changed since last time? A customer has finally arrived! The player can now stand in front of them and press down to serve them the order that Chef is currently holding Customers will provide feedback text on whether the order is correct or not Serving an order (correct or not) will remove it from Chef Player now has a score to increase (or decrease&amp;hellip;) Serving a correct order yields a point and an incorrect order deducts a point </description>
     </item>
-    
     <item>
       <title>Godot in a gif(fy): Variety is the Spice of Life</title>
       <link>https://tunzor.github.io/posts/godot-diner-drop-2/</link>
       <pubDate>Wed, 06 May 2020 01:01:02 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/godot-diner-drop-2/</guid>
-      <description>Click here to play the most up-to-date version
-Catch Me If You Can What&amp;rsquo;s changed since last time? Chef can now catch and hold the falling food; allowing orders to be made All three parts of the burger now spawn Bottom: the bun and lettuce Middle: the patty and tomato Top: the onion and bun The garbage can interaction now lets Chef throw away their currently held order </description>
+      <description>Click here to play the most up-to-date version&#xA;Catch Me If You Can What&amp;rsquo;s changed since last time? Chef can now catch and hold the falling food; allowing orders to be made All three parts of the burger now spawn Bottom: the bun and lettuce Middle: the patty and tomato Top: the onion and bun The garbage can interaction now lets Chef throw away their currently held order </description>
     </item>
-    
     <item>
       <title>Godot in a gif(fy): A game dev blog told through gifs</title>
       <link>https://tunzor.github.io/posts/godot-diner-drop-1/</link>
       <pubDate>Wed, 06 May 2020 01:01:01 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/godot-diner-drop-1/</guid>
-      <description>Click here to play the most up-to-date version
-As outlined in a previous post, I started developing a game with the Godot engine about catching falling food and serving it to demanding customers, aptly named Diner Drop.
-In this series of posts I intend on showcasing the progress made on the game&amp;rsquo;s development through the greatest of all Internet formats: the gif. A lot can be said with pictures (especially moving ones) but I may also include a few words too.</description>
+      <description>Click here to play the most up-to-date version&#xA;As outlined in a previous post, I started developing a game with the Godot engine about catching falling food and serving it to demanding customers, aptly named Diner Drop.&#xA;In this series of posts I intend on showcasing the progress made on the game&amp;rsquo;s development through the greatest of all Internet formats: the gif. A lot can be said with pictures (especially moving ones) but I may also include a few words too.</description>
     </item>
-    
   </channel>
 </rss>

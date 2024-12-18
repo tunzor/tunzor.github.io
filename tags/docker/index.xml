@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>docker on tunzor</title>
+    <title>Docker on tunzor</title>
     <link>https://tunzor.github.io/tags/docker/</link>
-    <description>Recent content in docker on tunzor</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Docker on tunzor</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Dec 2019 10:31:48 -0500</lastBuildDate><atom:link href="https://tunzor.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Dec 2019 10:31:48 -0500</lastBuildDate>
+    <atom:link href="https://tunzor.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quick Tip: List docker images sorted by size</title>
       <link>https://tunzor.github.io/posts/docker-list-images-by-size/</link>
       <pubDate>Mon, 16 Dec 2019 10:31:48 -0500</pubDate>
-      
       <guid>https://tunzor.github.io/posts/docker-list-images-by-size/</guid>
-      <description>The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.
-Huh? What&amp;rsquo;s that, docker? You can&amp;rsquo;t do that.
-If you want something done right&amp;hellip;
-It ain&amp;rsquo;t pretty but it works.
-docker image ls --format &amp;#34;{{.Repository}}:{{.Tag}} {{.Size}}&amp;#34; | \ awk &amp;#39;{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &amp;#34;MB - &amp;#34; $1 ; else print $2 &amp;#34; - &amp;#34; $1 }&amp;#39; | \ sed &amp;#39;/^0/d&amp;#39; | \ sort -n Side Note</description>
+      <description>The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.&#xA;Huh? What&amp;rsquo;s that, docker? You can&amp;rsquo;t do that.&#xA;If you want something done right&amp;hellip;&#xA;It ain&amp;rsquo;t pretty but it works.&#xA;docker image ls --format &amp;#34;{{.Repository}}:{{.Tag}} {{.Size}}&amp;#34; | \ awk &amp;#39;{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &amp;#34;MB - &amp;#34; $1 ; else print $2 &amp;#34; - &amp;#34; $1 }&amp;#39; | \ sed &amp;#39;/^0/d&amp;#39; | \ sort -n Side Note</description>
     </item>
-    
     <item>
       <title>Deploying a dockerized two-tier app on Kubernetes</title>
       <link>https://tunzor.github.io/posts/k8s-two-tier-deploy/</link>
       <pubDate>Wed, 11 Dec 2019 18:56:27 -0500</pubDate>
-      
       <guid>https://tunzor.github.io/posts/k8s-two-tier-deploy/</guid>
-      <description>For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I&amp;rsquo;d like to walk you through that deployment and explain everything along the way.
-Before we jump in, you&amp;rsquo;ll need to have:</description>
+      <description>For a great deal of developers, myself included, doing something is the preferred method of learning as opposed to reading how to do it. When I was wrapping my head around using kubernetes to manage my docker containers, I found that creating a deployment from scratch was invaluable. I&amp;rsquo;d like to walk you through that deployment and explain everything along the way.&#xA;Before we jump in, you&amp;rsquo;ll need to have:</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>automation on tunzor</title>
+    <title>Automation on tunzor</title>
     <link>https://tunzor.github.io/tags/automation/</link>
-    <description>Recent content in automation on tunzor</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Automation on tunzor</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tunzor.github.io/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tunzor.github.io/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automating the publication of a Hugo generated site with Google Cloud Build</title>
       <link>https://tunzor.github.io/posts/cloud-build-hugo-site/</link>
       <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/cloud-build-hugo-site/</guid>
-      <description>Hugo is a really cool tool for getting a blog up and running quickly.
-In a previous post I outlined how to use it to generate a site and then host that site on Github Pages or Google Cloud Storage. Now I want to take it a step further and automate its publication on Github Pages. Why? Cause I&amp;rsquo;m lazy, automation is cool, and doing so will make us look better in the optical sensors of our eventual robot overlords.</description>
+      <description>Hugo is a really cool tool for getting a blog up and running quickly.&#xA;In a previous post I outlined how to use it to generate a site and then host that site on Github Pages or Google Cloud Storage. Now I want to take it a step further and automate its publication on Github Pages. Why? Cause I&amp;rsquo;m lazy, automation is cool, and doing so will make us look better in the optical sensors of our eventual robot overlords.</description>
     </item>
-    
   </channel>
 </rss>

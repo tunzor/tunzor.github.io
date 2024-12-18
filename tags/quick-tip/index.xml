@@ -1,37 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>quick-tip on tunzor</title>
+    <title>Quick-Tip on tunzor</title>
     <link>https://tunzor.github.io/tags/quick-tip/</link>
-    <description>Recent content in quick-tip on tunzor</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Quick-Tip on tunzor</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Dec 2019 10:31:48 -0500</lastBuildDate><atom:link href="https://tunzor.github.io/tags/quick-tip/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Dec 2019 10:31:48 -0500</lastBuildDate>
+    <atom:link href="https://tunzor.github.io/tags/quick-tip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quick Tip: List docker images sorted by size</title>
       <link>https://tunzor.github.io/posts/docker-list-images-by-size/</link>
       <pubDate>Mon, 16 Dec 2019 10:31:48 -0500</pubDate>
-      
       <guid>https://tunzor.github.io/posts/docker-list-images-by-size/</guid>
-      <description>The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.
-Huh? What&amp;rsquo;s that, docker? You can&amp;rsquo;t do that.
-If you want something done right&amp;hellip;
-It ain&amp;rsquo;t pretty but it works.
-docker image ls --format &amp;#34;{{.Repository}}:{{.Tag}} {{.Size}}&amp;#34; | \ awk &amp;#39;{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &amp;#34;MB - &amp;#34; $1 ; else print $2 &amp;#34; - &amp;#34; $1 }&amp;#39; | \ sed &amp;#39;/^0/d&amp;#39; | \ sort -n Side Note</description>
+      <description>The docker image ls command has an option for filtering output but what if we want to sort the images to find the really hefty ones? You know, the ones that might need to go the way of Old Yeller.&#xA;Huh? What&amp;rsquo;s that, docker? You can&amp;rsquo;t do that.&#xA;If you want something done right&amp;hellip;&#xA;It ain&amp;rsquo;t pretty but it works.&#xA;docker image ls --format &amp;#34;{{.Repository}}:{{.Tag}} {{.Size}}&amp;#34; | \ awk &amp;#39;{if ($2~/GB/) print substr($2, 1, length($2)-2) * 1000 &amp;#34;MB - &amp;#34; $1 ; else print $2 &amp;#34; - &amp;#34; $1 }&amp;#39; | \ sed &amp;#39;/^0/d&amp;#39; | \ sort -n Side Note</description>
     </item>
-    
     <item>
       <title>Quick Tip: Make a directory and enter it with one command</title>
       <link>https://tunzor.github.io/posts/mkdir-and-enter-one-liner/</link>
       <pubDate>Wed, 11 Dec 2019 18:41:10 -0500</pubDate>
-      
       <guid>https://tunzor.github.io/posts/mkdir-and-enter-one-liner/</guid>
-      <description>We all make directories. It&amp;rsquo;s one way that we attempt to bring order to the chaos that is the filesystem.
-We&amp;rsquo;re also pretty lazy. Creating a new directory and navigating into it is usually a two command affair:
-mkdir order-i-say cd order-i-say Not anymore it isn&amp;rsquo;t:
-mkdir quickly-now &amp;amp;&amp;amp; cd $_ Explanation
-$_ is the last argument passed to the previous command. In our case, it&amp;rsquo;s the directory name. There&amp;rsquo;s a lot more here.</description>
+      <description>We all make directories. It&amp;rsquo;s one way that we attempt to bring order to the chaos that is the filesystem.&#xA;We&amp;rsquo;re also pretty lazy. Creating a new directory and navigating into it is usually a two command affair:&#xA;mkdir order-i-say cd order-i-say Not anymore it isn&amp;rsquo;t:&#xA;mkdir quickly-now &amp;amp;&amp;amp; cd $_ Explanation&#xA;$_ is the last argument passed to the previous command. In our case, it&amp;rsquo;s the directory name. There&amp;rsquo;s a lot more here.</description>
     </item>
-    
   </channel>
 </rss>

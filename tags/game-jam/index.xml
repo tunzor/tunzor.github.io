@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>game-jam on tunzor</title>
+    <title>Game-Jam on tunzor</title>
     <link>https://tunzor.github.io/tags/game-jam/</link>
-    <description>Recent content in game-jam on tunzor</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Game-Jam on tunzor</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tunzor.github.io/tags/game-jam/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tunzor.github.io/tags/game-jam/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Making a Game in 48 hours</title>
       <link>https://tunzor.github.io/posts/gmtk-jam-2020-game/</link>
       <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://tunzor.github.io/posts/gmtk-jam-2020-game/</guid>
-      <description>Following up the post I wrote about making a game in one day with this one may seem like a step back, going from 22 to 48 hours.
-The difference is there&amp;rsquo;s no qualification of development time vs actual time passed; this time I didn&amp;rsquo;t have the luxury of spreading my development over 4 days.
-2 days. 48 hours.
-That&amp;rsquo;s all the time I had to think, plan, and develop. Not to mention also eat, sleep, and tend to other normal bodily functions.</description>
+      <description>Following up the post I wrote about making a game in one day with this one may seem like a step back, going from 22 to 48 hours.&#xA;The difference is there&amp;rsquo;s no qualification of development time vs actual time passed; this time I didn&amp;rsquo;t have the luxury of spreading my development over 4 days.&#xA;2 days. 48 hours.&#xA;That&amp;rsquo;s all the time I had to think, plan, and develop. Not to mention also eat, sleep, and tend to other normal bodily functions.</description>
     </item>
-    
   </channel>
 </rss>
